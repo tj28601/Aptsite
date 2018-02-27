@@ -1,0 +1,4 @@
+<h1> Howdy </h1>
+<% @apartments.each do |apartment| %>
+<h3><%= link_to apartment.title, apartment_path(apartment) %><%= "#{apartment.price}/month" %></h3>
+<% end %>

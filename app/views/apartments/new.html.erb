@@ -1,0 +1,23 @@
+<h1>Hello!</h1>
+
+<%= form_for @apartment do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.label :price %>
+<%= f.text_field :price %>
+<%= f.label :address %>
+<%= f.text_field :address %>
+<%= f.label :bedrooms %>
+<%= f.text_field :bedrooms %>
+<%= f.label :bathrooms %>
+<%= f.text_field :bathrooms %>
+<%= f.label :sq_ft %>
+<%= f.text_field :sq_ft %>
+<%= f.label :pets? %>
+<%= f.text_field :pets? %>
+<%= f.label :date_available %>
+<%= f.date_field :date_available %>
+<%= f.submit %>
+<% end %>
