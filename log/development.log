@@ -1,0 +1,2496 @@
+  [1m[35m (50.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (22.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20180215025718)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180215025718"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "apartments" ("id" bigserial primary key, "price" character varying NOT NULL, "address" character varying NOT NULL, "bedrooms" character varying NOT NULL, "bathrooms" character varying NOT NULL, "sq_ft" character varying, "pets?" character varying, "date_available" date)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180215031126"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-02-15 03:27:14.045806"], ["updated_at", "2018-02-15 03:27:14.045806"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mDROP TABLE "apartments"[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180215031126"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "apartments" ("id" bigserial primary key, "price" character varying NOT NULL, "address" character varying NOT NULL, "bedrooms" character varying NOT NULL, "bathrooms" character varying NOT NULL, "sq_ft" character varying, "pets?" character varying, "date_available" date)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180215031126"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mDROP TABLE "apartments"[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180215031126"]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20180215025718)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP INDEX  "index_users_on_reset_password_token"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP INDEX  "index_users_on_email"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180215025718"]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20180215025718)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180215025718"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (6.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE TABLE "apartments" ("id" bigserial primary key, "price" character varying NOT NULL, "address" character varying NOT NULL, "bedrooms" character varying NOT NULL, "bathrooms" character varying NOT NULL, "sq_ft" character varying, "pets?" character varying, "date_available" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180215031126"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mApartment Load (14.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."price" = $1 AND "apartments"."address" = $2 AND "apartments"."bedrooms" = $3 AND "apartments"."bathrooms" = $4 AND "apartments"."sq_ft" = $5 AND "apartments"."pets?" = $6 LIMIT $7[0m  [["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets?", "No Dogs allowed, but cats are okay. Meow!"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "apartments" ("price", "address", "bedrooms", "bathrooms", "sq_ft", "pets?", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets?", "No Dogs allowed, but cats are okay. Meow!"], ["created_at", "2018-02-15 04:35:45.287118"], ["updated_at", "2018-02-15 04:35:45.287118"]]
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."price" = $1 AND "apartments"."address" = $2 AND "apartments"."bedrooms" = $3 AND "apartments"."bathrooms" = $4 AND "apartments"."sq_ft" = $5 AND "apartments"."pets?" = $6 LIMIT $7[0m  [["price", "$750"], ["address", "24 2nd Ave SW Hickory, NC 28601"], ["bedrooms", "2"], ["bathrooms", "3"], ["sq_ft", "750"], ["pets?", "No Pets."], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "apartments" ("price", "address", "bedrooms", "bathrooms", "sq_ft", "pets?", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["price", "$750"], ["address", "24 2nd Ave SW Hickory, NC 28601"], ["bedrooms", "2"], ["bathrooms", "3"], ["sq_ft", "750"], ["pets?", "No Pets."], ["created_at", "2018-02-15 04:35:45.308332"], ["updated_at", "2018-02-15 04:35:45.308332"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."price" = $1 AND "apartments"."address" = $2 AND "apartments"."bedrooms" = $3 AND "apartments"."bathrooms" = $4 AND "apartments"."sq_ft" = $5 AND "apartments"."pets?" = $6 LIMIT $7[0m  [["price", "$900"], ["address", "37 6th St NW Hickory, NC 28601"], ["bedrooms", "4"], ["bathrooms", "2"], ["sq_ft", "1020"], ["pets?", "All pets are welcome!"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "apartments" ("price", "address", "bedrooms", "bathrooms", "sq_ft", "pets?", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["price", "$900"], ["address", "37 6th St NW Hickory, NC 28601"], ["bedrooms", "4"], ["bathrooms", "2"], ["sq_ft", "1020"], ["pets?", "All pets are welcome!"], ["created_at", "2018-02-15 04:35:45.321456"], ["updated_at", "2018-02-15 04:35:45.321456"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+Started GET "/" for 127.0.0.1 at 2018-02-14 23:46:21 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApartmentsController#index as HTML
+Completed 401 Unauthorized in 125ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ApartmentsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-02-14 23:56:19 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.6ms)
+Started GET "/" for 127.0.0.1 at 2018-02-14 23:56:21 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.6ms)
+Started GET "/" for 127.0.0.1 at 2018-02-14 23:56:33 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12659ms (Views: 12657.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 202ms (Views: 199.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 14830ms (Views: 14828.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:00:13 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (7.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (53.4ms)
+Completed 200 OK in 143ms (Views: 118.3ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:00:52 -0500
+Processing by ApartmentsController#index as HTML
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:00:54 -0500
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 48541ms (Views: 100.4ms | ActiveRecord: 8.8ms)
+
+
+Processing by ApartmentsController#index as HTML
+Started GET "/api/v1/tickets" for 127.0.0.1 at 2018-02-15 00:01:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/tickets"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/apartments" for 127.0.0.1 at 2018-02-15 00:01:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/apartments"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:01:50 -0500
+Processing by ApartmentsController#index as HTML
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:01:54 -0500
+Processing by ApartmentsController#index as HTML
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Apartment Load (0.0ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:05:17 -0500
+Processing by ApartmentsController#index as HTML
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:05:34 -0500
+  [1m[36mApartment Load (1.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Apartment Load (0.0ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Apartment Load (0.0ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Apartment Load (0.0ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:06:26 -0500
+  [1m[35m (8.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (25.4ms)
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:06:27 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (1.2ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (1673.7ms)
+Completed 200 OK in 1873ms (Views: 618.1ms | ActiveRecord: 1253.3ms)
+
+
+Completed 200 OK in 3119ms (Views: 3104.4ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:07:02 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 53ms (Views: 50.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:07:53 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 54ms (Views: 51.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:08:34 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:09:07 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:09:10 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 64ms (Views: 62.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:09:24 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:09:26 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:09:28 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 47ms (Views: 45.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:09:59 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 59ms (Views: 57.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:10:42 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 54ms (Views: 51.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:10:43 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 55ms (Views: 52.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:10:45 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 53ms (Views: 50.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:10:51 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:26:22 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (474.1ms)
+Completed 401 Unauthorized in 483ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `apartment_path' for #<#<Class:0x007fbc2c7ce030>:0x007fbc3167a698>):
+    1: <h1> Howdy </h1>
+    2: <% @apartments.each do |apartment| %>
+    3: <h3><%= link_to apartment.price, apartment_path(apartment) %></h3>
+    4: <% end %>
+  
+app/views/apartments/index.html.erb:3:in `block in _app_views_apartments_index_html_erb___512954989585576679_70223098159380'
+app/views/apartments/index.html.erb:2:in `_app_views_apartments_index_html_erb___512954989585576679_70223098159380'
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:38:41 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 106ms (Views: 101.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:38:44 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (5.6ms)
+Completed 401 Unauthorized in 20ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Apartment:0x007fbc317a3538>):
+    1: <h1><%= @apartment.name %></h1>
+    2: 
+    3: <p>
+    4:   <strong>
+  
+app/views/apartments/show.html.erb:1:in `_app_views_apartments_show_html_erb___3970547886552729346_70223130333540'
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:39:08 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 47ms (Views: 41.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:41:28 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 00:44:39 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (1.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 124ms (Views: 121.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:44:41 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 49ms (Views: 43.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:45:52 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 38.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:46:00 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 71ms (Views: 68.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:46:15 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (283.0ms)
+Completed 401 Unauthorized in 291ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `apartment' for #<#<Class:0x007fbc33253220>:0x007fbc34208a30>
+Did you mean?  @apartment):
+    1: <h3><%= @apartment.price %></h3>
+    2: <h3><%= @apartment.address %></h3>
+    3: <h3><%= "#{apartment.bedrooms} bedrooms" %></h3>
+    4: <h3><%= @apartment.bathrooms %></h3>
+  
+app/views/apartments/show.html.erb:3:in `_app_views_apartments_show_html_erb___3970547886552729346_70223152564740'
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:46:28 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 106ms (Views: 103.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:47:01 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (396.2ms)
+Completed 401 Unauthorized in 404ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `asdfkl' for #<#<Class:0x007fbc33253220>:0x007fbc2da7c178>):
+    1: <h3><%= @apartment.price %></h3>
+    2: <h3><%= @apartment.address %></h3>
+    3: <h3><%= @apartment.bedrooms asdfkl; %></h3>
+    4: <h3><%= @apartment.bathrooms %></h3>
+  
+app/views/apartments/show.html.erb:3:in `_app_views_apartments_show_html_erb___3970547886552729346_70223098275240'
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:47:19 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.6ms)
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    1: <h3><%= @apartment.price %></h3>
+    2: <h3><%= @apartment.address %></h3>
+    3: <h3><%= @apartment.bedrooms "asdfkl;" %></h3>
+    4: <h3><%= @apartment.bathrooms %></h3>
+  
+app/views/apartments/show.html.erb:3:in `_app_views_apartments_show_html_erb___3970547886552729346_70223145604860'
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:47:40 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 49ms (Views: 45.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:47:52 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:48:01 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:48:08 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:48:41 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 49ms (Views: 46.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:49:22 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:49:45 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:49:59 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 88ms (Views: 84.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:50:12 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 99ms (Views: 96.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:50:13 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:50:25 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 56ms (Views: 53.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 00:50:39 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments/3" for 127.0.0.1 at 2018-02-15 00:50:42 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 01:35:52 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 107ms (Views: 102.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 21:13:14 -0500
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (28.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (91.0ms)
+Started GET "/" for 127.0.0.1 at 2018-02-15 21:13:15 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (170.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (1916.5ms)
+Completed 200 OK in 2192ms (Views: 631.5ms | ActiveRecord: 1485.9ms)
+
+
+Completed 200 OK in 3678ms (Views: 3608.2ms | ActiveRecord: 62.7ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-02-15 21:13:21 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (3.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 55ms (Views: 42.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 22:15:15 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 160ms (Views: 144.1ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-02-15 22:15:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/new" for 127.0.0.1 at 2018-02-15 22:15:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/new" for 127.0.0.1 at 2018-02-15 22:16:01 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/new" for 127.0.0.1 at 2018-02-15 22:16:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/apartments" for 127.0.0.1 at 2018-02-15 22:16:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/apartments"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-02-15 22:16:38 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 108ms (Views: 103.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 22:16:40 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 64ms (Views: 58.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-15 22:16:43 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (45.1ms)
+Completed 401 Unauthorized in 52ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Apartment:0x007f9a71132c80>):
+    2: 
+    3: <%= form_for @apartment do |f| %>
+    4: <%= f.label :name %>
+    5: <%= f.text_field :name %>
+    6: <% end %>
+  
+app/views/apartments/new.html.erb:5:in `block in _app_views_apartments_new_html_erb__560888074481989707_70150649382900'
+app/views/apartments/new.html.erb:3:in `_app_views_apartments_new_html_erb__560888074481989707_70150649382900'
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-15 22:17:14 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-15 22:29:01 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-15 22:29:48 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 57ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-15 22:31:21 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-15 22:31:50 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (372.6ms)
+Completed 401 Unauthorized in 380ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `feet' for #<#<Class:0x007f9a717ea5f0>:0x007f9a6bf92f10>):
+     9: <%= f.text_field :bedrooms %>
+    10: <%= f.label :bathrooms %>
+    11: <%= f.text_field :bathrooms %>
+    12: <%= f.label square feet %>
+    13: <%= f.text_field :sq_ft %>
+    14: <% end %>
+  
+app/views/apartments/new.html.erb:12:in `block in _app_views_apartments_new_html_erb__560888074481989707_70150606593320'
+app/views/apartments/new.html.erb:3:in `_app_views_apartments_new_html_erb__560888074481989707_70150606593320'
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-15 22:32:02 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-15 22:37:42 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 107ms (Views: 104.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (9.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (6.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (40.3ms)[0m  [1m[35mDROP TABLE "apartments"[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180215031126"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (78.9ms)[0m  [1m[35mCREATE TABLE "apartments" ("id" bigserial primary key, "title" character varying NOT NULL, "description" character varying NOT NULL, "price" character varying NOT NULL, "address" character varying NOT NULL, "bedrooms" character varying NOT NULL, "bathrooms" character varying NOT NULL, "sq_ft" character varying, "pets?" character varying, "date_available" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180215031126"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 22:45:55 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 12ms (ActiveRecord: 7.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Apartment with 'id'=1):
+  
+app/controllers/apartments_controller.rb:9:in `show'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."price" = $1 AND "apartments"."address" = $2 AND "apartments"."bedrooms" = $3 AND "apartments"."bathrooms" = $4 AND "apartments"."sq_ft" = $5 AND "apartments"."pets?" = $6 LIMIT $7[0m  [["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets?", "No Dogs allowed, but cats are okay. Meow!"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "apartments" ("price", "address", "bedrooms", "bathrooms", "sq_ft", "pets?", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets?", "No Dogs allowed, but cats are okay. Meow!"], ["created_at", "2018-02-16 03:46:22.848887"], ["updated_at", "2018-02-16 03:46:22.848887"]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 22:53:41 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Apartment with 'id'=1):
+  
+app/controllers/apartments_controller.rb:9:in `show'
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 22:53:43 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Apartment with 'id'=1):
+  
+app/controllers/apartments_controller.rb:9:in `show'
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8045.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "apartmentsss_development"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:00:16 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 104ms (Views: 100.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:01:01 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 43ms (Views: 40.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:01:02 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 54ms (Views: 48.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:12:20 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 55ms (Views: 53.7ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:15:46 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:15:47 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-15 23:15:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/apartments"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets?" = $8 LIMIT $9[0m  [["title", "Nice 3BR 1.5 BA in Great Location!"], ["description", "this apartment is located in fantastic, family-oriented neighborhood. NO DOGS ALLOWED"], ["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets?", "No Dogs allowed, but cats are okay. Meow!"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets?", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Nice 3BR 1.5 BA in Great Location!"], ["description", "this apartment is located in fantastic, family-oriented neighborhood. NO DOGS ALLOWED"], ["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets?", "No Dogs allowed, but cats are okay. Meow!"], ["created_at", "2018-02-16 04:16:51.417521"], ["updated_at", "2018-02-16 04:16:51.417521"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets?" = $8 LIMIT $9[0m  [["title", "2 BR 3BA Apt in Historic Downtown"], ["description", "this apt is close to various bars and restaurants. Amazing location!"], ["price", "$750"], ["address", "24 2nd Ave SW Hickory, NC 28601"], ["bedrooms", "2"], ["bathrooms", "3"], ["sq_ft", "750"], ["pets?", "No Pets."], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets?", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "2 BR 3BA Apt in Historic Downtown"], ["description", "this apt is close to various bars and restaurants. Amazing location!"], ["price", "$750"], ["address", "24 2nd Ave SW Hickory, NC 28601"], ["bedrooms", "2"], ["bathrooms", "3"], ["sq_ft", "750"], ["pets?", "No Pets."], ["created_at", "2018-02-16 04:16:51.423918"], ["updated_at", "2018-02-16 04:16:51.423918"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets?" = $8 LIMIT $9[0m  [["title", "4 BR 2 BA Apt in Viewmont!"], ["description", "Breath-taking apartment in AMAZING neighborhood. All pets are welcome! MEOW, WHOOOF"], ["price", "$900"], ["address", "37 6th St NW Hickory, NC 28601"], ["bedrooms", "4"], ["bathrooms", "2"], ["sq_ft", "1020"], ["pets?", "All pets are welcome!"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets?", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "4 BR 2 BA Apt in Viewmont!"], ["description", "Breath-taking apartment in AMAZING neighborhood. All pets are welcome! MEOW, WHOOOF"], ["price", "$900"], ["address", "37 6th St NW Hickory, NC 28601"], ["bedrooms", "4"], ["bathrooms", "2"], ["sq_ft", "1020"], ["pets?", "All pets are welcome!"], ["created_at", "2018-02-16 04:16:51.429832"], ["updated_at", "2018-02-16 04:16:51.429832"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8542.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "apartmentsss_development"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (211.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "apartmentsss_development"[0m
+  [1m[35m (201.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "apartmentsss_test"[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20180215025718)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180215025718"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "apartments" ("id" bigserial primary key, "title" character varying NOT NULL, "description" character varying NOT NULL, "price" character varying NOT NULL, "address" character varying NOT NULL, "bedrooms" character varying NOT NULL, "bathrooms" character varying NOT NULL, "sq_ft" character varying, "pets?" character varying, "date_available" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180215031126"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-02-16 04:19:34.306851"], ["updated_at", "2018-02-16 04:19:34.306851"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets?" = $8 LIMIT $9[0m  [["title", "Nice 3BR 1.5 BA in Great Location!"], ["description", "this apartment is located in fantastic, family-oriented neighborhood. NO DOGS ALLOWED"], ["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets?", "No Dogs allowed, but cats are okay. Meow!"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets?", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Nice 3BR 1.5 BA in Great Location!"], ["description", "this apartment is located in fantastic, family-oriented neighborhood. NO DOGS ALLOWED"], ["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets?", "No Dogs allowed, but cats are okay. Meow!"], ["created_at", "2018-02-16 04:19:57.539420"], ["updated_at", "2018-02-16 04:19:57.539420"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets?" = $8 LIMIT $9[0m  [["title", "2 BR 3BA Apt in Historic Downtown"], ["description", "this apt is close to various bars and restaurants. Amazing location!"], ["price", "$750"], ["address", "24 2nd Ave SW Hickory, NC 28601"], ["bedrooms", "2"], ["bathrooms", "3"], ["sq_ft", "750"], ["pets?", "No Pets."], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets?", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "2 BR 3BA Apt in Historic Downtown"], ["description", "this apt is close to various bars and restaurants. Amazing location!"], ["price", "$750"], ["address", "24 2nd Ave SW Hickory, NC 28601"], ["bedrooms", "2"], ["bathrooms", "3"], ["sq_ft", "750"], ["pets?", "No Pets."], ["created_at", "2018-02-16 04:19:57.546409"], ["updated_at", "2018-02-16 04:19:57.546409"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets?" = $8 LIMIT $9[0m  [["title", "4 BR 2 BA Apt in Viewmont!"], ["description", "Breath-taking apartment in AMAZING neighborhood. All pets are welcome! MEOW, WHOOOF"], ["price", "$900"], ["address", "37 6th St NW Hickory, NC 28601"], ["bedrooms", "4"], ["bathrooms", "2"], ["sq_ft", "1020"], ["pets?", "All pets are welcome!"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets?", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "4 BR 2 BA Apt in Viewmont!"], ["description", "Breath-taking apartment in AMAZING neighborhood. All pets are welcome! MEOW, WHOOOF"], ["price", "$900"], ["address", "37 6th St NW Hickory, NC 28601"], ["bedrooms", "4"], ["bathrooms", "2"], ["sq_ft", "1020"], ["pets?", "All pets are welcome!"], ["created_at", "2018-02-16 04:19:57.552510"], ["updated_at", "2018-02-16 04:19:57.552510"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:24:34 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (26.0ms)
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:24:37 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (1.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 3111ms (Views: 3098.9ms | ActiveRecord: 8.6ms)
+
+
+Completed 200 OK in 230ms (Views: 163.5ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-02-15 23:24:39 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 58ms (Views: 49.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:25:05 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:25:30 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 23:25:33 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 39.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 23:26:26 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 47ms (Views: 43.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 23:27:02 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 65ms (Views: 61.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 23:27:20 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 44ms (Views: 40.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 23:27:28 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 57ms (Views: 54.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 23:27:36 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 49ms (Views: 45.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 23:27:45 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 43ms (Views: 39.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 23:28:00 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 50ms (Views: 46.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 23:31:14 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 42ms (Views: 39.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:32:28 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (2.0ms)
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/tayloryount/apartmentsss/app/views/apartments/index.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+...ment_path(apartment) @apartment.price);@output_buffer.safe_a...
+...                               ^):
+  
+app/views/apartments/index.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:32:55 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:34:33 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 46ms (Views: 43.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:34:47 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 23:35:45 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 47ms (Views: 44.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:36:05 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 55ms (Views: 52.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-15 23:36:35 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/apartments"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:36:41 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2018-02-15 23:36:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/apartments/2" for 127.0.0.1 at 2018-02-15 23:37:06 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-15 23:37:09 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/apartments"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/apartments/" for 127.0.0.1 at 2018-02-15 23:37:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/apartments"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:37:19 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (150.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (153.3ms)
+Completed 200 OK in 210ms (Views: 58.1ms | ActiveRecord: 150.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:39:36 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 69ms (Views: 59.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-15 23:39:38 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 44.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:39:42 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-15 23:39:47 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 59ms (Views: 56.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-15 23:39:49 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-15 23:39:50 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 76ms (Views: 74.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-02-15 23:39:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/apartments" for 127.0.0.1 at 2018-02-15 23:40:07 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 59ms (Views: 56.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-15 23:40:09 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 95ms (Views: 93.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-15 23:43:35 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 53ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-15 23:44:09 -0500
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for ApartmentsController):
+  
+actionpack (5.1.5) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+webpacker (3.2.2) lib/webpacker/dev_server_proxy.rb:18:in `perform_request'
+rack-proxy (0.6.3) lib/rack/proxy.rb:57:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/apartments" for 127.0.0.1 at 2018-02-15 23:55:03 -0500
+  
+SyntaxError (/Users/tayloryount/apartmentsss/app/controllers/apartments_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/apartments_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:55:09 -0500
+  
+SyntaxError (/Users/tayloryount/apartmentsss/app/controllers/apartments_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/apartments_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2018-02-15 23:55:32 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 106ms (Views: 96.4ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-15 23:55:45 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-15 23:55:48 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-15 23:56:02 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WNGTATNfpa+yA4qLj4IN0w1iuhv0/ODJpq7ofY1T4Sn6uiKnuIq6LPMemaa47CEzu/HHEP3d6p1F0GMRQd9iXA==", "apartment"=>{"price"=>"sdf", "address"=>"j", "bedrooms"=>"j", "bathrooms"=>"j", "sq_ft"=>"j", "date_available"=>"2018-02-28"}, "commit"=>"Create Apartment"}
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:04:44 -0500
+No template found for ApartmentsController#create, rendering head :no_content
+Completed 204 No Content in 536781ms (ActiveRecord: 0.0ms)
+
+
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 119ms (Views: 95.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:05:09 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 116ms (Views: 111.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-16 00:05:11 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 00:05:55 -0500
+  [1m[35m (8.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 3043ms (Views: 3030.0ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:06:03 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 91ms (Views: 89.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:09:20 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Drnjhsr/9giBq17UGKfCCMtqRZ2+pGup2QCCYe/p8Q+s0lIgQSrpi8C2Tfkvye7offk4lreFYf06fgkNI2Vyeg==", "apartment"=>{"price"=>"asdf", "address"=>"asdf", "bedrooms"=>"asdf", "bathrooms"=>"asdf", "sq_ft"=>"asdf", "date_available"=>"2018-02-28"}, "commit"=>"Create Apartment"}
+Unpermitted parameter: :bathrooms
+Completed 401 Unauthorized in 33ms (ActiveRecord: 8.3ms)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/apartments_controller.rb:4:in `create'
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:09:38 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Drnjhsr/9giBq17UGKfCCMtqRZ2+pGup2QCCYe/p8Q+s0lIgQSrpi8C2Tfkvye7offk4lreFYf06fgkNI2Vyeg==", "apartment"=>{"price"=>"asdf", "address"=>"asdf", "bedrooms"=>"asdf", "bathrooms"=>"asdf", "sq_ft"=>"asdf", "date_available"=>"2018-02-28"}, "commit"=>"Create Apartment"}
+Unpermitted parameter: :bathrooms
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 77ms (Views: 48.4ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:09:47 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vhw5UD98VhO7swVDGE3wgpaxi6MCJNAgLOWSLeXQKGgcd4j2tKlJkPquFm4vI9xiICL2qAsF2nTPmxlBKVyrHQ==", "apartment"=>{"price"=>"asdf", "address"=>"asdf", "bedrooms"=>"asdf", "bathrooms"=>"", "sq_ft"=>"asdf", "date_available"=>"2018-02-28"}, "commit"=>"Create Apartment"}
+Unpermitted parameter: :bathrooms
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 74ms (Views: 69.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:09:48 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+breStFTEMoxQDKrjvpGuywu1wvXPhaz2H9+ACnaocNb0W/sWoYPSXBdIYa5lGpbmr2qAN4fHOc7AfVs5VYitg==", "apartment"=>{"price"=>"asdf", "address"=>"asdf", "bedrooms"=>"asdf", "bathrooms"=>"", "sq_ft"=>"asdf", "date_available"=>"2018-02-28"}, "commit"=>"Create Apartment"}
+Unpermitted parameter: :bathrooms
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 67ms (Views: 61.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:09:53 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 64ms (Views: 61.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:10:01 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 59ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:10:12 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yXqHZVM0r8y+f1VqNIJcpNsSnIk3FY6IguEmOhy6jBZrETbD2OGwT/9iRkcD7HBEbYHhgj40hNxhn61W0DYPYw==", "apartment"=>{"price"=>"kljlkj", "address"=>"jlkj", "bedrooms"=>"lkj", "bathrooms"=>"lkjkj", "sq_ft"=>"lkjlkj", "date_available"=>"2018-02-27"}, "commit"=>"Create Apartment"}
+Unpermitted parameter: :bathrooms
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 65ms (Views: 59.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:10:21 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 00:10:26 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 67ms (Views: 65.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 00:12:10 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:12:14 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 80ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:12:24 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ny5YLn0ZKy3PS6CRajlLSuEdg41fYJi/k6PdFQvB1piVRemI9sw0ro5Ws7xdV2eqV47+hlZBkutw3VZ5x01V7Q==", "apartment"=>{"price"=>"sdfff", "address"=>"sdfff", "bedrooms"=>"sdfff", "bathrooms"=>"jkj", "sq_ft"=>"", "date_available"=>""}, "commit"=>"Create Apartment"}
+Unpermitted parameter: :bathrooms
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 65ms (Views: 59.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:12:36 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hWXyJN+HTZsTBnNrU1eMos9lyRJOj5XaVBponOEjNAwnDkOCVFJSGFIbYEZkOaBCefa0GUeun463ZOPwLa+3eQ==", "apartment"=>{"price"=>"sdfff", "address"=>"sdfff", "bedrooms"=>"sdfff", "bathrooms"=>"sdflkj", "sq_ft"=>"lkjlkj", "date_available"=>"2018-02-28"}, "commit"=>"Create Apartment"}
+Unpermitted parameter: :bathrooms
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 63ms (Views: 57.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-02-16 00:12:51 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 95ms (Views: 69.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-02-16 00:12:58 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 65ms (Views: 63.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-02-16 00:13:18 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+scgMPG9P45/7wu65fzz5SGpQhRErbmK7zSGFwDEr+9YrJGWemggDT7yGJfSkt8Flzo/H02Ms94MSg17zEgsmg==", "user"=>{"email"=>"taylorjyount@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (16.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "taylorjyount@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "taylorjyount@gmail.com"], ["encrypted_password", "$2a$11$Om1Uqa.bsUqIO5/eta2pzOr/v6oVCioBEeUDDSjLSiNtCytspumTu"], ["created_at", "2018-02-16 05:13:18.951376"], ["updated_at", "2018-02-16 05:13:18.951376"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-02-16 05:13:18.960164"], ["last_sign_in_at", "2018-02-16 05:13:18.960164"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2018-02-16 05:13:18.961718"], ["id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 248ms (ActiveRecord: 25.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:13:18 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 68ms (Views: 64.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 00:13:26 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 74.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:13:29 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 90.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:13:47 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mY8ZLxANJeP4khwmD+AB3VUos+1EtqjUy8gVUoBja9c75KiJm9g6YLmPDws4ji0947vO5k2XooAotp4+TO/oog==", "apartment"=>{"price"=>"asdf", "address"=>"sfdsklfj", "bedrooms"=>"j", "bathrooms"=>"4", "sq_ft"=>"23", "date_available"=>"2018-02-28"}, "commit"=>"Create Apartment"}
+Unpermitted parameter: :bathrooms
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (8.4ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 77.7ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:13:57 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IDyzK/kZQbRGkx4Mchlg7mOSGzV88bxmKz6e5VcgXVuCVwKNcsxeNweODSFFd0wO1QFmPnXQtjLIQBWJm6zeLg==", "apartment"=>{"price"=>"asdf", "address"=>"sfdsklfj", "bedrooms"=>"2", "bathrooms"=>"3", "sq_ft"=>"23", "date_available"=>"2018-02-28"}, "commit"=>"Create Apartment"}
+Unpermitted parameter: :bathrooms
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (11.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 91.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:14:43 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (7.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 131ms (Views: 83.5ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:15:53 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (25.1ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1612ms (Views: 1592.2ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 00:16:07 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 69ms (Views: 65.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:16:07 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (22.0ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 92.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:16:30 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Km3CTGtFVGnUjE8qIa5zJOqUoh9/Ae9XCzCSNFdqjYiIBnPq4JBL6pWRXAcWwF/EXAffFHYg5QPoThlYm+YO/Q==", "apartment"=>{"price"=>"234", "address"=>"wekj", "bedrooms"=>"3", "bathrooms"=>"4", "sq_ft"=>"1300", "date_available"=>"2018-02-28"}, "commit"=>"Create Apartment"}
+Unpermitted parameter: :bathrooms
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:18:56 -0500
+Unpermitted parameter: :bathrooms
+Unpermitted parameter: :bathrooms
+Unpermitted parameter: :bathrooms
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 329275ms (Views: 45.0ms | ActiveRecord: 2.2ms)
+
+
+Processing by ApartmentsController#new as HTML
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:21:59 -0500
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:21:59 -0500
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:21:59 -0500
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 113ms (Views: 82.8ms | ActiveRecord: 15.3ms)
+
+
+Processing by ApartmentsController#new as HTML
+Processing by ApartmentsController#new as HTML
+Processing by ApartmentsController#new as HTML
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:21:59 -0500
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:21:59 -0500
+Processing by ApartmentsController#index as HTML
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendering apartments/new.html.erb within layouts/application
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (5.3ms)
+  Rendered apartments/new.html.erb within layouts/application (3.1ms)
+  Rendering apartments/new.html.erb within layouts/application
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (3.5ms)
+  Rendered apartments/new.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartment Load (9.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (193.6ms)
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 236ms (Views: 166.4ms | ActiveRecord: 37.1ms)
+
+
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:22:00 -0500
+Processing by ApartmentsController#index as HTML
+  [1m[36mUser Load (9.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (9.1ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 522ms (Views: 383.1ms | ActiveRecord: 88.9ms)
+
+
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 567ms (Views: 459.7ms | ActiveRecord: 57.9ms)
+
+
+Completed 200 OK in 583ms (Views: 288.2ms | ActiveRecord: 230.2ms)
+
+
+Completed 200 OK in 184ms (Views: 168.6ms | ActiveRecord: 14.1ms)
+
+
+Completed 200 OK in 615ms (Views: 469.1ms | ActiveRecord: 140.8ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-16 00:22:03 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 54.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:22:07 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (6.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 92.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:22:40 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wYjlDyTEZfndN0t698uwdX6pIrk73VIRK8wfu/DzRyRj41SprxF6epwqWFfApZyVyDpfsjL8WEXIspTXPH/EUQ==", "apartment"=>{"title"=>"asdf", "description"=>"asdf", "price"=>"asdf", "address"=>"asdf", "bedrooms"=>"asdf", "bathrooms"=>"asdf", "sq_ft"=>"asdf", "pets"=>"asdf", "date_available"=>"2018-02-27"}, "commit"=>"Create Apartment"}
+Unpermitted parameter: :pets
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.5ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "date_available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "asdf"], ["description", "asdf"], ["price", "asdf"], ["address", "asdf"], ["bedrooms", "asdf"], ["bathrooms", "asdf"], ["sq_ft", "asdf"], ["date_available", "2018-02-27"], ["created_at", "2018-02-16 05:22:40.199436"], ["updated_at", "2018-02-16 05:22:40.199436"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:22:40 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 65ms (Views: 62.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:24:43 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (1.0ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (15.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 91ms (Views: 85.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 00:24:49 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 66ms (Views: 63.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:24:52 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 91ms (Views: 87.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-02-16 00:25:17 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XKDQClLN9Zp2gs/RePiRXllBQj/uFNzhWF2aEjJAmrD+y2Gs2RjqGTef3PxPlr2+79I/NOc11rW7IxF+/swZxQ==", "apartment"=>{"title"=>"asdf", "description"=>"asdf", "price"=>"asdf", "address"=>"asdf", "bedrooms"=>"asdf", "bathrooms"=>"asdf", "sq_ft"=>"asdf", "pets"=>"a", "date_available"=>"2018-02-28"}, "commit"=>"Create Apartment"}
+Unpermitted parameters: :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (7.6ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 68.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 00:25:22 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 58ms (Views: 54.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments/4" for 127.0.0.1 at 2018-02-16 00:25:27 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 48ms (Views: 42.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-02-16 00:25:43 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 48ms (Views: 43.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:40:28 -0500
+  
+SyntaxError (/Users/tayloryount/apartmentsss/app/controllers/apartments_controller.rb:30: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/apartments_controller.rb:30: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:41:12 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (41.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 204ms (Views: 181.7ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-16 00:41:15 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 65ms (Views: 58.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/apartments/destroy" for 127.0.0.1 at 2018-02-16 00:41:41 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"destroy"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Apartment with 'id'=destroy):
+  
+app/controllers/apartments_controller.rb:24:in `show'
+Started GET "/apartments/destroy" for 127.0.0.1 at 2018-02-16 00:42:12 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"destroy"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Apartment with 'id'=destroy):
+  
+app/controllers/apartments_controller.rb:24:in `show'
+Started GET "/apartments/destroy" for 127.0.0.1 at 2018-02-16 00:42:22 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"destroy"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Apartment with 'id'=destroy):
+  
+app/controllers/apartments_controller.rb:24:in `show'
+Started GET "/" for 127.0.0.1 at 2018-02-16 00:42:51 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (40.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (76.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 239ms (Views: 171.0ms | ActiveRecord: 64.0ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 00:42:55 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (1.2ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 76ms (Views: 71.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/apartments/create" for 127.0.0.1 at 2018-02-16 00:42:59 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mApartment Load (1.0ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Apartment with 'id'=create):
+  
+app/controllers/apartments_controller.rb:24:in `show'
+Started GET "/apartments/new" for 127.0.0.1 at 2018-02-16 00:43:07 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/new.html.erb within layouts/application (7.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 125ms (Views: 123.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-02-16 00:44:19 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 102ms (Views: 98.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-02-16 00:53:44 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 105ms (Views: 89.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 00:53:48 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 59.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-16 00:54:01 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 46.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartments/destroy" for 127.0.0.1 at 2018-02-16 00:54:08 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"destroy"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Apartment with 'id'=destroy):
+  
+app/controllers/apartments_controller.rb:24:in `show'
+Started GET "/" for 127.0.0.1 at 2018-02-16 01:04:15 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (28.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 172ms (Views: 164.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-16 01:04:18 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-16 01:05:06 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 37.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 01:05:10 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 71ms (Views: 67.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-16 01:05:14 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 45.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-16 01:05:20 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 43.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-16 01:05:23 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (6.0ms)
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <h1> Howdy </h1>
+    2: <% @apartments.each do |apartment| %>
+    3: <h3><%= link_to @apartment.title, apartment_path(apartment) %><%= "#{apartment.price}/month" %></h3>
+    4: <% end %>
+  
+app/views/apartments/index.html.erb:3:in `block in _app_views_apartments_index_html_erb__2160245129653732653_70294676194060'
+app/views/apartments/index.html.erb:2:in `_app_views_apartments_index_html_erb__2160245129653732653_70294676194060'
+Started GET "/" for 127.0.0.1 at 2018-02-16 01:06:37 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-16 01:06:39 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 43.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-16 01:08:35 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 41.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 01:08:38 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 62ms (Views: 57.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-02-16 01:10:44 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-02-16 01:10:48 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (136.0ms)
+Completed 401 Unauthorized in 144ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `post_apartment_path' for #<#<Class:0x007fdd7ccf0290>:0x007fdd8062c900>):
+     5: <h3><%= @apartment.description %> </h3>
+     6: 
+     7: <td>
+     8:       <%= link_to 'Destroy', post_apartment_path(@apartment),
+     9:           :confirm => 'Are you sure?', :method => :delete %>
+    10:   </td>
+  
+app/views/apartments/show.html.erb:8:in `_app_views_apartments_show_html_erb___403383990362887323_70294659230060'
