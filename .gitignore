@@ -23,4 +23,14 @@
 /public/packs-test
 /node_modules
 yarn-debug.log*
+
+
+yarn_error.log*
+/coverage
+.env
+/public/uploads
+/app/assets/images
+*.DS_Store
+
+
 .yarn-integrity
