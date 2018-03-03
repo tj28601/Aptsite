@@ -3,3 +3,6 @@
 <h3><%= "#{@apartment.bedrooms} bedrooms" %></h3>
 <h3><%= "#{@apartment.bathrooms} bathrooms" %></h3>
 <h3><%= @apartment.description %> </h3>
+
+<h3><%= link_to 'Edit', edit_apartment_path(@apartment) %> </h3>
+<h3><%= link_to 'Delete', apartment_path(@apartment), method: :delete, data: { confirm: 'Are you sure?' } %></h3>
