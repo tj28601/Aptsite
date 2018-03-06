@@ -7,26 +7,37 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
-import React from 'react'
-import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
+// console.log('Hello World from Webpacker')
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../react/containers/app'
 
-const Hello = props => (
-  <div>Hello {props.name}!</div>
-)
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);
 
-Hello.defaultProps = {
-  name: 'David'
-}
+// let headerElement = (
+// <div>
+//   <h1>
+//     I am a React element! Hear me roar!
+//   </h1>
+//   </div>
+// );
 
-Hello.propTypes = {
-  name: PropTypes.string
-}
+// ReactDOM.render(
+//   headerElement,
+//   document.getElementById('app')
+// );
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Hello name="React" />,
-    document.getElementById('app'),
-  )
-})
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   let reactElement = document.getElementById('app')
+//
+//   if (reactElement) {
+//     ReactDOM.render(
+//       <App />,
+//       reactElement
+//     )
+//   }
+// })

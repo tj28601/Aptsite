@@ -5298,3 +5298,871 @@ Processing by Api::V1::ApartmentsController#index as HTML
 Completed 200 OK in 44ms (Views: 30.1ms | ActiveRecord: 11.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-05 23:20:23 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (1.0ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (16.7ms)
+[Webpacker] Compiling…
+Started GET "/" for 127.0.0.1 at 2018-03-05 23:20:27 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (42.2ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 283ms (Views: 248.6ms | ActiveRecord: 32.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-05 23:20:30 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 86ms (Views: 77.1ms | ActiveRecord: 1.7ms)
+
+
+[Webpacker] Compilation failed:
+Hash: 4309daba436bc4116546
+Version: webpack 3.11.0
+Time: 2361ms
+                                  Asset       Size  Chunks                    Chunk Names
+    hello_react-bbb4647c0952fb539a9f.js     650 kB       0  [emitted]  [big]  hello_react
+    application-2d4f26a5a0832ce19b37.js     629 kB       1  [emitted]  [big]  application
+hello_react-bbb4647c0952fb539a9f.js.map     756 kB       0  [emitted]         hello_react
+application-2d4f26a5a0832ce19b37.js.map     732 kB       1  [emitted]         application
+                          manifest.json  282 bytes          [emitted]         
+  [23] ./app/javascript/packs/application.js 1.09 kB {1} [built]
+  [24] ./app/javascript/packs/hello_react.jsx 739 bytes {0} [built]
+    + 25 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve '../react/containers/app' in '/Users/tayloryount/apartmentsss/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 13:0-42
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 8536ms (Views: 8524.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-05 23:20:34 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 111ms (Views: 105.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-05 23:20:49 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 76.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-05 23:20:56 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 62ms (Views: 58.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-05 23:26:27 -0500
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2688ms (Views: 2648.8ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-05 23:26:42 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 57.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-05 23:35:25 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.8ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5138ms (Views: 5135.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-05 23:39:28 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.0ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (23.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5760ms (Views: 5734.2ms | ActiveRecord: 24.2ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-05 23:39:39 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 76ms (Views: 71.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:01:46 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (7.8ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6425ms (Views: 6421.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:01:56 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 112ms (Views: 107.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:02:35 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.7ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6212ms (Views: 6209.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-03-06 00:02:45 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 67ms (Views: 63.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-03-06 00:15:44 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (1.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 222ms (Views: 205.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-03-06 00:18:29 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 215ms (Views: 207.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:18:32 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 107ms (Views: 103.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:26:09 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 96.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:26:12 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 86ms (Views: 81.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:28:37 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (2.3ms)
+[Webpacker] Compiling…
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:28:39 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (309.6ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 444ms (Views: 426.9ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/apartments/7" for 127.0.0.1 at 2018-03-06 00:28:43 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 220ms (Views: 212.5ms | ActiveRecord: 2.8ms)
+
+
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 8384ms (Views: 8376.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/apartments/7" for 127.0.0.1 at 2018-03-06 00:29:42 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 105ms (Views: 100.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/apartments/7" for 127.0.0.1 at 2018-03-06 00:30:18 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.9ms)
+[Webpacker] Compiling…
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:30:21 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 136ms (Views: 133.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:30:23 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 150ms (Views: 145.7ms | ActiveRecord: 1.3ms)
+
+
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 8212ms (Views: 8205.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:30:57 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (34.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 200ms (Views: 195.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:31:01 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 78.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:31:07 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 59.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:31:29 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.5ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5467ms (Views: 5463.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:31:48 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.8ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6350ms (Views: 6343.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:32:03 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.5ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3417ms (Views: 3411.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:32:19 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartments/3" for 127.0.0.1 at 2018-03-06 00:32:20 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 91.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/apartments/3" for 127.0.0.1 at 2018-03-06 00:34:13 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.7ms)
+[Webpacker] Compiling…
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:34:18 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 161ms (Views: 157.7ms | ActiveRecord: 1.5ms)
+
+
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6886ms (Views: 6880.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:34:23 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 57.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:35:17 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.7ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5496ms (Views: 5489.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:42:27 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (1.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (6.9ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+Hash: 8cb350c62b30770f3a8c
+Version: webpack 3.11.0
+Time: 2313ms
+                                  Asset       Size  Chunks                    Chunk Names
+    hello_react-bef901d7a7299087e4ed.js     650 kB       0  [emitted]  [big]  hello_react
+    application-ee75896199af6a0adbf7.js    2.89 kB       1  [emitted]         application
+hello_react-bef901d7a7299087e4ed.js.map     756 kB       0  [emitted]         hello_react
+application-ee75896199af6a0adbf7.js.map    2.49 kB       1  [emitted]         application
+                          manifest.json  282 bytes          [emitted]         
+   [8] ./app/javascript/packs/application.js 141 bytes {1} [built] [failed] [1 error]
+   [9] ./app/javascript/packs/hello_react.jsx 739 bytes {0} [built]
+    + 25 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module build failed: SyntaxError: Unexpected token, expected , (41:0)
+
+  39 | //   }
+  40 | // })
+> 41 | 
+     | ^
+
+
+
+  [1m[36mUser Load (32.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6013ms (Views: 5962.3ms | ActiveRecord: 33.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:42:36 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 209ms (Views: 204.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:43:54 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.5ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6652ms (Views: 6646.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:44:04 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 105ms (Views: 98.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:44:18 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.4ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6000ms (Views: 5995.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:56:05 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (6.1ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 198ms (Views: 178.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:58:08 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (2.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 167ms (Views: 144.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 00:59:47 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.6ms)
+[Webpacker] Compiling…
+Started GET "/" for 127.0.0.1 at 2018-03-06 00:59:50 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 271ms (Views: 267.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-03-06 00:59:54 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.7ms)
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 195ms (Views: 188.1ms | ActiveRecord: 3.2ms)
+
+
+Completed 200 OK in 6912ms (Views: 6905.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-03-06 01:29:10 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (1.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (21.4ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2018-03-06 01:29:17 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (3.1ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (40.7ms)
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 192ms (Views: 180.5ms | ActiveRecord: 8.6ms)
+
+
+Completed 200 OK in 7075ms (Views: 7032.8ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-03-06 01:29:27 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 89.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-03-06 01:30:44 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 132.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 01:31:41 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.2ms)
+[Webpacker] Compiling…
+Started GET "/" for 127.0.0.1 at 2018-03-06 01:31:41 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 161ms (Views: 157.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 01:31:45 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (4.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 173ms (Views: 161.5ms | ActiveRecord: 6.9ms)
+
+
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6828ms (Views: 6823.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 01:35:40 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (7.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 176ms (Views: 172.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 01:35:43 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 136.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 01:43:12 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 70ms (Views: 65.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 01:44:11 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 222ms (Views: 218.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 01:44:19 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (1.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 121ms (Views: 116.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 01:44:23 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 151ms (Views: 146.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 01:44:47 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 116ms (Views: 111.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 01:44:49 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 93.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 01:45:05 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 74.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 01:45:58 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (1.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[Webpacker] Compiling…
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 01:46:02 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 116ms (Views: 111.8ms | ActiveRecord: 1.2ms)
+
+
+[Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
+Completed 200 OK in 6346ms (Views: 6336.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 01:46:05 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 155ms (Views: 137.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 01:46:09 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 96.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 01:46:45 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 76.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 01:46:47 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (1.0ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 81.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 01:51:19 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 89.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartments/7" for 127.0.0.1 at 2018-03-06 01:51:21 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 73.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 02:36:50 -0500
+  [1m[35m (8.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (2.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (48.1ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+Hash: b33947aa9d3e7592415e
+Version: webpack 3.11.0
+Time: 2357ms
+                                  Asset       Size  Chunks                    Chunk Names
+    hello_react-76b4dac07e10da83e6cc.js     650 kB       0  [emitted]  [big]  hello_react
+    application-aea86787c63b57ae3b09.js     630 kB       1  [emitted]  [big]  application
+hello_react-76b4dac07e10da83e6cc.js.map     756 kB       0  [emitted]         hello_react
+application-aea86787c63b57ae3b09.js.map     732 kB       1  [emitted]         application
+                          manifest.json  282 bytes          [emitted]         
+  [23] ./app/javascript/packs/application.js 1.13 kB {1} [built]
+  [24] ./app/javascript/react/containers/app.js 283 bytes {1} [built] [failed] [1 error]
+  [25] ./app/javascript/packs/hello_react.jsx 739 bytes {0} [built]
+    + 25 hidden modules
+
+ERROR in ./app/javascript/react/containers/app.js
+Module build failed: SyntaxError: Unexpected token, expected ; (21:20)
+
+  19 | }}
+  20 | 
+> 21 | componentDidMount() {
+     |                     ^
+  22 |   fetch('/api/v1/apartments')
+  23 |   .then(response => response.json())
+  24 |   .then(json => {
+
+ @ ./app/javascript/packs/application.js 13:0-42
+
+
+Completed 200 OK in 8457ms (Views: 8380.1ms | ActiveRecord: 73.9ms)
+
+
+Started GET "/apartments/3" for 127.0.0.1 at 2018-03-06 02:37:04 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 91ms (Views: 81.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 02:37:56 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 60.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-06 02:37:57 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartments/show.html.erb within layouts/application
+  Rendered apartments/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 150ms (Views: 144.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-06 02:44:28 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 157ms (Views: 152.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-06 02:44:57 -0500
+Processing by Api::V1::ApartmentsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartment Load (1.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (6.59ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 1.8ms)
+
+
