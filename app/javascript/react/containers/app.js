@@ -1,33 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import { Router, browserHistory, Route, IndexRoute } from 'react-router';
+import ApartmentsContainer from './ApartmentsContainer';
+import NavBar from './NavBar'
+import ApartmentTile from './ApartmentTile'
 
-// const App = props => {
-//
-//   return(
-//     <h1>Hewwoooooooo</h1>
-//   )
-// }
-//
-// export default App
-
-class App extends Component {
-constructor(props) {
-  super(props);
-  this.state={
-    apartments: []
-  }
-}}
-
-componentDidMount() {
-  fetch('/api/v1/apartments')
-  .then(response => response.json())
-  .then(json => {
-    debugger;
-  })
-}
-
-render() {
+const App = props => {
   return(
-    
+    <Router history={browserHistory}>
+      <Route path= '/' component ={NavBar} >
+        <IndexRoute component={ApartmentsContainer} />
+          <Route path='/apartments' component={ApartmentTile} />
+          <Route path='/apartments/:id' component = {ApartmentsContainer} />
+        </Route>
+        <ApartmentsContainer />
+        </Router>
   )
 }
+
+export default App;
