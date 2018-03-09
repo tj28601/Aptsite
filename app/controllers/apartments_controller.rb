@@ -17,14 +17,13 @@ class ApartmentsController < ApplicationController
 
   redirect_to root_path
   end
-  def index
-    @apartments = Apartment.all
+  def index;
   end
   def new
     @apartment = Apartment.new
   end
-  def show
-    @apartment = Apartment.find(params[:id])
+  def show;
+    render :index
   end
 
   def update

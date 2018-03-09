@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+import BackButton from './BackButton'
 const NavBar = (props) => {
 
   return(
 <div>
-  <h1>Hewooo</h1>
+  <BackButton />
+  <Link to='/'> HOME </Link>
+  { props.children }
  </div>
   )
 };

@@ -21,6 +21,7 @@ class ApartmentsContainer extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.params)
     fetch('/api/v1/apartments')
       .then(response => {
         if (response.ok) {
@@ -33,31 +34,30 @@ class ApartmentsContainer extends Component {
       })
 
       .then(response => response.json())
-
       .then(body => {
-        this.setState({ apts: body.apartments });
+      this.setState({ apts: body.apartments });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
   render() {
-    let apartmentObject = this.state.apts.map((apt) =>{
+    let apartmentObjects = this.state.apts.map((apt) =>{
       return(
-        <div>
         <ApartmentTile
-        key={apt.id}
-        id = {apt.id}
-        description = {apt.description}
-        address = {apt.address}
-        title = {apt.title}
-        price = {apt.price}
+          key={apt.id}
+          id = {apt.id}
+          description = {apt.description}
+          address = {apt.address}
+          title = {apt.title}
+          price = {apt.price}
         />
-        </div>
+
       )
     })
 
     return(
       <div>
-        <ul>{apartmentObject}</ul>
+        <h1>Look at our Wonderful Apartments</h1>
+        {apartmentObjects}
       </div>
     );
   }
