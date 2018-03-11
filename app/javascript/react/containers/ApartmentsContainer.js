@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ApartmentTile from './ApartmentTile';
-// import { Router, browserHistory, Route, IndexRoute, Link } from 'react-router';
-
-// const App = props => {
-//
-//   return(
-//     <h1>Hewwoooooooo</h1>
-//   )
-// }
-//
-// export default App
 
 class ApartmentsContainer extends Component {
   constructor(props) {
