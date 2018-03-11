@@ -34,11 +34,17 @@ class ApartmentShowContainer extends Component {
 
   render(){
     return(
-  
+
       <ApartmentInformation
         id={this.state.apartmentInfo.id}
         title={this.state.apartmentInfo.title}
         price={this.state.apartmentInfo.price}
+        address={this.state.apartmentInfo.address}
+        bedrooms={this.state.apartmentInfo.bedrooms}
+        bathrooms={this.state.apartmentInfo.bathrooms}
+        sq_ft={this.state.apartmentInfo.sq_ft}
+        pets={this.state.apartmentInfo.pets}
+        date_available={this.state.apartmentInfo.date_available}
         description={this.state.apartmentInfo.description}
         />
     )

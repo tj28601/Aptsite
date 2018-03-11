@@ -28,7 +28,7 @@ class ApartmentsController < ApplicationController
 
   def update
     @apartment = Apartment.find(params[:id])
-    if @apartment.update(params[:apartment].permit(:title, :description, :price, :address, :bedrooms, :bathrooms ))
+    if @apartment.update(params[:apartment].permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available ))
       redirect_to @apartment
     else
       render :edit
@@ -37,6 +37,6 @@ class ApartmentsController < ApplicationController
   private
 
   def new_apartment_params
-    params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms )
+    params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available )
   end
 end

@@ -5,4 +5,5 @@ class Apartment < ApplicationRecord
   validates :address, presence: true
   validates :bedrooms, presence: true
   validates :bathrooms, presence: true
+
 end
