@@ -28566,3 +28566,10 @@ Processing by Api::V1::ApartmentsController#show as */*
 Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:28:41 -0400
+Processing by Api::V1::ApartmentsController#index as HTML
+  [1m[36mApartment Load (1.2ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (12.78ms)
+Completed 200 OK in 44ms (Views: 38.9ms | ActiveRecord: 1.2ms)
+
+
