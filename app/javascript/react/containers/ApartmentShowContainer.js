@@ -4,10 +4,8 @@ import ApartmentInformation from './ApartmentInformation'
 class ApartmentShowContainer extends Component {
   constructor(props){
     super(props);
-
     this.state = {
       apartmentInfo: {}
-
     }
   }
   componentDidMount(){
@@ -29,7 +27,6 @@ class ApartmentShowContainer extends Component {
         this.setState({ apartmentInfo: body.apartment });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
-
   }
 
   render(){
