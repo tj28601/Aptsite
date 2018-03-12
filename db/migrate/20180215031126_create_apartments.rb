@@ -8,7 +8,7 @@ class CreateApartments < ActiveRecord::Migration[5.1]
       t.string :bedrooms, null: false
       t.string :bathrooms, null: false
       t.string :sq_ft
-      t.string :pets?
+      t.string :pets
       t.date :date_available
 
       t.timestamps

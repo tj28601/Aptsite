@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const ApartmentTile = props => {
   return (
     <div>
-    <h1><Link to={`/apartments/${props.id}`}><h1>{props.title}</h1></Link></h1>
+    <h1><Link to={`/apartments/${props.id}`}><h1>{props.title}{props.price}</h1></Link></h1>
 
     </div>
 

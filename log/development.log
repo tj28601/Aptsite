@@ -27389,6 +27389,7 @@ Processing by Api::V1::ApartmentsController#index as */*
 Completed 200 OK in 17ms (Views: 5.8ms | ActiveRecord: 9.5ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2018-03-09 02:46:09 -0500
   [1m[35m (8.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by ApartmentsController#index as HTML
@@ -27770,10 +27771,643 @@ Completed 302 Found in 54ms (ActiveRecord: 44.9ms)
 
 
 Started GET "/" for 127.0.0.1 at 2018-03-09 03:36:21 -0500
+=======
+  [1m[35m (8.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (6.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (62.2ms)[0m  [1m[35mDROP TABLE "apartments"[0m
+  [1m[35mSQL (7.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180215031126"]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (61.9ms)[0m  [1m[35mCREATE TABLE "apartments" ("id" bigserial primary key, "title" character varying NOT NULL, "description" character varying NOT NULL, "price" character varying NOT NULL, "address" character varying NOT NULL, "bedrooms" character varying NOT NULL, "bathrooms" character varying NOT NULL, "sq_ft" character varying, "pets" character varying, "date_available" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180215031126"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  [1m[35m (8.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8297.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "apartmentsss_development"[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets" = $8 LIMIT $9[0m  [["title", "Nice 3BR 1.5 BA in Great Location!"], ["description", "this apartment is located in fantastic, family-oriented neighborhood. NO DOGS ALLOWED"], ["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets", "No Dogs allowed, but cats are okay. Meow!"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Nice 3BR 1.5 BA in Great Location!"], ["description", "this apartment is located in fantastic, family-oriented neighborhood. NO DOGS ALLOWED"], ["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets", "No Dogs allowed, but cats are okay. Meow!"], ["created_at", "2018-03-11 06:02:33.540654"], ["updated_at", "2018-03-11 06:02:33.540654"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets" = $8 LIMIT $9[0m  [["title", "2 BR 3BA Apt in Historic Downtown"], ["description", "this apt is close to various bars and restaurants. Amazing location!"], ["price", "$750"], ["address", "24 2nd Ave SW Hickory, NC 28601"], ["bedrooms", "2"], ["bathrooms", "3"], ["sq_ft", "750"], ["pets", "No Pets."], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "2 BR 3BA Apt in Historic Downtown"], ["description", "this apt is close to various bars and restaurants. Amazing location!"], ["price", "$750"], ["address", "24 2nd Ave SW Hickory, NC 28601"], ["bedrooms", "2"], ["bathrooms", "3"], ["sq_ft", "750"], ["pets", "No Pets."], ["created_at", "2018-03-11 06:02:33.551789"], ["updated_at", "2018-03-11 06:02:33.551789"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets" = $8 LIMIT $9[0m  [["title", "4 BR 2 BA Apt in Viewmont!"], ["description", "Breath-taking apartment in AMAZING neighborhood. All pets are welcome! MEOW, WHOOOF"], ["price", "$900"], ["address", "37 6th St NW Hickory, NC 28601"], ["bedrooms", "4"], ["bathrooms", "2"], ["sq_ft", "1020"], ["pets", "All pets are welcome!"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "4 BR 2 BA Apt in Viewmont!"], ["description", "Breath-taking apartment in AMAZING neighborhood. All pets are welcome! MEOW, WHOOOF"], ["price", "$900"], ["address", "37 6th St NW Hickory, NC 28601"], ["bedrooms", "4"], ["bathrooms", "2"], ["sq_ft", "1020"], ["pets", "All pets are welcome!"], ["created_at", "2018-03-11 06:02:33.558511"], ["updated_at", "2018-03-11 06:02:33.558511"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+Started GET "/" for 127.0.0.1 at 2018-03-11 01:36:51 -0500
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3220ms (Views: 3206.9ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:36:54 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (1.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (6.11ms)
+Completed 200 OK in 100ms (Views: 48.4ms | ActiveRecord: 38.1ms)
+
+
+Started GET "/api/v1/apartments/1" for 127.0.0.1 at 2018-03-11 01:36:58 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.58ms)
+Completed 200 OK in 13ms (Views: 2.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-03-11 01:37:04 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/_form.html.erb (43.9ms)
+  Rendered apartments/new.html.erb within layouts/application (45.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 137.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-03-11 01:37:37 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c3ku3+o+G7O+cSUk+4aY3QMePrSd/4fDIrPRTRTJPNnREp95YesEMP9sNgnM6LQ9tY1Dv5TejZfBzVoh2EW/rA==", "apartment"=>{"title"=>"c", "description"=>"c", "price"=>"c", "address"=>"c", "bedrooms"=>"c", "bathrooms"=>"c", "sq_ft"=>"c", "pets"=>"c", "date_available"=>"2018-03-30"}, "commit"=>"Create Apartment"}
+Unpermitted parameters: :sq_ft, :pets, :date_available
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.4ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "c"], ["description", "c"], ["price", "c"], ["address", "c"], ["bedrooms", "c"], ["bathrooms", "c"], ["created_at", "2018-03-11 06:37:37.385611"], ["updated_at", "2018-03-11 06:37:37.385611"]]
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 18.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 01:37:37 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 93.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:37:37 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.14ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments/5" for 127.0.0.1 at 2018-03-11 01:37:40 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.34ms)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:37:46 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.5ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+Started GET "/api/v1/apartments/5" for 127.0.0.1 at 2018-03-11 01:40:11 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mApartment Load (1.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (1.58ms)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/apartments/edit" for 127.0.0.1 at 2018-03-11 01:40:16 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 127ms (Views: 125.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/apartments/edit" for 127.0.0.1 at 2018-03-11 01:40:16 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"edit"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Apartment with 'id'=edit):
+  
+app/controllers/api/v1/apartments_controller.rb:7:in `show'
+Started GET "/apartments/5" for 127.0.0.1 at 2018-03-11 01:40:35 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 57.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:40:38 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.41ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-03-11 01:40:43 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 84.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:40:44 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.98ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-03-11 01:40:48 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/_form.html.erb (7.5ms)
+  Rendered apartments/new.html.erb within layouts/application (9.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 58ms (Views: 54.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-03-11 01:41:10 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aL3GRPmaZh1W4n+hgi2IdTSnMMIIMGJ1R0l4Ch8EVbnK1nfick95nhf/bIy1Q6SVgjRNyQERaCGkN/Nm04jWzA==", "apartment"=>{"title"=>"giraffe", "description"=>"giraffe", "price"=>"giraffe", "address"=>"giraffe", "bedrooms"=>"giraffe", "bathrooms"=>"giraffe", "sq_ft"=>"giraffe", "pets"=>"giraffe", "date_available"=>"2018-03-29"}, "commit"=>"Create Apartment"}
+Unpermitted parameters: :sq_ft, :pets, :date_available
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "giraffe"], ["description", "giraffe"], ["price", "giraffe"], ["address", "giraffe"], ["bedrooms", "giraffe"], ["bathrooms", "giraffe"], ["created_at", "2018-03-11 06:41:10.677533"], ["updated_at", "2018-03-11 06:41:10.677533"]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 01:41:10 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 69ms (Views: 67.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:41:11 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.4ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/apartments/6" for 127.0.0.1 at 2018-03-11 01:41:12 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.4ms)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:41:54 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (1.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.9ms)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/apartments/1" for 127.0.0.1 at 2018-03-11 01:41:59 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.92ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:42:02 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.04ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/apartments/5" for 127.0.0.1 at 2018-03-11 01:42:04 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (1.21ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:42:06 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.48ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/apartments/4" for 127.0.0.1 at 2018-03-11 01:42:07 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.65ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:42:09 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (10.91ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/apartments/1" for 127.0.0.1 at 2018-03-11 01:53:01 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (3.66ms)
+Completed 200 OK in 57ms (Views: 6.0ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-11 01:53:03 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 329ms (Views: 321.4ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/apartments/1" for 127.0.0.1 at 2018-03-11 01:53:03 -0500
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 246ms (Views: 243.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/apartments/1" for 127.0.0.1 at 2018-03-11 01:53:04 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (1.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.83ms)
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 01:53:05 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 123ms (Views: 119.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:53:05 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.49ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/apartments/2" for 127.0.0.1 at 2018-03-11 01:53:06 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (1.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.72ms)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:53:13 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (7.05ms)
+Completed 200 OK in 20ms (Views: 16.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/apartments/5" for 127.0.0.1 at 2018-03-11 01:53:15 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.93ms)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:53:29 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (4.38ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/apartments/5" for 127.0.0.1 at 2018-03-11 01:53:32 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.6ms)
+Completed 200 OK in 10ms (Views: 1.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:53:41 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.34ms)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments/6" for 127.0.0.1 at 2018-03-11 01:53:48 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.69ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:53:59 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (1.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.56ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/apartments/6" for 127.0.0.1 at 2018-03-11 01:54:03 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.79ms)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:54:12 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (6.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.97ms)
+Completed 200 OK in 23ms (Views: 15.9ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/v1/apartments/4" for 127.0.0.1 at 2018-03-11 01:54:13 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mApartment Load (2.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.94ms)
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-03-11 01:54:20 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/_form.html.erb (6.7ms)
+  Rendered apartments/new.html.erb within layouts/application (9.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 152ms (Views: 146.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-03-11 01:54:55 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w6NhQmWCqdTR6M/SNxt4g7n2tHDsDUjiNSFePxUr96NhyNDk7le2V5D13P8AdVRjD2XJe+UsQrbWX9VT2ad01g==", "apartment"=>{"title"=>"giraffe", "description"=>"dragon", "price"=>"giraffe", "address"=>"giraffe", "bedrooms"=>"giraffe", "bathrooms"=>"giraffe", "sq_ft"=>"256780", "pets"=>"no :(", "date_available"=>"2018-03-21"}, "commit"=>"Create Apartment"}
+Unpermitted parameters: :sq_ft, :pets, :date_available
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/_form.html.erb (7.1ms)
+  Rendered apartments/new.html.erb within layouts/application (9.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 144ms (Views: 136.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-03-11 01:55:03 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 68ms (Views: 66.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:55:03 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (1.1ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.9ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/apartments/6" for 127.0.0.1 at 2018-03-11 01:55:08 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.32ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:55:11 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.62ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/apartments" for 127.0.0.1 at 2018-03-11 01:55:14 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 89ms (Views: 87.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:55:15 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.68ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/apartments/6" for 127.0.0.1 at 2018-03-11 01:55:17 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mApartment Load (1.0ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.84ms)
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:55:19 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (4.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.81ms)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-03-11 01:55:22 -0500
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/_form.html.erb (5.5ms)
+  Rendered apartments/new.html.erb within layouts/application (8.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 80.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-03-11 01:55:42 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3qxY1bQa3c/LpoH3zULK8TYTNXcW5g1TePhZ+9MKkal8x+lzP8/CTIq7ktr6LOYRgIBIfB/HBwebhtKXH4YS3A==", "apartment"=>{"title"=>"dragon", "description"=>"dragon", "price"=>"dragon", "address"=>"dragon", "bedrooms"=>"dragon", "bathrooms"=>"dragon", "sq_ft"=>"654890", "pets"=>"", "date_available"=>"2018-03-13"}, "commit"=>"Create Apartment"}
+Unpermitted parameters: :sq_ft, :pets, :date_available
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/_form.html.erb (7.3ms)
+  Rendered apartments/new.html.erb within layouts/application (9.6ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 278ms (Views: 228.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-03-11 01:56:00 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LIlkXy4Wbz0aHr7WbEMgyDIa2yvpKPTrNYK+MZTKPe6O4tX5pcNwvlsDrftbLQwohImmIOAJ/r/W/DVdWEa+mw==", "apartment"=>{"title"=>"dragon", "description"=>"dragon", "price"=>"dragon", "address"=>"dragon", "bedrooms"=>"dragon", "bathrooms"=>"dragon", "sq_ft"=>"", "pets"=>"", "date_available"=>""}, "commit"=>"Create Apartment"}
+Unpermitted parameters: :sq_ft, :pets, :date_available
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/_form.html.erb (4.5ms)
+  Rendered apartments/new.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 71ms (Views: 64.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-03-11 01:56:31 -0500
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K7YNIO3NQL4iqq0FhkGUUzOaeabmdT1OnkcrwZ4RmjKJ3byGZhhfPWO3viixL7izhQkEre9UNxp9OaCtUp0ZRw==", "apartment"=>{"title"=>"dragon", "description"=>"dragon", "price"=>"dragon", "address"=>"dragon", "bedrooms"=>"dragon", "bathrooms"=>"dragon", "sq_ft"=>"5437", "pets"=>"no ", "date_available"=>"2018-03-15"}, "commit"=>"Create Apartment"}
+Unpermitted parameters: :sq_ft, :pets, :date_available
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "dragon"], ["description", "dragon"], ["price", "dragon"], ["address", "dragon"], ["bedrooms", "dragon"], ["bathrooms", "dragon"], ["created_at", "2018-03-11 06:56:32.000732"], ["updated_at", "2018-03-11 06:56:32.000732"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 39ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 01:56:32 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 128ms (Views: 120.3ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:56:32 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.64ms)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/apartments/7" for 127.0.0.1 at 2018-03-11 01:56:34 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mApartment Load (0.3ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.62ms)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:56:38 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (1.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.16ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 01:59:41 -0500
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 145ms (Views: 135.7ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:59:42 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.86ms)
+Completed 200 OK in 52ms (Views: 34.7ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/api/v1/apartments/4" for 127.0.0.1 at 2018-03-11 01:59:44 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.96ms)
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:59:47 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.51ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/apartments/1" for 127.0.0.1 at 2018-03-11 01:59:48 -0500
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.6ms)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 01:59:55 -0500
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.51ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-03-11 03:00:02 -0400
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/_form.html.erb (4.6ms)
+  Rendered apartments/new.html.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 88.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-03-11 03:00:26 -0400
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8LTXIFHVs0/8LNp8n7A+1to8Yh1PzOkcx75ggfUrJvBS32aG2gCszL0xyVGo3hI2bK8fFkbt40gkwOvtOaelhQ==", "apartment"=>{"title"=>"testing", "description"=>"testing", "price"=>"testing", "address"=>"testing", "bedrooms"=>"testing", "bathrooms"=>"testing", "sq_ft"=>"testing", "pets"=>"testing", "date_available"=>"2018-03-29"}, "commit"=>"Create Apartment"}
+Unpermitted parameters: :sq_ft, :pets, :date_available
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "testing"], ["description", "testing"], ["price", "testing"], ["address", "testing"], ["bedrooms", "testing"], ["bathrooms", "testing"], ["created_at", "2018-03-11 07:00:26.843072"], ["updated_at", "2018-03-11 07:00:26.843072"]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:00:26 -0400
+>>>>>>> 24c99cebd886b3cfb83faa898eb3fdf1b5fc909c
 Processing by ApartmentsController#index as HTML
   Rendering apartments/index.html.erb within layouts/application
   Rendered apartments/index.html.erb within layouts/application (0.4ms)
   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+<<<<<<< HEAD
 Completed 200 OK in 56ms (Views: 54.0ms | ActiveRecord: 0.6ms)
 
 
@@ -27964,5 +28598,555 @@ Completed 200 OK in 14ms (Views: 5.8ms | ActiveRecord: 7.8ms)
 
 [Webpacker] Compiled all packs in /Users/tayloryount/apartmentsss/public/packs
 Completed 200 OK in 7194ms (Views: 7192.0ms | ActiveRecord: 0.7ms)
+=======
+Completed 200 OK in 90ms (Views: 87.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:00:27 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.75ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/apartments/8" for 127.0.0.1 at 2018-03-11 03:00:30 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.56ms)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments/8" for 127.0.0.1 at 2018-03-11 03:01:27 -0400
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 93.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments/8" for 127.0.0.1 at 2018-03-11 03:01:28 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.68ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/8" for 127.0.0.1 at 2018-03-11 03:01:29 -0400
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/apartments/8" for 127.0.0.1 at 2018-03-11 03:01:30 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.58ms)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apartments/8" for 127.0.0.1 at 2018-03-11 03:01:30 -0400
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 135.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/apartments/8" for 127.0.0.1 at 2018-03-11 03:01:30 -0400
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 132ms (Views: 123.6ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/apartments/8" for 127.0.0.1 at 2018-03-11 03:01:31 -0400
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 157ms (Views: 155.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/apartments/8" for 127.0.0.1 at 2018-03-11 03:01:32 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.42ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:01:34 -0400
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 69ms (Views: 65.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:01:34 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.45ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments/7" for 127.0.0.1 at 2018-03-11 03:01:37 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.79ms)
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:01:39 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.09ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments/2" for 127.0.0.1 at 2018-03-11 03:01:40 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.79ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:01:52 -0400
+Processing by Api::V1::ApartmentsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.49ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8482.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "apartmentsss_development"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8405.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "apartmentsss_development"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mDROP TABLE "apartments"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180215031126"]]
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7777900743656582805)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApartments (20180215031126)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (38.3ms)[0m  [1m[35mCREATE TABLE "apartments" ("id" bigserial primary key, "title" character varying NOT NULL, "description" character varying NOT NULL, "price" character varying NOT NULL, "address" character varying NOT NULL, "bedrooms" character varying NOT NULL, "bathrooms" character varying NOT NULL, "sq_ft" character varying, "pets" character varying, "date_available" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180215031126"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7777900743656582805)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:04:18 -0400
+Processing by Api::V1::ApartmentsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartment Load (1.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.57ms)
+Completed 200 OK in 42ms (Views: 24.4ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:04:23 -0400
+Processing by Api::V1::ApartmentsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.72ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8494.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "apartmentsss_development"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (213.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "apartmentsss_development"[0m
+  [1m[35m (203.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "apartmentsss_test"[0m
+  [1m[35m (661.0ms)[0m  [1m[35mCREATE DATABASE "apartmentsss_development" ENCODING = 'unicode'[0m
+  [1m[35m (424.0ms)[0m  [1m[35mCREATE DATABASE "apartmentsss_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (26.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "apartments" CASCADE[0m
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE TABLE "apartments" ("id" bigserial primary key, "title" character varying NOT NULL, "description" character varying NOT NULL, "price" character varying NOT NULL, "address" character varying NOT NULL, "bedrooms" character varying NOT NULL, "bathrooms" character varying NOT NULL, "sq_ft" character varying, "pets" character varying, "date_available" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180215031126)[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180215025718);
+
+[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-11 07:05:29.503945"], ["updated_at", "2018-03-11 07:05:29.503945"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "apartments" CASCADE[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "apartments" ("id" bigserial primary key, "title" character varying NOT NULL, "description" character varying NOT NULL, "price" character varying NOT NULL, "address" character varying NOT NULL, "bedrooms" character varying NOT NULL, "bathrooms" character varying NOT NULL, "sq_ft" character varying, "pets" character varying, "date_available" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180215031126)[0m
+  [1m[35m (3.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180215025718);
+
+[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-11 07:05:29.630225"], ["updated_at", "2018-03-11 07:05:29.630225"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-03-11 07:05:29.638195"], ["key", "environment"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mApartment Load (1.0ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets" = $8 LIMIT $9[0m  [["title", "Nice 3BR 1.5 BA in Great Location!"], ["description", "this apartment is located in fantastic, family-oriented neighborhood. NO DOGS ALLOWED"], ["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets", "No Dogs allowed, but cats are okay. Meow!"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Nice 3BR 1.5 BA in Great Location!"], ["description", "this apartment is located in fantastic, family-oriented neighborhood. NO DOGS ALLOWED"], ["price", "$800"], ["address", "47 8th Ave NE Hickory, NC 28602"], ["bedrooms", "3"], ["bathrooms", "1.5"], ["sq_ft", "900"], ["pets", "No Dogs allowed, but cats are okay. Meow!"], ["created_at", "2018-03-11 07:05:29.697905"], ["updated_at", "2018-03-11 07:05:29.697905"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets" = $8 LIMIT $9[0m  [["title", "2 BR 3BA Apt in Historic Downtown"], ["description", "this apt is close to various bars and restaurants. Amazing location!"], ["price", "$750"], ["address", "24 2nd Ave SW Hickory, NC 28601"], ["bedrooms", "2"], ["bathrooms", "3"], ["sq_ft", "750"], ["pets", "No Pets."], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "2 BR 3BA Apt in Historic Downtown"], ["description", "this apt is close to various bars and restaurants. Amazing location!"], ["price", "$750"], ["address", "24 2nd Ave SW Hickory, NC 28601"], ["bedrooms", "2"], ["bathrooms", "3"], ["sq_ft", "750"], ["pets", "No Pets."], ["created_at", "2018-03-11 07:05:29.703975"], ["updated_at", "2018-03-11 07:05:29.703975"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."title" = $1 AND "apartments"."description" = $2 AND "apartments"."price" = $3 AND "apartments"."address" = $4 AND "apartments"."bedrooms" = $5 AND "apartments"."bathrooms" = $6 AND "apartments"."sq_ft" = $7 AND "apartments"."pets" = $8 LIMIT $9[0m  [["title", "4 BR 2 BA Apt in Viewmont!"], ["description", "Breath-taking apartment in AMAZING neighborhood. All pets are welcome! MEOW, WHOOOF"], ["price", "$900"], ["address", "37 6th St NW Hickory, NC 28601"], ["bedrooms", "4"], ["bathrooms", "2"], ["sq_ft", "1020"], ["pets", "All pets are welcome!"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "4 BR 2 BA Apt in Viewmont!"], ["description", "Breath-taking apartment in AMAZING neighborhood. All pets are welcome! MEOW, WHOOOF"], ["price", "$900"], ["address", "37 6th St NW Hickory, NC 28601"], ["bedrooms", "4"], ["bathrooms", "2"], ["sq_ft", "1020"], ["pets", "All pets are welcome!"], ["created_at", "2018-03-11 07:05:29.709259"], ["updated_at", "2018-03-11 07:05:29.709259"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:06:02 -0400
+  [1m[35m (9.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ApartmentsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (4.19ms)
+Completed 200 OK in 82ms (Views: 53.5ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/api/v1/apartments/4" for 127.0.0.1 at 2018-03-11 03:06:26 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 401 Unauthorized in 18ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Apartment with 'id'=4):
+  
+app/controllers/api/v1/apartments_controller.rb:7:in `show'
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:06:33 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.14ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:06:34 -0400
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.4ms)
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:06:36 -0400
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.5ms)
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:06:38 -0400
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 7496ms (Views: 7494.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 3307ms (Views: 3257.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 5106ms (Views: 5001.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:06:42 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (73.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.71ms)
+Completed 200 OK in 115ms (Views: 40.7ms | ActiveRecord: 73.6ms)
+
+
+Started GET "/api/v1/apartments/3" for 127.0.0.1 at 2018-03-11 03:06:44 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mApartment Load (1.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.38ms)
+Completed 200 OK in 17ms (Views: 1.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:06:47 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (1.3ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.58ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-03-11 03:06:53 -0400
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/_form.html.erb (48.8ms)
+  Rendered apartments/new.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 103ms (Views: 99.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-03-11 03:07:12 -0400
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hAVKmUvJNIrLDjjo3zfMQnLFgUvl0XUKNTcGWAs5NVsmbvs/wBwrCYoTK8XoWeCixFb8QOzwf17WSY00x7W2Lg==", "apartment"=>{"title"=>"godzilla", "description"=>"godzilla", "price"=>"godzilla", "address"=>"godzilla", "bedrooms"=>"godzilla", "bathrooms"=>"godzilla", "sq_ft"=>"godzilla", "pets"=>"godzilla", "date_available"=>"2018-03-23"}, "commit"=>"Create Apartment"}
+Unpermitted parameters: :sq_ft, :pets, :date_available
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.3ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "godzilla"], ["description", "godzilla"], ["price", "godzilla"], ["address", "godzilla"], ["bedrooms", "godzilla"], ["bathrooms", "godzilla"], ["created_at", "2018-03-11 07:07:12.255305"], ["updated_at", "2018-03-11 07:07:12.255305"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:07:12 -0400
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 153ms (Views: 151.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:07:12 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (1.4ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.87ms)
+Completed 200 OK in 59ms (Views: 57.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/apartments/4" for 127.0.0.1 at 2018-03-11 03:07:15 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.38ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:09:10 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.33ms)
+Completed 200 OK in 26ms (Views: 15.0ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:09:16 -0400
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:09:16 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (1.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.08ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:09:18 -0400
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 51ms (Views: 48.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:09:19 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (2.1ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.69ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2018-03-11 03:09:28 -0400
+Processing by ApartmentsController#new as HTML
+  Rendering apartments/new.html.erb within layouts/application
+  Rendered apartments/_form.html.erb (5.2ms)
+  Rendered apartments/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 138ms (Views: 135.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2018-03-11 03:10:10 -0400
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LujLsZBgZ4oqCVedwcU+M7QJbeUqyyS8kJyGm6RtRxCMg3oXG7V4CWsURLD2qxLTApoQ7iPqLuhz4g33aOHEZQ==", "apartment"=>{"title"=>"", "description"=>"yikes", "price"=>"yikes", "address"=>"yikes", "bedrooms"=>"yikes", "bathrooms"=>"yikes", "sq_ft"=>"should appear", "pets"=>"should appear", "date_available"=>"2018-03-30"}, "commit"=>"Create Apartment"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "apartments" ("title", "description", "price", "address", "bedrooms", "bathrooms", "sq_ft", "pets", "date_available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", ""], ["description", "yikes"], ["price", "yikes"], ["address", "yikes"], ["bedrooms", "yikes"], ["bathrooms", "yikes"], ["sq_ft", "should appear"], ["pets", "should appear"], ["date_available", "2018-03-30"], ["created_at", "2018-03-11 07:10:10.879228"], ["updated_at", "2018-03-11 07:10:10.879228"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:10:10 -0400
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 103ms (Views: 100.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:10:11 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.9ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.75ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/apartments/5" for 127.0.0.1 at 2018-03-11 03:10:12 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.5ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:10:30 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (13.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.66ms)
+Completed 200 OK in 22ms (Views: 7.6ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:10:59 -0400
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 71ms (Views: 68.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:11:00 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.38ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:11:06 -0400
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:11:06 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.69ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments/2" for 127.0.0.1 at 2018-03-11 03:11:17 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (1.2ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.5ms)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-03-11 03:14:46 -0400
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 160ms (Views: 159.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/apartments/2" for 127.0.0.1 at 2018-03-11 03:14:46 -0400
+Processing by ApartmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 251ms (Views: 250.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/apartments/2" for 127.0.0.1 at 2018-03-11 03:14:46 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.6ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.53ms)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/apartments/2" for 127.0.0.1 at 2018-03-11 03:14:47 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.58ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 03:14:50 -0400
+Processing by ApartmentsController#index as HTML
+  Rendering apartments/index.html.erb within layouts/application
+  Rendered apartments/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:14:51 -0400
+Processing by Api::V1::ApartmentsController#index as */*
+  [1m[36mApartment Load (0.7ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.54ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/apartments/5" for 127.0.0.1 at 2018-03-11 03:15:21 -0400
+Processing by Api::V1::ApartmentsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mApartment Load (0.4ms)[0m  [1m[34mSELECT  "apartments".* FROM "apartments" WHERE "apartments"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered ApartmentSerializer with ActiveModelSerializers::Adapter::Json (0.79ms)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/apartments" for 127.0.0.1 at 2018-03-11 03:28:41 -0400
+Processing by Api::V1::ApartmentsController#index as HTML
+  [1m[36mApartment Load (1.2ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (12.78ms)
+Completed 200 OK in 44ms (Views: 38.9ms | ActiveRecord: 1.2ms)
+>>>>>>> 24c99cebd886b3cfb83faa898eb3fdf1b5fc909c
 
 

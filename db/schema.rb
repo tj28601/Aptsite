@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180215031126) do
     t.string "bedrooms", null: false
     t.string "bathrooms", null: false
     t.string "sq_ft"
-    t.string "pets?"
+    t.string "pets"
     t.date "date_available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
