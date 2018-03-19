@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ApartmentInformation = props => {
+const ApartmentInformation = (props) => {
 
   return(
     <div>
@@ -12,7 +12,11 @@ const ApartmentInformation = props => {
       <li>{`Size: ${props.sq_ft}ft`}<sup>2</sup></li>
       <li>{`Pets: ${props.pets}`}</li>
       <li>{`Available Date:${props.date_available}`}</li>
-      <p>{props.description}</p>
+      <p>{`Description: ${props.description}`}</p>
+
+
+
+
     </div>
   )
 }

@@ -11,7 +11,6 @@ class ApartmentsContainer extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.params)
     fetch('/api/v1/apartments')
       .then(response => {
         if (response.ok) {
@@ -31,6 +30,7 @@ class ApartmentsContainer extends Component {
   }
   render() {
     let apartmentObjects = this.state.apts.map((apt) =>{
+
       return(
         <ApartmentTile
           key={apt.id}
@@ -39,6 +39,7 @@ class ApartmentsContainer extends Component {
           address = {apt.address}
           title = {apt.title}
           price = {apt.price}
+          photo = {apt.photo}
         />
 
       )
