@@ -11,6 +11,7 @@ class CreateApartments < ActiveRecord::Migration[5.1]
       t.string :pets
       t.date :date_available
 
+
       t.timestamps
     end
   end

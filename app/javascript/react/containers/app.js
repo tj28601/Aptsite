@@ -3,7 +3,8 @@ import { Router, browserHistory, Route, IndexRoute } from 'react-router';
 import ApartmentsContainer from './ApartmentsContainer';
 import NavBar from './NavBar';
 import ApartmentShowContainer from './ApartmentShowContainer';
-import ApartmentInformation from './ApartmentInformation';
+import PhotoShowContainer from './PhotoShowContainer';
+// import ApartmentInformation from './ApartmentInformation';
 import ApartmentTile from './ApartmentTile';
 
 const App = props => {
@@ -12,7 +13,8 @@ const App = props => {
       <Route path= '/' component ={NavBar} >
         <IndexRoute component={ApartmentsContainer} />
           <Route path='/apartments' component={ApartmentsContainer} />
-          <Route path='/apartments/:id' component={ApartmentShowContainer} />
+
+            <Route path='/apartments/:id' component={ApartmentShowContainer}  />
         </Route>
         <ApartmentsContainer />
         </Router>

@@ -1,4 +1,7 @@
-<%= form_for @apartment do |f| %>
+<!-- <%= form_for @apartment do |f| %> -->
+<!-- ^^original...using example for now -->
+
+ <%= form_for @apartment, :html => {:multipart => true} do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %>
 <%= f.label :description %>
@@ -17,7 +20,13 @@
 <%= f.text_field :pets %>
 <%= f.label :date_available %>
 <%= f.date_field :date_available %>
+<!-- <%= f.label :photo  %>
+<%= f.file_field :photo %> -->
+<!-- ^^original..but using code from ex below... -->
+
+<%= file_field_tag "images[]", type: :file, multiple: true %>
+
 
 <%= f.submit %>
-
+<% end %>
 <% end %>
