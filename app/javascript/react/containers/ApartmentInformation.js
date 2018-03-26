@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const ApartmentInformation = (props) => {
 
   return(
     <div>
+      <h1> Apartment Description: </h1>
       <li>{`Rent: ${props.price}/month`}</li>
       <li>{props.title}</li>
       <li>{`Address: ${props.address}`}</li>
@@ -13,6 +15,7 @@ const ApartmentInformation = (props) => {
       <li>{`Pets: ${props.pets}`}</li>
       <li>{`Available Date:${props.date_available}`}</li>
       <p>{`Description: ${props.description}`}</p>
+      <a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit</a>
 
 
 

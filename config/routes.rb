@@ -12,10 +12,20 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :apartments
+      resources :photos
 
-      resources :photos do
+
+      # resources :photos do
+      #   ^was working earlier
+
+
+
      # get 'photos/apartment_id', :to => "photos#show", :as => "apartment_id"
-     end
+
+
+     # end
+     # ^^was working working earlier
+
     end
   end
 end
