@@ -72,12 +72,24 @@ class ApartmentsController < ApplicationController
     # end
 
     # authorize @apartment
-    if @apartment.update(params[:apartment].permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, :photos ))
+
+
+
+     if @apartment.update_attributes(new_apartment_params)
+    # if @apartment.update(params[:apartment].permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, :image ))
+
+
+  #   render :new for @apartment.photos
+  # end
+
      # to handle multiple images upload on update when user add more picture
       if params[:images]
        params[:images].each { |image|
          @apartment.photos.create(image: image)
        }
+
+       # if @apartment.photos
+
       end
       flash[:notice] = "Apartment has been successfully updated!"
       redirect_to @apartment
@@ -89,6 +101,6 @@ class ApartmentsController < ApplicationController
   private
 
   def new_apartment_params
-    params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available )
+    params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, params[:images] )
   end
 end
