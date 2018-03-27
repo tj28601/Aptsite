@@ -1,4 +1,6 @@
 class ApartmentsController < ApplicationController
+  before_action :authorize_user, except: [:index, :show]
+
   def create
 
     # @apartment = Apartment.new(new_apartment_params)
@@ -102,5 +104,10 @@ class ApartmentsController < ApplicationController
 
   def new_apartment_params
     params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, params[:images] )
+  end
+  def authorize_user
+    if !user_signed_in? || !current_user.admin?
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 end
