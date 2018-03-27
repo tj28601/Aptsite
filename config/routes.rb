@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :apartments
       resources :photos
-
+      resources :users 
 
       # resources :photos do
       #   ^was working earlier
