@@ -1,5 +1,5 @@
 class ApartmentsController < ApplicationController
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def create
 
@@ -41,19 +41,28 @@ class ApartmentsController < ApplicationController
 
   # end
   def edit
+    if (current_user.role == 'admin')
     @apartment = Apartment.find(params[:id])
+  else
+      flash[:notice] = 'You are not able to edit this page'
+      redirect_to apartment_path
+    end
   end
   def destroy
   @apartment = Apartment.find(params[:id])
   @apartment.destroy
 
-  redirect_to root_path
+  redirect_to root_path, flash[:notice] = 'Your post has been deleted'
   end
   def index;
   end
   def new
-    @apartment = Apartment.new
-
+    if (current_user.role == 'admin')
+      @apartment = Apartment.new
+    else
+        flash[:notice] = 'Sorry. You do not have access to this page'
+        redirect_to apartments_path
+      end
 
     # @photos = @apartment.photos.build
   end
@@ -105,7 +114,7 @@ class ApartmentsController < ApplicationController
   def new_apartment_params
     params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, params[:images] )
   end
-  def authorize_user
+  def authenticate_user
     if !user_signed_in? || !current_user.admin?
       raise ActionController::RoutingError.new("Not Found")
     end

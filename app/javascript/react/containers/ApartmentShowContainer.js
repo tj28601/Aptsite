@@ -10,10 +10,12 @@ class ApartmentShowContainer extends Component {
     super(props);
     this.state = {
       apartmentInfo: {},
-      photoInfo: []
+      photoInfo: [],
+      binaryURL: ''
 
     }
     this.addNewPhoto = this.addNewPhoto.bind(this);
+
   }
   componentDidMount(){
     let apartmentId = this.props.params.id
@@ -50,100 +52,56 @@ class ApartmentShowContainer extends Component {
         })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
-//   componentWillMount(){
-//   let apartmentId = this.props.params.id
-//
-//
-// }
 
-  addNewPhoto(type, formPayload) {
-    // debugger;
-    //post fetch
-    // console.log(formPayload)
-    let apartmentId = this.props.params.id
-    // fetch('/api/v1/photos/6')
 
-    fetch(`/api/v1/photos/${apartmentId}`, {
+
+  addNewPhoto(formPayload) {
+
+    fetch('/api/v1/photos', {
      credentials: 'same-origin',
      method: 'POST',
-     // body: body,
      body: JSON.stringify(formPayload),
-     headers: { 'Accept': 'application/json' }
-     // headers: {
-     //   'Content-Type': 'application/json',
-       // 'X-Requested-With': 'XMLHttpRequest',
-       // 'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
-     // }
+     headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+       }
+
    })
 
-    // , {
-    // ^^COME BACK TO
+   .then(response => {
+     if (response.ok) {
+       return response;
+     } else {
+       let errorMessage = `${response.status} (${response.statusText})`,
+           error = new Error(errorMessage);
+       throw(error);
+     }
+   })
 
-    //   credentials: 'same-origin',
-    //   method: 'POST',
-    //   body: JSON.stringify(formPayload),
-    //   headers: new Headers({ 'Content-Type': 'application/json'
-    // })
-
-
-    // credentials: 'same-origin',
-    // method: 'POST',
-    //  headers: {
-    //    'Accept': 'application/json, text/plain, */*',
-    //     'Content-type':'application/json'
-    //  },
-    //  body: JSON.stringify(formPayload),
-    // ^^COME BACK TO
-
-
-
-
-      // headers: { 'Content-Type': 'application/json' }
-      // headers: {
-      //   'Content-Type': 'application/json',
-      //   'X-Requested-With': 'XMLHttpRequest',
-      //   'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
-      // }
-
-    // })
-
-
-    .then((res) => res.json())
-    .then((data) => console.log(data))
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-      // .then(response => {
-      //   debugger;
-      // })
     .then(response => response.json())
-    .then(json => {
-      debugger;
-    })
-    // .then(body => {
-    //   let newPhotoArray = this.state.photoInfo.concat(body)
-    //   this.setState({ photoInfo: newPhotoArray })
+    // .then(json => {
+    //   debugger;
     // })
+    .then(body => {
+      let newPhotoArray = this.state.photoInfo.concat(body)
+      this.setState({ photoInfo: newPhotoArray })
+    })
   }
 
   render(){
-    let handleAddNewPhoto = (formPayload) =>
-      this.addNewPhoto(formPayload)
+
+    let addNewPhoto = (formPayload) => this.addNewPhoto(formPayload)
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
     return(
+
       <ApartmentPhotos
           key={photo.id}
           id={photo.id}
           description={photo.photo_description}
           image={photo.image}
         />
+
     )
     })
 
@@ -151,6 +109,7 @@ class ApartmentShowContainer extends Component {
       <div>
       <ApartmentInformation
         id={this.state.apartmentInfo.id}
+        key={this.state.apartmentInfo.id}
         title={this.state.apartmentInfo.title}
         price={this.state.apartmentInfo.price}
         address={this.state.apartmentInfo.address}
@@ -166,7 +125,7 @@ class ApartmentShowContainer extends Component {
 
         <h1> Apartment Photos: </h1>
         <PhotoFormContainer
-            addNewPhoto={handleAddNewPhoto}/>
+            addNewPhoto={addNewPhoto}/>
        {photoObjects}
        </div>
       );

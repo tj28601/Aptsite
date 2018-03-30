@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import TextInputField from './TextInputField'
+import TextInputField from './TextInputField';
+import PhotoInputField from './PhotoInputField';
+// import Dropzone from 'react-dropzone';
+// import ReactDom from 'react-dom'
 
 class PhotoFormContainer extends Component {
   constructor(props) {
@@ -11,9 +14,14 @@ class PhotoFormContainer extends Component {
       // photoArray: '',
       // newPhotoArray: ''
 
+
     }
+
     this.handlePhotoDescriptionChange = this.handlePhotoDescriptionChange.bind(this);
-    this.handlePhotoImageChange = this.handlePhotoImageChange.bind(this);
+    this.handlePhotoFileChange = this.handlePhotoFileChange.bind(this);
+
+
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -21,9 +29,12 @@ class PhotoFormContainer extends Component {
     let value = event.target.value
     this.setState({ photoDescription: value })
   }
-  handlePhotoImageChange(event) {
-    let value = event.target.value
-    this.setState({ photoImage: value })
+
+  handlePhotoFileChange(event) {
+    // debugger;
+    let giraffe = event.target.files[0].name
+    this.setState({ photoImage: giraffe })
+    // debugger;
   }
 
   handleSubmit(event) {
@@ -31,11 +42,14 @@ class PhotoFormContainer extends Component {
     let formPayload = {
       photo_description: this.state.photoDescription,
       // image: this.state.photoImage
-      image: this.state.photoImage,
-      // apartment_id: this.state.apartmentId
-    }
+      image: this.fileInput.files[0].name,
+      apartment_id: +3
+    };
+    alert(
+     `Selected file - ${this.fileInput.files[0].name}`
+   );
     this.props.addNewPhoto(formPayload);
-    // debugger;
+    debugger;
   }
 
   render() {
@@ -45,19 +59,29 @@ class PhotoFormContainer extends Component {
           label='Photo Description'
           value={this.state.photoDescription}
           name='photoDescription'
-          handleChange={this.handlePhotoDescriptionChange}
+          handleChange={this.handlePhotoFileChange}
         />
-        <TextInputField
+
+            <PhotoInputField
           label='Photo Image'
-          value={this.state.photoImage}
+          cow={this.state.photoImage}
+          value={null}
           name='photoImage'
-          handleChange={this.handlePhotoImageChange}
+          handleChange={this.handlePhotoFileChange}
+
+
         />
+
+        <img id="root" src="" />
         <input type='submit' value='Submit'/>
       </form>
 
     )
   }
 }
+// ReactDOM.render(
+//   <FileInput />,
+//   document.getElementById('root')
+// );
 
 export default PhotoFormContainer;
