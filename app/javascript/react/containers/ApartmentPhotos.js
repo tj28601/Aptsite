@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const ApartmentPhotos = props => {
-// debugger;
+
   return(
     <div>
       <li>hello from ApartmentPhotos</li>
