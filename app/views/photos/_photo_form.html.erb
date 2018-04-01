@@ -1,0 +1,14 @@
+<%= form_for [@apartment, @photo] do |f| %>
+
+
+<%= f.label :image  %>
+<%= f.file_field :image %>
+<%= f.label :photo_description %>
+<%= f.text_field :photo_description %>
+<!-- ^^original..but using code from ex below... -->
+
+
+
+
+<%= f.submit %>
+<% end %>

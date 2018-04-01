@@ -63,7 +63,7 @@ class ApartmentShowContainer extends Component {
      body: JSON.stringify(formPayload),
      headers: {
        'Accept': 'application/json',
-       'Content-Type': 'application/json'
+       'Content-Type': 'application/json',
        }
 
    })
@@ -84,8 +84,9 @@ class ApartmentShowContainer extends Component {
     // })
     .then(body => {
       let newPhotoArray = this.state.photoInfo.concat(body)
-      this.setState({ photoInfo: newPhotoArray })
+      this.setState({ photoInfo: newPhotoArray });
     })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
@@ -96,6 +97,7 @@ class ApartmentShowContainer extends Component {
     return(
 
       <ApartmentPhotos
+          apartment_id={photo.apartment_id}
           key={photo.id}
           id={photo.id}
           description={photo.photo_description}
@@ -124,8 +126,7 @@ class ApartmentShowContainer extends Component {
 
 
         <h1> Apartment Photos: </h1>
-        <PhotoFormContainer
-            addNewPhoto={addNewPhoto}/>
+    
        {photoObjects}
        </div>
       );
