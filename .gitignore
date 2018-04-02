@@ -7,7 +7,7 @@
 # Ignore bundler config.
 /.bundle
 /public/uploads
-
+/app/assets/images
 /coverage
 
 # Ignore all logfiles and tempfiles.
