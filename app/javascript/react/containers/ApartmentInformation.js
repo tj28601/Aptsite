@@ -4,7 +4,9 @@ import { Link } from 'react-router';
 const ApartmentInformation = (props) => {
 
   return(
-    <div>
+
+    <div id='apartmentInformation'>
+  <div id='apartmentInformationText'>
       <h1> Apartment Description: </h1>
       <h5><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit</a> | <a id="deleteYourApartment" href={`/apartments/${props.id}`}>Delete</a></h5>
       <li>{`Rent: ${props.price}/month`}</li>
@@ -15,11 +17,11 @@ const ApartmentInformation = (props) => {
       <li>{`Size: ${props.sq_ft}ft`}<sup>2</sup></li>
       <li>{`Pets: ${props.pets}`}</li>
       <li>{`Available Date:${props.date_available}`}</li>
-      <p>{`Description: ${props.description}`}</p>
+      <li>{`Description: ${props.description}`}</li>
 
 
 
-
+      </div>
     </div>
   )
 }
