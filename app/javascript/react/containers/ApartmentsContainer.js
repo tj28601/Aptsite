@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import ApartmentTile from './ApartmentTile';
+import ApartmentTile from '../components/ApartmentTile';
 
 class ApartmentsContainer extends Component {
   constructor(props) {

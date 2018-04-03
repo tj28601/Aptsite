@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import ApartmentInformation from './ApartmentInformation';
-import ApartmentPhotos from './ApartmentPhotos';
+import ApartmentInformation from '../components/ApartmentInformation';
+import ApartmentPhotos from '../components/ApartmentPhotos';
 import PhotoFormContainer from './PhotoFormContainer';
 
 
@@ -126,7 +126,7 @@ class ApartmentShowContainer extends Component {
 
 
         <h1> Apartment Photos: </h1>
-    
+
        {photoObjects}
        </div>
       );
