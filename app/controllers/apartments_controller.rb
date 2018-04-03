@@ -18,10 +18,10 @@ class ApartmentsController < ApplicationController
           @apartment.photos.create(image: image)
         }
       end
-      flash[:notice] = "Your apartment has been created successfully!"
+      flash[:notice] = "Your apartment profile has been created successfully!"
       redirect_to @apartment
     else
-      flash[:alert] = "Something went wrong :("
+      flash[:alert] = "Sorry :( Please try again."
       render :new
     end
   end
@@ -59,7 +59,7 @@ class ApartmentsController < ApplicationController
   def new
     if (current_user.role == 'admin')
       @apartment = Apartment.new
-      
+
     else
         flash[:notice] = 'Sorry. You do not have access to this page'
         redirect_to apartments_path

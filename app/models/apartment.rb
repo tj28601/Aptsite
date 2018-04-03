@@ -1,6 +1,6 @@
 class Apartment < ApplicationRecord
-  validates :title, null: false
-  validates :description, null: false
+  validates :title, presence: true
+  validates :description, presence: true
   validates :price, presence: true
   validates :address, presence: true
   validates :bedrooms, presence: true
@@ -18,7 +18,7 @@ has_many :photos
 
   # accepts_nested_attributes_for :photos, allow_destroy: true
     accepts_nested_attributes_for :photos, allow_destroy: true
-    
+
   # params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, photos_attributes: [:photo_description, :image, :id, :_destroy])
 
 end

@@ -2,6 +2,17 @@
 <!-- ^^original...using example for now -->
 
  <%= form_for @apartment, :html => {:multipart => true} do |f| %>
+ <% if @apartment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@apartment.errors.count, "error") %> prohibited this Apartment Profile from being saved:</h2>
+      <ul>
+        <% @apartment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div id="newApartment">
 <%= f.label :title %>
 <%= f.text_field :title %>
 <%= f.label :description %>
@@ -28,5 +39,6 @@
 
 
 <%= f.submit %>
+</div>
 <% end %>
 <% end %>

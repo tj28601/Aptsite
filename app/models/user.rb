@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :user_name, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z0-9]+\Z/ }
+
          def admin?
     role == "admin"
   end
