@@ -1,7 +1,7 @@
 <!-- <%= form_for @apartment do |f| %> -->
 <!-- ^^original...using example for now -->
 
- <%= form_for @apartment, :html => {:multipart => true} do |f| %>
+<%= form_for @apartment, :html => {:multipart => true} do |f| %>
  <% if @apartment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@apartment.errors.count, "error") %> prohibited this Apartment Profile from being saved:</h2>
@@ -30,11 +30,12 @@
 <%= f.label :pets %>
 <%= f.text_field :pets %>
 <%= f.label :date_available %>
-<%= f.date_field :date_available %>
-<!-- <%= f.label :photo  %>
-<%= f.file_field :photo %> -->
-<!-- ^^original..but using code from ex below... -->
+<%= f.date_field :date_available %> -->
+<%= f.label :photo, "Attach a thumbnail photo: " %>
+ <!-- <%= f.file_field :photo %> -->
 
+<!-- ^^original..but using code from ex below... -->
+<!-- <%= file_field_tag "image[]", type: :file %> -->
 <%= file_field_tag "images[]", type: :file, multiple: true %>
 
 
