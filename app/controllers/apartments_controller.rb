@@ -18,6 +18,11 @@ class ApartmentsController < ApplicationController
           @apartment.photos.create(image: image)
         }
       end
+      # if params[:image]
+      #   # params[:image].each { |image|
+      #     @apartment.photos.create(image: image)
+      #   # }
+      # end
       flash[:notice] = "Your apartment profile has been created successfully!"
       redirect_to @apartment
     else
@@ -103,7 +108,7 @@ class ApartmentsController < ApplicationController
        # if @apartment.photos
 
       end
-      flash[:notice] = "Apartment has been successfully updated!"
+      flash[:notice] = "Your apartment profile has been successfully updated!"
       redirect_to @apartment
    else
      render :edit

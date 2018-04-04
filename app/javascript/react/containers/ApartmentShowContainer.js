@@ -10,8 +10,7 @@ class ApartmentShowContainer extends Component {
     super(props);
     this.state = {
       apartmentInfo: {},
-      photoInfo: [],
-      binaryURL: ''
+      photoInfo: []
 
     }
     this.addNewPhoto = this.addNewPhoto.bind(this);
@@ -89,8 +88,9 @@ class ApartmentShowContainer extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  // handleThumbnailPhoto
   render(){
-
+    // let handleThumbnailPhoto = (firstPhoto) => this.showThumbnailPhoto(firstPhoto)
     let addNewPhoto = (formPayload) => this.addNewPhoto(formPayload)
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
@@ -103,6 +103,8 @@ class ApartmentShowContainer extends Component {
           description={photo.photo_description}
           image={photo.image}
         />
+
+
 
     )
     })

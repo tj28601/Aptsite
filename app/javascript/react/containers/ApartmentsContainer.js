@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ApartmentTile from '../components/ApartmentTile';
+// import ThumbnailPhotoContainer from './ThumbnailPhotoContainer'
 
 class ApartmentsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      apts: []
+      apts: [],
     }
   }
 
   componentDidMount() {
+
     fetch('/api/v1/apartments')
       .then(response => {
         if (response.ok) {
@@ -27,7 +29,7 @@ class ApartmentsContainer extends Component {
       this.setState({ apts: body.apartments });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
+    }
   render() {
     let apartmentObjects = this.state.apts.map((apt) =>{
 
@@ -39,16 +41,19 @@ class ApartmentsContainer extends Component {
           address = {apt.address}
           title = {apt.title}
           price = {apt.price}
-          photo = {apt.photo}
         />
 
       )
     })
 
+
+
+
     return(
       <div>
         <h1>Look at our Wonderful Apartments</h1>
         {apartmentObjects}
+
       </div>
     );
   }
