@@ -25,6 +25,9 @@ class ApartmentsContainer extends Component {
       })
 
       .then(response => response.json())
+      // .then(json => {
+      //   debugger;
+      // })
       .then(body => {
       this.setState({ apts: body.apartments });
       })
@@ -41,20 +44,18 @@ class ApartmentsContainer extends Component {
           address = {apt.address}
           title = {apt.title}
           price = {apt.price}
+          thumbpic = {apt.thumbnail_photo}
         />
 
       )
     })
 
-
-
-
     return(
-      <div>
-        <h1>Look at our Wonderful Apartments</h1>
+      <div>  
         {apartmentObjects}
+        </div>
 
-      </div>
+
     );
   }
 }

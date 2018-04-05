@@ -8,7 +8,8 @@ const ApartmentInformation = (props) => {
     <div id='apartmentInformation'>
   <div id='apartmentInformationText'>
       <h1> Apartment Description: </h1>
-      <h5><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit</a> | <a id="deleteYourApartment" href={`/apartments/${props.id}`}>Delete</a></h5>
+      <h5><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </h5>
+
       <li>{`Rent: ${props.price}/month`}</li>
       <li>{props.title}</li>
       <li>{`Address: ${props.address}`}</li>

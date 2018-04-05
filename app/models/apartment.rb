@@ -13,7 +13,7 @@ has_many :photos
   # has_many :photos
 
 
-  # mount_uploader :photo, ApartmentPhotoUploader
+  mount_uploader :thumbnail_photo, ThumbnailPhotoUploader
   # ^^per example, now moving this to photo model
 
   # accepts_nested_attributes_for :photos, allow_destroy: true

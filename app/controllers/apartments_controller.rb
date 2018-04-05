@@ -10,19 +10,17 @@ class ApartmentsController < ApplicationController
     #   render :new
 
     @apartment = Apartment.new(new_apartment_params)
-    # authorize @apartment
+
     if @apartment.save
-      # to handle multiple images upload on create
-      if params[:images]
-        params[:images].each { |image|
-          @apartment.photos.create(image: image)
-        }
-      end
-      # if params[:image]
-      #   # params[:image].each { |image|
+
+
+      # if params[:images]
+      #   params[:images].each { |image|
       #     @apartment.photos.create(image: image)
-      #   # }
+      #   }
       # end
+      # ^^what I had before
+
       flash[:notice] = "Your apartment profile has been created successfully!"
       redirect_to @apartment
     else
@@ -31,20 +29,6 @@ class ApartmentsController < ApplicationController
     end
   end
 
-
-
-    # respond_to do |format|
-    # if @apartment.save
-    #   params[:photos]['photo'].each do |a|
-    #      @photo = @apartment.photos.create!(:photo => a, :apartment_id => @apartment.id)
-    #   end
-    #   format.html { redirect_to @apartment, notice: 'Apartment Profile created successfully.' }
-    # else
-    #   format.html { render action: 'new' }
-    # end
-  # end
-
-  # end
   def edit
     if (current_user.role == 'admin')
     @apartment = Apartment.find(params[:id])
@@ -100,14 +84,14 @@ class ApartmentsController < ApplicationController
   # end
 
      # to handle multiple images upload on update when user add more picture
-      if params[:images]
-       params[:images].each { |image|
-         @apartment.photos.create(image: image)
-       }
+      # if params[:images]
+      #  params[:images].each { |image|
+      #    @apartment.photos.create(image: image)
+      #  }
 
        # if @apartment.photos
 
-      end
+      # end
       flash[:notice] = "Your apartment profile has been successfully updated!"
       redirect_to @apartment
    else
@@ -118,7 +102,8 @@ class ApartmentsController < ApplicationController
   private
 
   def new_apartment_params
-    params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, params[:images] )
+    # params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, params[:images] )
+      params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, :thumbnail_photo )
   end
   def authenticate_user
     if !user_signed_in? || !current_user.admin?

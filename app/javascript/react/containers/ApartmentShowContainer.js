@@ -127,8 +127,10 @@ class ApartmentShowContainer extends Component {
         />
 
 
-        <h1> Apartment Photos: </h1>
 
+        <br/>
+        <br/>
+        <br/>
        {photoObjects}
        </div>
       );
