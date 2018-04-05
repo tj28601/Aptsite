@@ -1,2 +1,7 @@
+<br/>
+<br/>
+<div id = 'editPhotoForm'>
 <h1>Edit Photo Details</h1>
+<h3><%= link_to 'Delete', apartment_photo_path(@apartment, @photo), method: :delete, data: { confirm: 'Are you sure?' } %></h3>
 <%= render 'photo_form' %>
+</div>

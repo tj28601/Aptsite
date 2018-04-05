@@ -10,10 +10,18 @@ const ApartmentTile = props => {
 
 
       <div id = 'apartmentIndex'>
+      <br/>
+      <br/>
+      <h2><Link to={`/apartments/${props.id}`}><div id = 'apartmentIndexText'>{props.price} - {props.title}</div></Link></h2>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <h2><img src= {`/uploads/apartment/thumbnail_photo/${props.id}/${props.thumbpic}`} alt= "thumbnail photo"id="apartmentpic" height='300px' width='300px' /></h2>
 
-      <h1><Link to={`/apartments/${props.id}`}><div id = 'apartmentIndexText'>{props.price} - {props.title}</div></Link></h1>
-
-
+      <li>{props.price}</li>
+      <li>{props.address}</li>
+      <li>{props.description}</li>
       </div>
 
     )

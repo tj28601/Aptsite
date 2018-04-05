@@ -51,6 +51,18 @@ end
     end
   end
 
+  # def destroy
+  # @apartment= Apartment.find(params[:apartment_id])
+  # @photo = Photo.find(params[:id])
+  #
+  #    # @photo.apartment.destroy
+  #     redirect_to apartment_path(@photo.apartment_id), flash[:notice] = 'Your post has been deleted'
+  #   # else
+  #   #   flash[:notice] = 'Unable to delete :('
+  #   #   render :edit
+  #   # end
+  # end
+
   private
 
   def photo_params

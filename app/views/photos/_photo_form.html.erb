@@ -1,9 +1,9 @@
 <%= form_for [@apartment, @photo] do |f| %>
 
 
-<%= f.label :image  %>
+<%= f.label :image, "image:"  %>
 <%= f.file_field :image %>
-<%= f.label :photo_description %>
+<%= f.label :photo_description, "Image Description:" %>
 <%= f.text_field :photo_description %>
 <!-- ^^original..but using code from ex below... -->
 
@@ -11,4 +11,8 @@
 
 
 <%= f.submit %>
+<br/>
+<br/>
+<br/>
+
 <% end %>
