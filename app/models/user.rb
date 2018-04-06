@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  
   validates :user_name, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z0-9]+\Z/ }
 
          def admin?

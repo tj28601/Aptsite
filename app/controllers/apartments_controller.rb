@@ -101,6 +101,7 @@ class ApartmentsController < ApplicationController
       flash[:notice] = "Your apartment profile has been successfully updated!"
       redirect_to @apartment
    else
+     flash[:alert] = "Sorry :( Please try again."
      render :edit
    end
  end
