@@ -16,14 +16,14 @@ end
 
 
   def new
-    # if (current_user.role == 'admin')
+    if (current_user.role == 'admin')
       @apartment = Apartment.find(params[:apartment_id])
       @photo = Photo.new
       # (:apartment=>@apartment)
     else
         flash[:notice] = 'Sorry. You do not have access to this page'
 
-      # end
+      end
 
     # @photos = @apartment.photos.build
   end
@@ -51,17 +51,18 @@ end
     end
   end
 
-  # def destroy
-  # @apartment= Apartment.find(params[:apartment_id])
-  # @photo = Photo.find(params[:id])
-  #
-  #    # @photo.apartment.destroy
-  #     redirect_to apartment_path(@photo.apartment_id), flash[:notice] = 'Your post has been deleted'
-  #   # else
-  #   #   flash[:notice] = 'Unable to delete :('
-  #   #   render :edit
-  #   # end
-  # end
+  def destroy
+  @apartment= Apartment.find(params[:apartment_id])
+  @photo = Photo.find(params[:id])
+
+     @photo.destroy
+     flash[:notice] = 'Your post has been deleted'
+      redirect_to apartment_url(@photo.apartment_id)
+    # else
+    #   flash[:notice] = 'Unable to delete :('
+    #   render :edit
+    # end
+  end
 
   private
 

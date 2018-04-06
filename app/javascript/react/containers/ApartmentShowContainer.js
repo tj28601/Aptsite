@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import ApartmentInformation from '../components/ApartmentInformation';
 import ApartmentPhotos from '../components/ApartmentPhotos';
 import PhotoFormContainer from './PhotoFormContainer';
-
+import PhotosTitle from '../components/PhotosTitle';
 
 class ApartmentShowContainer extends Component {
   constructor(props){
@@ -104,8 +104,6 @@ class ApartmentShowContainer extends Component {
           image={photo.image}
         />
 
-
-
     )
     })
 
@@ -125,12 +123,17 @@ class ApartmentShowContainer extends Component {
         description={this.state.apartmentInfo.description}
         photo={this.state.apartmentInfo.photo}
         />
-
-
+        <br/>
+        <br/>
+        <PhotosTitle
+          apt_id={this.state.apartmentInfo.id}
+          apt_key={this.state.apartmentInfo.id}
+        />
 
         <br/>
         <br/>
         <br/>
+
        {photoObjects}
        </div>
       );

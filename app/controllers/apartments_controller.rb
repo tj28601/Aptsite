@@ -40,9 +40,15 @@ class ApartmentsController < ApplicationController
   def destroy
   @apartment = Apartment.find(params[:id])
   @apartment.destroy
-
-  redirect_to root_path, flash[:notice] = 'Your post has been deleted'
+  flash[:notice] = 'Your post has been deleted'
+  redirect_to root_path
   end
+
+  # if @apartment.destroy
+  #   redirect_to apartments_path, flash: {notice: 'Your post has been deleted'}
+  # else
+  #   redirect_to :edit
+  # end
   def index;
   end
   def new

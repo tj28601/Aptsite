@@ -63,7 +63,7 @@
   text-align: bottom;
   background-position: top;
   // padding-top: 7.5em;
-
+  
 }
 
 #apartmentPhotos{
@@ -189,4 +189,16 @@ background-color: black;
   font-weight: bold;
   text-align: center;
   margin: 1em;
+}
+
+#photosTitle{
+  background: rgba(241,241,241,0.7);
+  text-align: bottom;
+  background-position: top;
+}
+
+#photosTitleText{
+  color: black;
+  font-size: 20px;
+  border: 5.5px solid black;
 }

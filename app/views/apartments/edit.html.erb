@@ -3,7 +3,8 @@
 <br/>
 <div id = 'editForm'>
 <h1>Edit Apartment Details</h1>
-<h3><%= link_to 'Delete', apartment_path(@apartment), method: :delete, data: { confirm: 'Are you sure?' } %></h3>
+<h3><%= link_to 'Delete', @apartment, method: :delete, data: { confirm: 'Are you sure?' } %></h3>
+<!-- apartment_path(@apartment) -->
 <%= render 'form' %>
 </div>
 <br/>
