@@ -27,6 +27,7 @@ class Api::V1::PhotosController < ApplicationController
 
   else
       flash[:notice] = 'Sorry. You do not have access to this page'
+      redirect_to apartment_path(@photo.apartment_id)
     end
   end
 #   def create

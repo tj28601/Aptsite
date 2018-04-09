@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  # before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
 def create
 
@@ -9,6 +9,7 @@ def create
   # @photo = Photo.new(:apartment=>@apartment)
   # @photo.apartment_id = @apartment.id
   if @photo.save
+    flash[:notice] = "Your photo has been created successfully!"
   redirect_to apartment_path(@photo.apartment_id)
 end
 end
@@ -23,6 +24,8 @@ end
     else
         flash[:notice] = 'Sorry. You do not have access to this page'
 
+        redirect_to apartments_path
+      end
       end
 
     # @photos = @apartment.photos.build
@@ -69,9 +72,9 @@ end
   def photo_params
     params.require(:photo).permit(:photo_description, :image, :apartment_id)
   end
-  # def authenticate_user
-  #   if !user_signed_in? || !current_user.admin?
-  #     raise ActionController::RoutingError.new("Not Found")
-  #   end
-  # end
+  def authenticate_user
+    if !user_signed_in? || !current_user.admin?
+      raise ActionController::RoutingError.new("Not Found")
+    # end
+  end
 end
