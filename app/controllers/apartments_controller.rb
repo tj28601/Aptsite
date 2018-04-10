@@ -33,14 +33,14 @@ class ApartmentsController < ApplicationController
     if (current_user.role == 'admin')
     @apartment = Apartment.find(params[:id])
   else
-      flash[:notice] = 'You are not able to edit this page'
+      flash[:notice] = 'You are not able to edit this page.'
       redirect_to apartment_path
     end
   end
   def destroy
   @apartment = Apartment.find(params[:id])
   @apartment.destroy
-  flash[:notice] = 'Your post has been deleted'
+  flash[:notice] = 'Your post has been deleted.'
   redirect_to root_path
   end
 
@@ -56,7 +56,7 @@ class ApartmentsController < ApplicationController
       @apartment = Apartment.new
 
     else
-        flash[:notice] = 'Sorry. You do not have access to this page'
+        flash[:notice] = 'Sorry :( You do not have access to this page.'
         redirect_to apartments_path
       end
 

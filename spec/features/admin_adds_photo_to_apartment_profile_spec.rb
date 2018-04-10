@@ -25,7 +25,7 @@ describe 'New Photo Form' do
     fill_in 'Password', with: user3.password
     click_button 'Log in'
     visit "/apartments/#{apartment.id}/photos/new"
-    expect(page).to have_content "Sorry. You do not have access to this page"
+    expect(page).to have_content "Sorry :( You do not have access to this page."
 
   end
 end
