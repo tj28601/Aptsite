@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'New Apartment Form' do
+describe 'New Photo Form' do
   let!(:user2) {FactoryBot.create(:user, role: "admin")}
   let!(:user3) {FactoryBot.create(:user, role: "member")}
   let!(:apartment) {FactoryBot.create(:apartment)}

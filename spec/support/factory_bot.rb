@@ -19,4 +19,9 @@ FactoryBot.define do
     bedrooms "3"
     bathrooms "2"
   end
+  # FactoryBot.define do
+  #   factory :photo do
+  #     photo_description "Photo Description"
+  #     image "2"
+  #   end
 end
