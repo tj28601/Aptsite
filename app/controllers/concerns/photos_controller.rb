@@ -65,7 +65,7 @@ end
   @photo = Photo.find(params[:id])
 
      @photo.destroy
-     flash[:notice] = 'Your post has been deleted.'
+     flash[:notice] = 'Your photo has been deleted.'
       redirect_to apartment_url(@photo.apartment_id)
     # else
     #   flash[:notice] = 'Unable to delete :('
