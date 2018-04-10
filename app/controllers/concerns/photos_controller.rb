@@ -1,18 +1,19 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
-def create
+  def create
 
-  @apartment = Apartment.find(params[:apartment_id])
-  @photo = Photo.new(photo_params)
-  @photo.apartment = @apartment
-  # @photo = Photo.new(:apartment=>@apartment)
-  # @photo.apartment_id = @apartment.id
-  if @photo.save
-    flash[:notice] = "Your photo has been created successfully!"
-  redirect_to apartment_path(@photo.apartment_id)
+    @apartment = Apartment.find(params[:apartment_id])
+    @photo = Photo.new(photo_params)
+    @photo.apartment = @apartment
+    # @photo = Photo.new(:apartment=>@apartment)
+    # @photo.apartment_id = @apartment.id
+    if @photo.save
+      flash[:notice] = "Your photo has been created successfully!"
+    redirect_to apartment_path(@photo.apartment_id)
+  end
 end
-end
+
 
 
 
@@ -26,18 +27,23 @@ end
 
         redirect_to apartments_path
       end
-      end
+    end
 
     # @photos = @apartment.photos.build
-  end
+  # end
 
   def edit
+
     if (current_user.role == 'admin')
     @apartment= Apartment.find(params[:apartment_id])
     @photo = Photo.find(params[:id])
+
   else
-      flash[:notice] = 'You are not able to edit this page'
-        redirect_to apartment_path(@photo.apartment_id)
+    @apartment= Apartment.find(params[:apartment_id])
+    @photo = Photo.find(params[:id])
+      flash[:notice] = 'You are not able to edit any photos.'
+        # redirect_to apartments_path
+        redirect_to apartment_url (@photo.apartment_id)
     end
   end
 
@@ -75,6 +81,6 @@ end
   def authenticate_user
     if !user_signed_in? || !current_user.admin?
       raise ActionController::RoutingError.new("Not Found")
-    # end
+    end
   end
 end
