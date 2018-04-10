@@ -4,7 +4,7 @@ describe 'Edit Photo Form' do
   let!(:user2) {FactoryBot.create(:user, role: "admin")}
   let!(:user3) {FactoryBot.create(:user, role: "member")}
   let!(:apartment) {FactoryBot.create(:apartment)}
-  photo = Photo.create!(apartment_id: apartment.id, photo_description: "this is a photo description", image: "#{Rails.root}/spec/support/images/photo.png")
+  let!(:photo) {Photo.create!(apartment_id: apartment.id, photo_description: "this is a photo description", image: "photo.png")}
 
   scenario 'signed in admin submits form to edit photo' do
     visit '/'

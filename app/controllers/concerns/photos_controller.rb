@@ -23,7 +23,7 @@ end
       @photo = Photo.new
       # (:apartment=>@apartment)
     else
-        flash[:notice] = 'Sorry. You do not have access to this page'
+        flash[:notice] = 'Sorry :( You do not have access to this page.'
 
         redirect_to apartments_path
       end
@@ -55,7 +55,7 @@ end
           flash[:notice] = 'Photo updated successfully!'
       redirect_to @apartment
   else
-      flash[:notice] = 'You are not able to edit this page'
+      flash[:notice] = 'You are not able to edit this page.'
         redirect_to apartment_path(@photo.apartment_id)
     end
   end
@@ -65,7 +65,7 @@ end
   @photo = Photo.find(params[:id])
 
      @photo.destroy
-     flash[:notice] = 'Your post has been deleted'
+     flash[:notice] = 'Your post has been deleted.'
       redirect_to apartment_url(@photo.apartment_id)
     # else
     #   flash[:notice] = 'Unable to delete :('
