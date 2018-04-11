@@ -3,7 +3,7 @@ import { Router, browserHistory, Route, IndexRoute } from 'react-router';
 import ApartmentsContainer from './ApartmentsContainer';
 import NavBar from '../components/NavBar';
 import ApartmentShowContainer from './ApartmentShowContainer';
-import PhotoShowContainer from './PhotoShowContainer';
+// import PhotoShowContainer from './PhotoShowContainer';
 // import ApartmentInformation from './ApartmentInformation';
 import ApartmentTile from '../components/ApartmentTile';
 

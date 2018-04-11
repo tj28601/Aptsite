@@ -14,7 +14,7 @@ describe 'Delete Photo' do
     click_button 'Log in'
     visit "/apartments/#{photo.apartment_id}/photos/#{photo.id}/edit"
     click_link "Delete"
-    expect(page).to have_content 'Your post has been deleted.'
+    expect(page).to have_content 'Your photo has been deleted.'
   end
 
 scenario 'member (non-admin) attempts to delete photo' do
