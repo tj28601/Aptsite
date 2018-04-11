@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import ApartmentInformation from '../components/ApartmentInformation';
 import ApartmentPhotos from '../components/ApartmentPhotos';
-import PhotoFormContainer from './PhotoFormContainer';
 import PhotosTitle from '../components/PhotosTitle';
 
 class ApartmentShowContainer extends Component {
@@ -11,15 +10,11 @@ class ApartmentShowContainer extends Component {
     this.state = {
       apartmentInfo: {},
       photoInfo: []
-
     }
-    this.addNewPhoto = this.addNewPhoto.bind(this);
-
   }
+
   componentDidMount(){
     let apartmentId = this.props.params.id
-    // console.log(this.props.params.id)
-    // console.log(`/api/v1/apartments/${apartmentId}`)
     fetch(`/api/v1/apartments/${apartmentId}`)
       .then(response => {
         if (response.ok) {
@@ -53,45 +48,7 @@ class ApartmentShowContainer extends Component {
   }
 
 
-
-  addNewPhoto(formPayload) {
-
-    fetch('/api/v1/photos', {
-     credentials: 'same-origin',
-     method: 'POST',
-     body: JSON.stringify(formPayload),
-     headers: {
-       'Accept': 'application/json',
-       'Content-Type': 'application/json',
-       }
-
-   })
-
-   .then(response => {
-     if (response.ok) {
-       return response;
-     } else {
-       let errorMessage = `${response.status} (${response.statusText})`,
-           error = new Error(errorMessage);
-       throw(error);
-     }
-   })
-
-    .then(response => response.json())
-    // .then(json => {
-    //   debugger;
-    // })
-    .then(body => {
-      let newPhotoArray = this.state.photoInfo.concat(body)
-      this.setState({ photoInfo: newPhotoArray });
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
-
-  // handleThumbnailPhoto
   render(){
-    // let handleThumbnailPhoto = (firstPhoto) => this.showThumbnailPhoto(firstPhoto)
-    let addNewPhoto = (formPayload) => this.addNewPhoto(formPayload)
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
     return(

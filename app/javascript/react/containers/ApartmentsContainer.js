@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import ApartmentTile from '../components/ApartmentTile';
-// import ThumbnailPhotoContainer from './ThumbnailPhotoContainer'
 
 class ApartmentsContainer extends Component {
   constructor(props) {
@@ -51,7 +50,7 @@ class ApartmentsContainer extends Component {
     })
 
     return(
-      <div>  
+      <div>
         {apartmentObjects}
         </div>
 
