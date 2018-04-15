@@ -14,7 +14,7 @@ describe 'Apartment delete functionality' do
     expect(page).to have_content 'Edit Apartment Details'
     expect(page).to have_content 'Delete'
     click_link 'Delete'
-    expect(page).to have_content 'Your post has been deleted.'
+    expect(page).to have_content 'Your profile has been deleted.'
   end
 
 end

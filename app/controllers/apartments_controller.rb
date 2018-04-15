@@ -40,7 +40,7 @@ class ApartmentsController < ApplicationController
   def destroy
   @apartment = Apartment.find(params[:id])
   @apartment.destroy
-  flash[:notice] = 'Your post has been deleted.'
+  flash[:notice] = 'Your profile has been deleted.'
   redirect_to root_path
   end
 
