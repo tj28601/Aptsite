@@ -30,12 +30,10 @@ apartment_2 = Apartment.create!(
 
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
-      expect(returned_json["apartments"].length).to eq 2
+      expect(returned_json["apartments"].length).to eq 3
       expect(returned_json["apartments"][0]["title"]).to eq "Amazing Apartment"
       expect(returned_json["apartments"][1]["title"]).to eq "Cool Apartment"
 
     end
   end
-
-
 end

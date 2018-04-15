@@ -1,9 +1,18 @@
 # README
-[![Build Status](https://codeship.com/projects/c8882dc0-fe33-0135-2759-12381a098dca/status?branch=master)
-
-[![Code Climate](https://codeclimate.com/github/tj28601/Aptsite/badges/gpa.svg)](https://codeclimate.com/github/tj28601/Aptsite)
-
+[![Build Status](https://codeship.com/projects/c8882dc0-fe33-0135-2759-12381a098dca/status?branch=master) [![Code Climate](https://codeclimate.com/github/tj28601/Aptsite/badges/gpa.svg)](https://codeclimate.com/github/tj28601/Aptsite)
 [![Coverage Status](https://coveralls.io/repos/github/tj28601/Aptsite/badge.svg?branch=master)](https://coveralls.io/github/tj28601/Aptsite?branch=master)
+
+# Ruby Version
+* Ruby v 2.3.3
+* Rails v 5.1.5
+
+# Installation
+```
+bundle install
+npm install
+rake db:create
+rake db:migrate
+```
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
