@@ -41,6 +41,26 @@ RSpec.describe ApartmentsController, type: :controller do
     expect(Apartment.find(apartment.id).price).to eq '$1700'
     end
   end
+
+  describe "#new" do
+        it "apartment new" do
+          admin = FactoryBot.create(:user, role: "admin")
+          apartment = Apartment.create(  title: "Amazing Apartment",
+            description: "This apt is in Beacon Hill. Come check it out before it's too late!",
+            price: "$1800",
+            address: '17 4th St Boston, MA 02147',
+            bedrooms: '4',
+            bathrooms: '2')
+
+          sign_in(admin)
+
+          get :new, params: { id: apartment.id }
+
+      returned_json = response.body
+      expect(response.status).to eq 200
+    end
+  end
+
   describe "DELETE#destroy" do
     it 'An admin deletes an apartment profile' do
 

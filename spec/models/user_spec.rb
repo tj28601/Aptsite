@@ -1,6 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
+  it 'has a matching password confirmation for the password' do
+  user = User.new
+  user.password = 'password'
+  user.password_confirmation = 'otherpassword'
+
+  expect(user).to_not be_valid
+  expect(user.errors[:password_confirmation]).to_not be_blank
+end
+
+
   describe "#admin?" do
   it "is not an admin if the role is not admin" do
     user = FactoryBot.create(:user, role: "member")
@@ -12,6 +23,7 @@ RSpec.describe User, type: :model do
     expect(user.admin?).to eq(true)
   end
 end
+
 describe 'validations' do
     # it { should have_valid(:user_name).when('NewUserName') }
     it { should have_valid(:email).when('newemail@example.com') }
