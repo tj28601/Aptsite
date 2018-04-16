@@ -20,8 +20,6 @@ const ApartmentInformation = (props) => {
       <li>{`Available Date:${props.date_available}`}</li>
       <li>{`Description: ${props.description}`}</li>
 
-
-
       </div>
     </div>
   )

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import ReactDOM from 'react-dom';
 import ApartmentInformation from '../components/ApartmentInformation';
 import ApartmentPhotos from '../components/ApartmentPhotos';
 import PhotosTitle from '../components/PhotosTitle';

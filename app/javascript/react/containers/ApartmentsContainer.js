@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import ReactDOM from 'react-dom';
 import ApartmentTile from '../components/ApartmentTile';
 
 class ApartmentsContainer extends Component {
@@ -22,11 +21,7 @@ class ApartmentsContainer extends Component {
           throw(error);
         }
       })
-
       .then(response => response.json())
-      // .then(json => {
-      //   debugger;
-      // })
       .then(body => {
       this.setState({ apts: body.apartments });
       })
