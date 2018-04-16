@@ -1,5 +1,24 @@
 require 'rails_helper'
 
+RSpec.configure do |config|
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+end
+
+RSpec.describe Apartment do
+  describe 'apartment model creation' do
+    it 'returns list of apartments' do
+      user = FactoryBot.create(:user, role: "admin")
+
+      apartment_1 = FactoryBot.create(:apartment)
+      apartment_2 = FactoryBot.create(:apartment)
+
+      apartments = Apartment.all
+
+      expect(apartments).to include(apartment_1)
+      expect(apartments).to include(apartment_2)
+    end
+  end
+end
 RSpec.describe Apartment, type: :model do
   describe 'validations' do
     it { should have_valid(:title).when('Apt title') }
@@ -15,6 +34,8 @@ RSpec.describe Apartment, type: :model do
     it { should_not have_valid(:address).when("") }
     it { should_not have_valid(:bedrooms).when("") }
     it { should_not have_valid(:bathrooms).when("") }
+
+    it { should have_many :photos }
     end
   end
 
