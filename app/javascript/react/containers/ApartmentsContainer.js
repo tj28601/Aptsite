@@ -39,6 +39,7 @@ class ApartmentsContainer extends Component {
           title = {apt.title}
           price = {apt.price}
           thumbpic = {apt.thumbnail_photo}
+          pets = {apt.pets}
         />
 
       )

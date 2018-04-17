@@ -29,6 +29,7 @@ class ApartmentsController < ApplicationController
   end
 
   def index;
+
   end
 
   def new
@@ -42,6 +43,7 @@ class ApartmentsController < ApplicationController
   end
   def show;
     render :index
+
 
   end
 
