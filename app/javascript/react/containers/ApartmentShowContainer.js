@@ -51,7 +51,7 @@ class ApartmentShowContainer extends Component {
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
     return(
-
+      <div id = "photoarray">
       <ApartmentPhotos
           apartment_id={photo.apartment_id}
           key={photo.id}
@@ -59,7 +59,7 @@ class ApartmentShowContainer extends Component {
           description={photo.photo_description}
           image={photo.image}
         />
-
+      </div>
     )
     })
 

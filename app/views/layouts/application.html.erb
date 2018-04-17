@@ -11,22 +11,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
+
         <h1><a href="/">Connaughton & Associates</a></h1>
       </li>
       <br/>
       <br/>
       <br/>
+
       <li><a href="/aboutdetails">About</a></li>
       <li><a href="/aboutdetails">Back</a></li>
-      <li><%= link_to"Apply Today", "RentalApplication.pdf", :target => "_blank"%></li>
+      <li><%= link_to"Apply Today","/RentalApplication.pdf", :target=> "_blank"%></li>
+
     </ul>
 
 
     <section class="top-bar-section">
+
       <ul class="right">
         <!-- <li><a href="/aboutdetails">About</a></li>
         <li><a href="/aboutdetails">About</a></li>
@@ -41,6 +44,7 @@
 
 
         <%- end -%>
+
       </ul>
     </section>
 

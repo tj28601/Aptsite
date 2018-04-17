@@ -17,7 +17,7 @@
  */
 
  body {
-  background: image-url("background.jpg") no-repeat;
+  background: image-url("background.jpg");
   // background-size: 960px 720px;
   background-size: 1460px 1220px;
   // border: 3px solid #5C1912;
@@ -37,17 +37,13 @@
 // }
 
 #apartmentIndex{
-  // background-color: #F1F1F1;
+
   border: 5.5px solid black;
-  // opacity: 0.5;
   background: rgba(241,241,241,0.5);
-  // padding-top: 40px;
   padding-bottom: 10px;
   margin-top: 15px;
   width: auto;
   height: auto;
-  // margin-left: auto;
-  // margin-right: auto;
   columns: 3;
   margin: 3em;
   text-align: center;
@@ -60,22 +56,35 @@
 
 #apartmentInformation{
   background: rgba(241,241,241,0.7);
+  text-align: left;
+  background-position: top;
+  background-position: auto;
+
+}
+#photoarray{
+  column-count: 1;
+  column-gap: 7.5em;
+  margin: 25px;
+  // margin:left;
+  width: 75%;
+  float: center;
+  background-position: auto;
+  margin-left: 80px;
+}
+#apartmentPhotoDisplay{
+  // background: rgba(241,241,241,0.7);
   text-align: bottom;
   background-position: top;
   // padding-top: 7.5em;
-
+  // border: 5.5px solid black;
+  // padding-bottom: 10px;
+  // margin-top: 15px;
 }
-
-#apartmentPhotos{
-  background: rgba(241,241,241,0.7);
-  text-align: bottom;
-  background-position: top;
-  // padding-top: 7.5em;
-  border: 5.5px solid black;
-  padding-bottom: 10px;
-  margin-top: 15px;
-
-}
+// .photolist{
+//      column-count: 1;
+//      column-gap: 2.5em;
+//      margin: 15px;
+// }
 
 #apartmentInformationText{
   color: black;
@@ -85,50 +94,33 @@
 
 #logoImage{
 // background: image-url("logo.jpg");
-// background-position: center top;
-// background-size: 300px;
-// background-repeat: no-repeat;
-// height: 200px;
-// width: 500px;
-// margin: auto;
-// padding: 10px;
-// margin-bottom: 115px;
-// background-image: url("logo.jpg") no-repeat;
-// background-position: center center, center top;
-// background: url("blacklogo.jpg") no-repeat;
-// background-size: 250px 200px;
-// background-position: center;
+
 }
 .top-bar{
   // background-image: url("blacklogo.jpg") no-repeat;
-  // background-size: 10px 10px;
-  // background-position: center center, center top;
-  // background-size: 50px 50px;
+
   height: 200px;
   // padding-top: 10px;
-  // background: image-url("blacklogo.jpg") no-repeat;
-  // background-size: 250px 200px;
-  // background-position: center;
+
   background: image-url("blacklogo.jpg") no-repeat;
   background-size: 350px 350px;
   background-position: center;
   background-color: black;
+
 }
 
-.title-area{
+.title-area ul{
   // background: image-url("blacklogo.jpg") no-repeat;
-  // background-size: 200px 200px;
-  // background-position: center
+
   background-color: black;
+  color: orange;
 }
-.top-bar-section{
-  // background: image-url("blacklogo.jpg") no-repeat;
-  // background-size: 250px 200px;
-  // background-position: center;
-// height: 150px;
-background-color: black;
+.name {
+  background-color: black;
+  color: green;
 
 }
+
 
 #editForm{
   background: rgba(241,241,241,0.7);
@@ -193,8 +185,12 @@ background-color: black;
 
 #photosTitle{
   background: rgba(241,241,241,0.7);
-  text-align: bottom;
-  background-position: top;
+  // text-align: center;
+  // background-position: top;
+  // width: 70%;
+  // background-position: center;
+  // margin-left: 180px;
+
 }
 
 #photosTitleText{
@@ -209,7 +205,7 @@ background-color: black;
   border: 5.5px solid black;
   margin: 1em;
 }
-#navBar{
-  color:black;
+#navtext{
+  color: black;
   margin: 0;
 }
