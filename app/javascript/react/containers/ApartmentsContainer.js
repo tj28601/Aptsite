@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ApartmentTile from '../components/ApartmentTile';
-
+import NewApt from '../components/NewApt';
 class ApartmentsContainer extends Component {
   constructor(props) {
     super(props);
@@ -47,7 +47,11 @@ class ApartmentsContainer extends Component {
 
     return(
       <div>
+      <NewApt
+      />
         {apartmentObjects}
+        <NewApt
+        />
         </div>
 
 

@@ -8,8 +8,8 @@ const PhotosTile = props => {
 
       <div id='photosTitle'>
       <div id='photosTitleText'>
-        <h1>Apartment Photos </h1>
-        <h5><a id="addNewPhoto" href={`/apartments/${props.apt_id}/photos/new`}>Add New Photo</a></h5>
+        <h1>Apartment Photos: </h1>
+        <h5><button id='photobutton'><a id="addNewPhoto" href={`/apartments/${props.apt_id}/photos/new`}>Add New Photo</a></button></h5>
       </div>
       </div>
 

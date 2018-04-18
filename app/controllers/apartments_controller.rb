@@ -44,7 +44,6 @@ class ApartmentsController < ApplicationController
   def show;
     render :index
 
-
   end
 
   def update
