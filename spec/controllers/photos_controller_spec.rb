@@ -10,7 +10,7 @@ RSpec.describe PhotosController, type: :controller do
     price: "$1700",
     address: '13 4th St Boston, MA 02147',
     bedrooms: '3',
-    bathrooms: '3'
+    bathrooms: '3',
     )
 
     # photo = Photo.create!(apartment_id: apartment.id,

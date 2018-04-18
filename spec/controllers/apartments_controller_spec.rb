@@ -11,7 +11,7 @@ RSpec.describe ApartmentsController, type: :controller do
     price: "$1700",
     address: '13 4th St Boston, MA 02147',
     bedrooms: '3',
-    bathrooms: '3'
+    bathrooms: '3',
     )
 
   describe "POST#create" do

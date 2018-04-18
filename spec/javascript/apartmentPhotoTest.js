@@ -29,7 +29,7 @@ describe('ApartmentPhotos', ()=>{
 });
 
   it('Should return html with the data from props', () => {
-    expect(wrapper.find('li').at(1)).toHaveText('A description')
+    expect(wrapper.find('li').at(1)).toHaveText('*** A description ***')
 
 })
 })
