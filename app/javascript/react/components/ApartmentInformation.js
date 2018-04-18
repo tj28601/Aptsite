@@ -17,7 +17,7 @@ const ApartmentInformation = (props) => {
       <li>{`Bathrooms: ${props.bathrooms}`}</li>
       <li>{`Size: ${props.sq_ft}ft`}<sup>2</sup></li>
       <li>{`Pets: ${props.pets}`}</li>
-      <li>{`Available Date: ${props.date_available}`}</li>
+      <li>{`Available Date: ${props.datedisplay}`}</li>
       <li>{`Description: ${props.description}`}</li>
 
       </div>

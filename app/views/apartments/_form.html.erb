@@ -27,6 +27,7 @@
 <%= f.label :pets %>
 <%= f.text_field :pets %>
 <%= f.label :date_available %>
+<!-- <%= f.datetime_select(:date_available, :order => [:month, :day, :year]) %> -->
 <%= f.date_field :date_available %>
 <%= f.label :thumbnail_photo, "Attach a thumbnail photo: " %>
 <%= f.file_field :thumbnail_photo %>

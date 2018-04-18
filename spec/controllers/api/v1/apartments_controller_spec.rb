@@ -9,7 +9,8 @@ RSpec.describe Api::V1::ApartmentsController, type: :controller do
     price: "$1700",
     address: '13 4th St Boston, MA 02147',
     bedrooms: '3',
-    bathrooms: '3'
+    bathrooms: '3',
+  date_available: '2018-07-01'
     )
 
 
@@ -19,7 +20,8 @@ apartment_2 = Apartment.create!(
     price: "$2200",
     address: '28 7th St Boston, MA 02123',
     bedrooms: '3',
-    bathrooms: '4'
+    bathrooms: '4',
+    date_available: '2018-07-02'
     )
 
 

@@ -78,6 +78,7 @@ class ApartmentShowContainer extends Component {
         date_available={this.state.apartmentInfo.date_available}
         description={this.state.apartmentInfo.description}
         photo={this.state.apartmentInfo.photo}
+        datedisplay={this.state.apartmentInfo.date_display}
         />
         <br/>
         <br/>

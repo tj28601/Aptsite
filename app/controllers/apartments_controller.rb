@@ -35,6 +35,7 @@ class ApartmentsController < ApplicationController
   def new
     if (current_user.role == 'admin')
       @apartment = Apartment.new
+
     else
         flash[:notice] = 'Sorry :( You do not have access to this page.'
         redirect_to apartments_path
