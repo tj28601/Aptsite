@@ -19,9 +19,9 @@ const ApartmentTile = props => {
 
 
 
-        <h3>&bull; {props.description}</h3>
-        <h3>&bull; {props.pets}</h3>
-        <h3>&bull; {props.address}</h3>
+        <h3><li>{props.description}</li></h3>
+        <h3><li>{props.pets}</li></h3>
+        <h3><li>{props.address}</li></h3>
       </div>
 
     )

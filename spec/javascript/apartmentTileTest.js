@@ -3,6 +3,7 @@ import ApartmentTile from '../../app/javascript/react/components/ApartmentTile'
 import { shallow, mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
+import 'jasmine-ajax';
 
 
 Object.assign(global, {
@@ -24,13 +25,13 @@ describe('ApartmentTile', ()=>{
       <ApartmentTile />
     )
     wrapper.setProps({price: '$1200',
-    title: 'Here is a title', description: 'here is another apt description', address: '12 Hawthorne St Boston, MA 02144'
+    title: 'Here is a title', description: 'here is another apt description', address: '12 Hawthorne St Boston, MA 02144', pets: 'no pets'
     })
   });
 
   it('Should return html with the data from props', () => {
-    console.log(wrapper.find('h2').first());
-    expect(wrapper.find('li').first()).toHaveText('$1200')
+    console.log(wrapper.find('h3').first());
+    expect(wrapper.find('h3').first()).toHaveText('here is another apt description')
 
   })
 })

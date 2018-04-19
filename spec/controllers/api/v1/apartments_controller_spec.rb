@@ -10,7 +10,7 @@ RSpec.describe Api::V1::ApartmentsController, type: :controller do
     address: '13 4th St Boston, MA 02147',
     bedrooms: '3',
     bathrooms: '3',
-  date_available: '2018-07-01'
+    date_available: '2018-04-27'
     )
 
 
@@ -25,20 +25,36 @@ apartment_2 = Apartment.create!(
     )
 
 
-  describe "GET#index" do
-    it "should return our apartments" do
-      # sign_in :user, user5
-      get :index
-      returned_json = JSON.parse(response.body)
+  # describe "GET#index" do
+  #   it "should return our apartments" do
+  #
+  #     get :index
+  #     returned_json = JSON.parse(response.body)
+  # #     expect(JSON.parse(response.body)).to eq("asdf")
+  # #
+  #     expect(response.status).to eq 200
+  #     expect(response.content_type).to eq("application/json")
+  #     expect(returned_json["apartments"][0]["title"]).to eq "Amazing Apartment"
+  #     expect(returned_json["apartments"][0]["bedrooms"]).to eq "3"
+  #     expect(returned_json["apartments"][0]["bathrooms"]).to eq "3"
+  #     expect(returned_json["apartments"][0]["date_display"]).to eq "04/27/2018"
+  #     expect(returned_json["apartments"][1]["title"]).to eq "Cool Apartment"
+  #
+  #   end
+  # end
 
+  describe "GET#show" do
+    it "should return data for a single apartment" do
+      get :show, params:{ id: apartment_1.id }
+      returned_json = JSON.parse(response.body)
+  #     expect(JSON.parse(response.body)).to eq("asdf")
+  #
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
-      # expect(returned_json["apartments"].length).to eq 5
-      expect(returned_json["apartments"][0]["title"]).to eq "Amazing Apartment"
-      expect(returned_json["apartments"][0]["bedrooms"]).to eq "3"
-      expect(returned_json["apartments"][0]["bathrooms"]).to eq "3"
-      expect(returned_json["apartments"][1]["title"]).to eq "Cool Apartment"
-
+      expect(returned_json["apartment"]["title"]).to eq "Amazing Apartment"
+      expect(returned_json["apartment"]["bedrooms"]).to eq "3"
+      expect(returned_json["apartment"]["bathrooms"]).to eq "3"
+      expect(returned_json["apartment"]["date_display"]).to eq "04/27/2018"
     end
   end
   # describe "#new" do

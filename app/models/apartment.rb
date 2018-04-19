@@ -11,6 +11,7 @@ class Apartment < ApplicationRecord
 
 def date_display
   self.date_available.strftime("%m/%d/%Y")
+  # DateTime.strptime(self.date_available.strftime("%m/%d/%Y"))
 end
 
 
