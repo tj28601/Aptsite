@@ -6,11 +6,7 @@ class ThumbnailPhotoUploader < CarrierWave::Uploader::Base
      model.read_attribute :thumbnail_photo
    end
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.test?
-    storage :file
-  else
-    storage :fog
-  end
+  storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.

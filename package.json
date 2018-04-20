@@ -7,6 +7,7 @@
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.6.0",
     "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "react-dropzone": "^4.2.9",
     "react_ujs": "^2.4.4",
     "superagent": "^3.8.2"
@@ -24,8 +25,7 @@
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "2.0.1",
     "phantomjs-prebuilt": "~2.1.14",
-    "react-addons-test-utils": "^15.6.2",
-    "react-dom": "^15.6.2",
+    "react-addons-test-utils": "~15.6.2",
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {

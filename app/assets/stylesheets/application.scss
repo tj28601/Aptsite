@@ -104,7 +104,6 @@ a {
 #apartmentInformation{
   background: rgba(241,241,241,0.8);
   text-align: left;
-  font-weight: bold;
   background-position: top;
   background-position: auto;
   margin: 4em;
@@ -147,7 +146,7 @@ ul .photolist{
 
 #apartmentInformationText{
   color: black;
-  font-size: 25px;
+  font-size: 20px;
   border: 5.5px solid black;
   padding: 2em;
 }
@@ -183,7 +182,7 @@ ul .photolist{
 
 
 #editForm{
-  background: rgba(241,241,241,0.8);
+  background: rgba(241,241,241,0.7);
   // text-align: bottom;
   // background-position: top;
   padding-top: 3.5em;
@@ -191,7 +190,7 @@ ul .photolist{
   // padding-bottom: 30em;
 }
 #editPhotoForm{
-  background: rgba(241,241,241,0.8);
+  background: rgba(241,241,241,0.7);
   // text-align: bottom;
   // background-position: top;
   padding-top: 3.5em;
@@ -199,14 +198,14 @@ ul .photolist{
   // padding-bottom: 30em;
 }
 #newPhotoForm{
-  background: rgba(241,241,241,0.8);
+  background: rgba(241,241,241,0.7);
   padding-top: 3.5em;
   border: 5.5px solid black;
 }
 #newApartmentForm{
   background: image-url("background.jpg");
   background-size: 1460px 1220px;
-    background: rgba(241,241,241,0.8);
+    background: rgba(241,241,241,0.7);
     padding-top: 3.5em;
     border: 5.5px solid black;
     width: 90%;
@@ -216,7 +215,7 @@ ul .photolist{
 }
 
 .flash{
-  background: rgba(241,241,241,0.8);
+  background: rgba(241,241,241,0.7);
   // text-align: bottom;
   // background-position: top;
   // padding-top: 3.5em;
@@ -232,7 +231,7 @@ ul .photolist{
 }
 
 #logIn{
-  background: rgba(241,241,241,0.8);
+  background: rgba(241,241,241,0.5);
   // text-align: bottom;
   // background-position: top;
   // padding-top: 3.5em;
@@ -246,7 +245,7 @@ ul .photolist{
 }
 
 #signUp{
-  background: rgba(241,241,241,0.8);
+  background: rgba(241,241,241,0.7);
   // text-align: bottom;
   // background-position: top;
   // padding-top: 3.5em;
@@ -256,7 +255,6 @@ ul .photolist{
   font-weight: bold;
   text-align: center;
   margin: 1em;
-  padding: 1em;
   // a{
   //   color:orange;
   // }
