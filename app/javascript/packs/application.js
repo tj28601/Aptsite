@@ -11,9 +11,9 @@ console.log('Hello World from Webpacker')
 
 import App from '../react/containers/App';
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 
-ReactDom.render(
+ReactDOM.render(
   <App />,
   document.getElementById('app')
 );
