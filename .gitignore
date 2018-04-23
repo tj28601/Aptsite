@@ -6,7 +6,6 @@
 
 # Ignore bundler config.
 /.bundle
-/public/uploads
 /app/assets/images
 /coverage
 
