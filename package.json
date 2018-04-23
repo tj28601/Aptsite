@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.2.0",
-    "@version/react-router-v3": "^1.0.0",
+    "react-router": "~3.2.0",
     "babel-preset-react": "^6.24.1",
     "prop-types": "^15.6.0",
     "react": "^15.4.2",
