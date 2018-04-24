@@ -2,11 +2,12 @@ class ApartmentPhotoUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
-  if Rails.env.test?
-    storage :file
-  else
-    storage :fog
-  end 
+
+  # if Rails.env.test?
+  #   storage :file
+  # else
+  #   storage :fog
+  # end
 
   def serializable_hash
      model.read_attribute :image
@@ -15,7 +16,7 @@ class ApartmentPhotoUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
 
-  # storage :file
+  storage :file
 
   # storage :fog
 
