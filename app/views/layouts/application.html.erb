@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
-    <%= javascript_include_tag "vendor/modernizr" %>
-
+  <%= javascript_include_tag "vendor/modernizr" %>
 
   <%= csrf_meta_tags %>
 </head>
@@ -27,13 +26,8 @@
 
     </ul>
 
-
     <section class="top-bar-section">
-
       <ul class="right">
-        <!-- <li><a href="/aboutdetails">About</a></li>
-        <li><a href="/aboutdetails">About</a></li>
-        <li><a href="/aboutdetails">About</a></li> -->
         <%- if current_user -%>
 
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
@@ -44,10 +38,8 @@
 
 
         <%- end -%>
-
       </ul>
     </section>
-
   </nav>
 
   <%- flash.each do |key, value| -%>
