@@ -9,26 +9,25 @@
 
   <%= csrf_meta_tags %>
 
-  <%= javascript_include_tag 'application' %>
 
-  <%= javascript_pack_tag 'application' %>
 </head>
 <body>
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
+  <div class="wrapper">
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
 
-        <h1><a href="/">Connaughton & Associates</a></h1>
-      </li>
-      <br/>
-      <br/>
-      <br/>
+          <h1><a href="/">Connaughton & Associates</a></h1>
+        </li>
+        <br/>
+        <br/>
+        <br/>
 
-      <li><a href="/aboutdetails">About</a></li>
-      <li><a href="/">Home</a></li>
-      <li><%= link_to"Apply Today","/RentalApplication.pdf", :target=> "_blank"%></li>
+        <li><a href="/aboutdetails">About</a></li>
+        <li><a href="/">Home</a></li>
+        <li><%= link_to"Apply Today","/RentalApplication.pdf", :target=> "_blank"%></li>
 
-    </ul>
+      </ul>
 
     <section class="top-bar-section">
       <ul class="right">
@@ -41,20 +40,22 @@
           <li><%= link_to 'Sign In', new_user_session_path %></li>
 
 
-        <%- end -%>
-      </ul>
-    </section>
-  </nav>
+          <%- end -%>
+        </ul>
+      </section>
+    </nav>
 
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <%- end -%>
 
-  <%= yield %>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
 
-  <%= yield :extra_footer %>
-
+    <%= yield :extra_footer %>
+  </div>
 </body>
 </html>
