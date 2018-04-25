@@ -19,6 +19,9 @@ default: &default
     - .sass
     - .scss
     - .css
+    - .module.sass
+    - .module.scss
+    - .module.css
     - .png
     - .svg
     - .gif
@@ -28,6 +31,9 @@ default: &default
 development:
   <<: *default
   compile: true
+
+
+
 
   # Reference: https://webpack.js.org/configuration/dev-server/
   dev_server:
