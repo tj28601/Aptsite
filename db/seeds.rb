@@ -21,7 +21,7 @@
 # mstislav = FactoryBot.create(:user)
 # user123 = FactoryBot.create(user_name: "bob", role: "admin", email: "clown@gmail.com", password: "password")
 
-apt1 = Apartment.find_or_create_by(title: "Nice 3BR 1.5 BA in Great Location!", description: "this apartment is located in fantastic, family-oriented neighborhood. NO DOGS ALLOWED", price: "$800", address: "47 8th Ave NE Hickory, NC 28602", bedrooms: "3", bathrooms: "1.5", sq_ft: "900", pets: "No Dogs allowed, but cats are okay. Meow!")
+apt1 = Apartment.find_or_create_by(title: "4 BR 2 BA Apt by the Charles River!", description: "BREATHTAKING apartment.", price: "$900", address: "32 State Street, Boston, MA 02144", bedrooms: "4", bathrooms: "2", sq_ft: "1020", pets: "All pets are welcome!", "date_available":"2018-10-01","thumbnail_photo":"thumb.jpeg","date_display":"10/01/2018")
 apt2 = Apartment.find_or_create_by(title: "2 BR 3BA Apt in Historic Downtown", description: "this apt is close to various bars and restaurants. Amazing location!", price: "$750", address: "24 2nd Ave SW Hickory, NC 28601", bedrooms: "2", bathrooms: "3", sq_ft: "750", pets: "No Pets.")
 apt3 = Apartment.find_or_create_by(title: "4 BR 2 BA Apt in Viewmont!", description: "Breath-taking apartment in AMAZING neighborhood. All pets are welcome! MEOW, WHOOOF", price: "$900", address: "37 6th St NW Hickory, NC 28601", bedrooms: "4", bathrooms: "2", sq_ft: "1020", pets: "All pets are welcome!")
 
