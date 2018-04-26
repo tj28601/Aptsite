@@ -9,7 +9,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../react/containers/App';
+import App from '../react/containers/app';
 
 ReactDOM.render(
   <App />,
