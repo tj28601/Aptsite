@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fetchdemo</title>
+  <title>Connaughton & Associates </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
-    <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
 
   <%= csrf_meta_tags %>
+
+
 </head>
 <body>
+  <div class="wrapper">
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
 
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">Fetchdemo</a></h1>
-      </li>
-      <br/>
-    <br/>
-    <br/>
-      <li><a href="/">Home</a></li>
-      <li><%= link_to"Apply Today","/demo.pdf", :target=> "_blank"%></li>
+          <h1><a href="/">Connaughton & Associates</a></h1>
+        </li>
+        <br/>
+        <br/>
+        <br/>
 
-    </ul>
+        <li><a href="/aboutdetails">About</a></li>
+        <li><a href="/">Home</a></li>
+        <li><%= link_to"Apply Today","/RentalApplication.pdf", :target=> "_blank"%></li>
+
+      </ul>
+
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
+
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
+
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
-      </ul>
-    </section>
-  </nav>
 
 
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
+          <%- end -%>
+        </ul>
+      </section>
+    </nav>
 
-  <%= yield %>
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <%- end -%>
 
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_pack_tag 'application' %>
-  <%= yield :extra_footer %>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+
+    <%= yield :extra_footer %>
+  </div>
 </body>
 </html>
