@@ -8,7 +8,6 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log('Hello World from Webpacker')
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../react/containers/app';
