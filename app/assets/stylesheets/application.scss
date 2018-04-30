@@ -31,7 +31,7 @@
 }
 
 #aboutdetailsText {
-  background: image-url("about.jpg") no-repeat;
+  background: image-url('about.jpg') no-repeat;
   background-size: 800px;
   background-position: center;
   background-position: bottom;
@@ -139,7 +139,7 @@ ul .photolist {
 
 .top-bar {
   height: 200px;
-  background-image: image-url('images/blacklogo.jpg') no-repeat;
+  background: image-url('blacklogo.jpg') no-repeat;
   background-size: 350px 350px;
   background-position: center;
   background-color: black;
