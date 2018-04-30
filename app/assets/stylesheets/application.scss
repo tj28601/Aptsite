@@ -15,6 +15,13 @@
  *= require foundation_and_overrides
 
  */
+ .top-bar {
+   height: 200px;
+   background: image-url('blacklogo.jpg') no-repeat;
+   background-size: 350px 350px;
+   background-position: center;
+   background-color: black;
+ }
 
  body {
   background: image-url("background.jpg");
@@ -135,14 +142,6 @@ ul .photolist {
 
 #logoImage {
 
-}
-
-.top-bar {
-  height: 200px;
-  background: image-url('blacklogo.jpg') no-repeat;
-  background-size: 350px 350px;
-  background-position: center;
-  background-color: black;
 }
 
 .title-area ul {
