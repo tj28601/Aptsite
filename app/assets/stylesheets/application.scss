@@ -144,10 +144,16 @@ ul .photolist {
 
 }
 
-.title-area ul {
-  background-color: black;
-  color: orange;
+#menu-outer li {
+  float: left;
 }
+
+#menu-outer li a {
+display: block;
+padding: 0px 25px 0px 25px;
+}
+
+
 
 .name {
   background-color: black;
@@ -158,19 +164,32 @@ ul .photolist {
 #editForm {
   background: rgba(241,241,241,0.8);
   padding-top: 3.5em;
+  margin: 0em, 1em;
   border: 5.5px solid black;
+  width: 90%;
+  margin-left: 70px;
+  background-position: center;
+  padding: 15px 40px;
 }
 
 #editPhotoForm {
   background: rgba(241,241,241,0.8);
   padding-top: 3.5em;
   border: 5.5px solid black;
+  width: 90%;
+  margin-left: 70px;
+  background-position: center;
+  padding: 15px 40px;
 }
 
 #newPhotoForm {
   background: rgba(241,241,241,0.8);
   padding-top: 3.5em;
   border: 5.5px solid black;
+  width: 95%;
+  margin-left: 38px;
+  background-position: center;
+  padding: 15px 40px;
 }
 
 #newApartmentForm {

@@ -9,11 +9,10 @@ class Apartment < ApplicationRecord
 
   has_many :photos
 
-def date_display
-  self.date_available.strftime("%m/%d/%Y")
-  # DateTime.strptime(self.date_available.strftime("%m/%d/%Y"))
-end
-
+  def date_display
+    self.date_available.strftime("%m/%d/%Y")
+    # DateTime.strptime(self.date_available.strftime("%m/%d/%Y"))
+  end
 
   mount_uploader :thumbnail_photo, ThumbnailPhotoUploader
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ApartmentTile from '../components/ApartmentTile';
-import NewApt from '../components/NewApt';
+import Welcome from '../components/Welcome';
 class ApartmentsContainer extends Component {
   constructor(props) {
     super(props);
@@ -32,14 +32,14 @@ class ApartmentsContainer extends Component {
 
       return(
         <ApartmentTile
-          key={apt.id}
-          id = {apt.id}
-          description = {apt.description}
-          address = {apt.address}
-          title = {apt.title}
-          price = {apt.price}
-          thumbpic = {apt.thumbnail_photo}
-          pets = {apt.pets}
+          key={ apt.id }
+          id={ apt.id }
+          description={ apt.description }
+          address={ apt.address }
+          title={ apt.title }
+          price={ apt.price }
+          thumbnail_photo_url={ apt.thumbnail_photo_url }
+          pets={ apt.pets }
         />
 
       )
@@ -47,12 +47,10 @@ class ApartmentsContainer extends Component {
 
     return(
       <div>
-      <NewApt
+      <Welcome
       />
         {apartmentObjects}
-        <NewApt
-        />
-        </div>
+      </div>
 
 
     );
