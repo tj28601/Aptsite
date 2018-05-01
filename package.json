@@ -2,11 +2,11 @@
   "name": "apartmentsss",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.3.1",
+    "@rails/webpacker": "^3.4.0",
     "babel-preset-react": "^6.24.1",
-    "prop-types": "^15.6.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "prop-types": "^15.6.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "react-router": "~3.2.0"
   },
   "devDependencies": {
@@ -24,7 +24,7 @@
     "phantomjs-prebuilt": "~2.1.14",
     "react-addons-test-utils": "~15.6.2",
     "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "2.11.1"
+    "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
     "start": "./bin/webpack-dev-server",
