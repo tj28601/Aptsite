@@ -15,7 +15,7 @@ const ApartmentTile = props => {
           <br/>
           <br/>
           <br/>
-        <h2><img src= {`/uploads/apartment/thumbnail_photo/${props.id}/${props.thumbpic}`} alt= "thumbnail photo"id="apartmentpic" height='300px' width='500px' /></h2>
+        <h2><img src= {props.thumbnail_photo_url} alt= "thumbnail photo"id="apartmentpic" height='300px' width='500px' /></h2>
 
 
 
