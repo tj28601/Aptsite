@@ -6,29 +6,24 @@
 
 # Ignore bundler config.
 /.bundle
-/coverage
+coverage/*
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
+log/*
+tmp/*
 !/log/.keep
 !/tmp/.keep
 
-/node_modules
-/yarn-error.log
+node_modules/*
+yarn-error.log
 
 .byebug_history
-/public/packs
-/public/packs-test
-/node_modules
+public/packs
+public/packs-test
+node_modules/*
 yarn-debug.log*
 
-
-
-/coverage
 .env
-
-
 
 .yarn-integrity
 /public/packs
