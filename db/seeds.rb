@@ -29,16 +29,44 @@ apt1 = Apartment.find_or_create_by!({
   bathrooms: "2",
   sq_ft: "1020",
   pets: "All pets are welcome!",
-  date_available:"2018-10-01"
+  date_available: "2018-10-01"
 })
 
-apt2 = Apartment.find_or_create_by(title: "2 BR 3BA Apt in Historic Beacon Hill", description: "Close to various bars and restaurants. AMAZING LOCATION!", price: "$750", address: "25 Beacon Street, Boston, MA 02215", bedrooms: "2", bathrooms: "3", sq_ft: "750", pets: "No Pets.", "date_available":"2018-07-01", "thumbnail_photo":"blacklogo.jpeg")
-apt3 = Apartment.find_or_create_by(title: "Nice 3BR 1.5 BA close to Fenway Park!", description: "Located in fantastic, family-oriented neighborhood", price: "$800", address: "47 8th Street, Boston, MA 02122", bedrooms: "3", bathrooms: "1.5", sq_ft: "900", pets: "No Dogs allowed, but cats are okay. Meow!", "date_available":"2018-09-01", "thumbnail_photo":"thumbnail3.jpg")
+apt2 = Apartment.find_or_create_by!({
+  title: "2 BR 3BA Apt in Historic Beacon Hill",
+  description: "Close to various bars and restaurants. AMAZING LOCATION!",
+  price: "$750", address: "25 Beacon Street, Boston, MA 02215",
+  bedrooms: "2",
+  bathrooms: "3",
+  sq_ft: "750",
+  pets: "No Pets.", date_available: "2018-07-01"
+})
+
+apt3 = Apartment.find_or_create_by!({
+  title: "Nice 3BR 1.5 BA close to Fenway Park!",
+  description: "Located in fantastic, family-oriented neighborhood",
+  price: "$800",
+  address: "47 8th Street, Boston, MA 02122",
+  bedrooms: "3",
+  bathrooms: "1.5",
+  sq_ft: "900",
+  pets: "No Dogs allowed, but cats are okay. Meow!",
+  date_available: "2018-09-01"
+})
 
 # aptphoto1 = Photo.find_or_create_by(apartment_id: 1, photo_description: "Amazing Photo!", image: "logo.jpg")
 # aptphoto2 = Photo.find_or_create_by(apartment_id: 2, photo_description: "cool photo!" , image: "blacklogo.jpg")
+
+apt1photo1 = Photo.find_or_create_by!({
+  apartment_id: 1,
+  photo_description: "Elegant Living Room with Marvelous Views !!!",
+  image: "livingroom1.jpeg"})
+apt1photo2 = Photo.find_or_create_by!({
+  apartment_id: 1,
+  photo_description: "Gorgeous bedroom with amazing views of the Boston Common!",
+  image_url: "https://heifetz.s3.amazonaws.com/uploads/photo/image/21/br2.jpeg"
+})
 aptphoto1 = Photo.find_or_create_by(apartment_id: 2, photo_description: "Living Room", image: "livingroom2.jpeg"),
 aptphoto2 = Photo.find_or_create_by(apartment_id: 2, photo_description: "Gorgeous Kitchen!", image: "kitchen2.jpeg"),
 aptphoto3 = Photo.find_or_create_by(apartment_id: 3, photo_description: "SPACIOUS Kitchen with BEAUTIFUL hardwood floors !!!", image: "kitchen3.jpeg")
-aptphoto4 = Apartment.find_or_create_by(apartment_id: 1, photo_description: "Elegant Living Room with Marvelous Views !!!", image: "livingroom1.jpeg")
 aptphoto5 = Photo.find_or_create_by(apartment_id":3,"id":10,"photo_description":"INCREDIBLE Living Room!","image":"livingroom3.jpeg"
