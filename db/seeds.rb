@@ -66,7 +66,7 @@ apt1photo2 = Photo.find_or_create_by!({
   photo_description: "Gorgeous bedroom with amazing views of the Boston Common!",
   image_url: "https://heifetz.s3.amazonaws.com/uploads/photo/image/21/br2.jpeg"
 })
-aptphoto1 = Photo.find_or_create_by(apartment_id: 2, photo_description: "Living Room", image: "livingroom2.jpeg"),
-aptphoto2 = Photo.find_or_create_by(apartment_id: 2, photo_description: "Gorgeous Kitchen!", image: "kitchen2.jpeg"),
-aptphoto3 = Photo.find_or_create_by(apartment_id: 3, photo_description: "SPACIOUS Kitchen with BEAUTIFUL hardwood floors !!!", image: "kitchen3.jpeg")
-aptphoto5 = Photo.find_or_create_by(apartment_id":3,"id":10,"photo_description":"INCREDIBLE Living Room!","image":"livingroom3.jpeg"
+# aptphoto1 = Photo.find_or_create_by(apartment_id: 2, photo_description: "Living Room", image: "livingroom2.jpeg"),
+# aptphoto2 = Photo.find_or_create_by(apartment_id: 2, photo_description: "Gorgeous Kitchen!", image: "kitchen2.jpeg"),
+# aptphoto3 = Photo.find_or_create_by(apartment_id: 3, photo_description: "SPACIOUS Kitchen with BEAUTIFUL hardwood floors !!!", image: "kitchen3.jpeg")
+# aptphoto5 = Photo.find_or_create_by(apartment_id":3,"id":10,"photo_description":"INCREDIBLE Living Room!","image":"livingroom3.jpeg"
