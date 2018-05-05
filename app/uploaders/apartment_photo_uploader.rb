@@ -8,7 +8,7 @@ class ApartmentPhotoUploader < CarrierWave::Uploader::Base
   else
     storage :fog
   end
-
+#asdf
   # def serializable_hash
   #    model.read_attribute :image
   #  end
