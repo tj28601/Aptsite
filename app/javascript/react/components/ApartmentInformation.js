@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import MapWithAMarker from './MyMapComponent';
 
 const ApartmentInformation = (props) => {
 
@@ -19,10 +20,12 @@ const ApartmentInformation = (props) => {
       <li>{`Pets: ${props.pets}`}</li>
       <li>{`Available Date: ${props.datedisplay}`}</li>
       <li>{`Description: ${props.description}`}</li>
-
+      <MapWithAMarker />
       </div>
     </div>
+
   )
 }
+
 
 export default ApartmentInformation;
