@@ -8,12 +8,12 @@ import ApartmentShowContainer from './ApartmentShowContainer';
 const App = props => {
   return(
     <div>
-    <Router history={browserHistory}>
+    <Router history={browserHistory} >
       <Route path= '/' component ={NavBar} >
 
         <IndexRoute component={ApartmentsContainer} />
           <Route path='/apartments' component={ApartmentsContainer} />
-            <Route path='/apartments/:id' component={ApartmentShowContainer}  />
+            <Route path='/apartments/:id' component={ApartmentShowContainer} />
         </Route>
         <ApartmentsContainer />
         </Router>
