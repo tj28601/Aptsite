@@ -79,6 +79,8 @@ class ApartmentShowContainer extends Component {
           description={ this.state.apartmentInfo.description }
           photo={ this.state.apartmentInfo.photo }
           datedisplay={ this.state.apartmentInfo.date_display }
+          latitude={ this.state.apartmentInfo.latitude }
+          longitude={ this.state.apartmentInfo.longitude }
           />
           <br/>
           <br/>

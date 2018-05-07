@@ -1,4 +1,5 @@
 class ApartmentSerializer < ActiveModel::Serializer
+
   attributes :id,
     :title,
     :description,
@@ -10,6 +11,8 @@ class ApartmentSerializer < ActiveModel::Serializer
     :pets,
     :date_available,
     :date_display,
-    :thumbnail_photo_url
+    :thumbnail_photo_url,
+    :latitude,
+    :longitude
 
 end

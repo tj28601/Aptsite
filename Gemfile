@@ -65,3 +65,6 @@ gem 'active_model_serializers'
 gem 'fog-aws'
 gem 'fog'
 gem 'carrierwave'
+
+gem 'geokit-rails'
+gem 'geocoder'
