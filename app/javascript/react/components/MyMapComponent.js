@@ -4,8 +4,9 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 
 
 const MapWithAMarker = compose(
+
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDboS0d_sYpMgl4MQJFw7N1Mghmi6XPU8Y&callback=initMap",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
@@ -14,11 +15,11 @@ const MapWithAMarker = compose(
   withGoogleMap
 )((props) =>
   <GoogleMap
-    defaultZoom={12}
-    defaultCenter={{ lat: 42, lng: -71 }}
+    defaultZoom={15}
+    defaultCenter={{ lat: props.latitude, lng: props.longitude }}
   >
   <Marker
-    position={{ lat: 42.1, lng: -71.1 }}
+    position={{ lat: props.latitude, lng: props.longitude }}
   />
   </GoogleMap>
 );
@@ -75,7 +76,7 @@ const MapWithAMarker = compose(
 // );
 
 <MapWithAMarker
-  googleMapURL="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"
+  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDboS0d_sYpMgl4MQJFw7N1Mghmi6XPU8Y&callback=initMap"
   loadingElement={<div style={{ height: `100%` }} />}
   containerElement={<div style={{ height: `400px` }} />}
   mapElement={<div style={{ height: `100%` }} />}
