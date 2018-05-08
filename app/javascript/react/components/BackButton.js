@@ -6,6 +6,7 @@ const BackButton = (props) => {
     <div>
       <button onClick={ browserHistory.goBack }>Back</button>
     </div>
+
   )
 }
 

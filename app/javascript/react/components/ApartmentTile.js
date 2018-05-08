@@ -5,8 +5,8 @@ import { Link } from 'react-router';
 
 const ApartmentTile = props => {
   let imgUrl = props.thumbnail_photo_url
-if (props.thumbnail_photo_url === 'default.png') {
-imgUrl = `https://heifetz.s3.amazonaws.com/heifetz/${props.imgUrl}`
+if (props.thumbnail_photo_url === '/images/fallback/logo.jpg') {
+imgUrl = 'logo.jpg'
 }
     return (
 
@@ -19,7 +19,6 @@ imgUrl = `https://heifetz.s3.amazonaws.com/heifetz/${props.imgUrl}`
           <br/>
           <br/>
         <h2><img src= {imgUrl} alt= "thumbnail photo"id="apartmentpic" height='300px' width='500px' /></h2>
-
 
 
         <h3><li>{props.description}</li></h3>
