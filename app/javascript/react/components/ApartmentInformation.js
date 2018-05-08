@@ -13,7 +13,7 @@ sqFeet = '(unspecified)'
 
     <div id='apartmentInformation'>
   <div id='apartmentInformationText'>
-      <h2>{props.title}</h2>
+      <h1>{props.title}</h1>
       <li>{`Rent: ${props.price}/month`}</li>
       <li>{`Address: ${props.address}`}</li>
       <li>{`Bedrooms: ${props.bedrooms}`}</li>
