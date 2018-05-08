@@ -13,9 +13,7 @@ sqFeet = '(unspecified)'
 
     <div id='apartmentInformation'>
   <div id='apartmentInformationText'>
-      <h1> Apartment Description: </h1>
-      <h5><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </button></h5>
-
+      <h2>{props.title}</h2>
       <li>{`Rent: ${props.price}/month`}</li>
       <li>{`Address: ${props.address}`}</li>
       <li>{`Bedrooms: ${props.bedrooms}`}</li>
@@ -24,6 +22,8 @@ sqFeet = '(unspecified)'
       <li>{`Pets: ${props.pets}`}</li>
       <li>{`Available Date: ${props.datedisplay}`}</li>
       <li>{`Description: ${props.description}`}</li>
+      <br/>
+      <h5><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </button></h5>
       <br/>
       <MapWithAMarker
       latitude={ props.latitude }
