@@ -18,12 +18,23 @@ class Apartment < ApplicationRecord
   validates :address, presence: true
   validates :bedrooms, presence: true
   validates :bathrooms, presence: true
+  validates :pets, presence: true
 
   has_many :photos
 
-  def date_display
+  # def date_display
+  #   if !self.date_available == nil
+  #   self.date_available.strftime("%m/%d/%Y")
+  # end
+
+    def date_display
+    if self.date_available.nil?
+      "TBA"
+else
     self.date_available.strftime("%m/%d/%Y")
   end
+end
+
 
 
   mount_uploader :thumbnail_photo, ThumbnailPhotoUploader
