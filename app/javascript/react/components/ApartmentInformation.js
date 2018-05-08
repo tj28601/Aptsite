@@ -17,7 +17,6 @@ sqFeet = '(unspecified)'
       <h5><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </button></h5>
 
       <li>{`Rent: ${props.price}/month`}</li>
-      <li>{`Title: ${props.title}`}</li>
       <li>{`Address: ${props.address}`}</li>
       <li>{`Bedrooms: ${props.bedrooms}`}</li>
       <li>{`Bathrooms: ${props.bathrooms}`}</li>
@@ -25,6 +24,7 @@ sqFeet = '(unspecified)'
       <li>{`Pets: ${props.pets}`}</li>
       <li>{`Available Date: ${props.datedisplay}`}</li>
       <li>{`Description: ${props.description}`}</li>
+      <br/>
       <MapWithAMarker
       latitude={ props.latitude }
       longitude={ props.longitude }
