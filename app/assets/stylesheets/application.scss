@@ -232,9 +232,9 @@ padding: 0px 25px 0px 25px;
     border: 5.5px solid black;
     color: black;
     font-weight: bold;
-    text-align: center;
-    margin: 1em;
-    padding: 1em;
+    text-align: left;
+    margin: 5em 10em;
+    padding: 2em;
 }
 .hidden {
   display: none;
@@ -276,4 +276,10 @@ padding: 0px 25px 0px 25px;
   text-align: center;
   margin: 1em;
   padding: 1em;
+}
+.textarea {
+  height: 200px;
+}
+.button {
+  background: black;
 }
