@@ -31,7 +31,7 @@ sqFeet = '(unspecified)'
       />
       </div>
     </div>
-
+//maybe add "book appointment" or "add to favorites" here ...
   )
 }
 
