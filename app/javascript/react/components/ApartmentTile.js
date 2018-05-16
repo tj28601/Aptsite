@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 
 
 const ApartmentTile = props => {
+// debugger;
   let imgUrl = props.thumbnail_photo_url
 if (props.thumbnail_photo_url === '/images/fallback/default.png') {
 imgUrl = 'default.png'
@@ -20,7 +21,7 @@ imgUrl = 'default.png'
           <br/>
         <h2><img src= {imgUrl} alt= "thumbnail photo"id="apartmentpic" height='300px' width='500px' /></h2>
 
-
+<button id="addToFavorites" onClick={props.addAptToFavs}>Add To Favorites</button>
         <h3><li>{props.description}</li></h3>
         <h3><li>{props.pets}</li></h3>
         <h3><li>{props.address}</li></h3>

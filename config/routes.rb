@@ -16,6 +16,7 @@ end
       resources :apartments
       resources :photos
       resources :users
+      resources :favorites
 
     end
   end

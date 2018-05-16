@@ -22,6 +22,9 @@
    background-position: center;
    background-color: black;
  }
+ section .top-bar-section {
+   background-color: black
+ }
 
  body {
   background: image-url("background.jpg");
@@ -132,6 +135,10 @@ ul .photolist {
      list-style-type: none;
     font-size: 42px;
 }
+
+//  .right {
+//   background-color: orange;
+// }
 
 #apartmentInformationText {
   color: black;
@@ -294,4 +301,60 @@ padding: 0px 25px 0px 25px;
 }
 .button {
   background: black;
+}
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+  // background: black;
+  // border: 5em;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  // background: #373a47;
+  background: white;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+  // color: white
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+  // background: white;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  // background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  height: 20px;
+  background: white;
+    border: 5.5px solid black;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  // color: #b8b7ad;
+  color: black;
+  padding: 0.8em;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }
