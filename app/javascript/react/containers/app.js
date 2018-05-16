@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, browserHistory, Route, IndexRoute } from 'react-router';
 import ApartmentsContainer from './ApartmentsContainer';
-import NavBar from '../components/NavBar';
+// import NavBar from '../components/NavBar';
 import ApartmentShowContainer from './ApartmentShowContainer';
 
 
@@ -9,7 +9,7 @@ const App = props => {
   return(
     <div>
     <Router history={browserHistory} >
-      <Route path= '/' component ={NavBar} >
+      <Route path= '/' component ={ApartmentsContainer} >
 
         <IndexRoute component={ApartmentsContainer} />
           <Route path='/apartments' component={ApartmentsContainer} />
@@ -21,5 +21,5 @@ const App = props => {
   )
 }
 
-//asdfasdfasasdfasdfasdf
+
 export default App;

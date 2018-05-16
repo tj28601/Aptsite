@@ -27,13 +27,13 @@ class Apartment < ApplicationRecord
   #   self.date_available.strftime("%m/%d/%Y")
   # end
 
-    def date_display
+  def date_display
     if self.date_available.nil?
-      "TBA"
-else
-    self.date_available.strftime("%m/%d/%Y")
+        "TBA"
+    else
+      self.date_available.strftime("%m/%d/%Y")
+    end
   end
-end
 
 
 
