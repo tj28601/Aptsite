@@ -1,5 +1,6 @@
 class FavoriteSerializer < ActiveModel::Serializer
-  attributes :id,
+  attributes :user_id,
+  :id,
    :title,
    :description,
    :price,

@@ -5,12 +5,13 @@ class Favorite < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  validates_uniqueness_of :address, presence: true
+  validates :address, presence: true
   validates :bedrooms, presence: true
   validates :bathrooms, presence: true
   validates :pets, presence: true
 
   has_many :photos
+  # belongs_to :user
 
   def date_display
     if self.date_available.nil?
