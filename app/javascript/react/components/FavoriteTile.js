@@ -5,7 +5,7 @@ const FavoriteTile = props => {
 
   return (
     <div>
-  <li>{`${props.address} ${props.title}`}</li>
+  <li>{`${props.address} ${props.title}`}<button id="deleteFromFavorites" onClick={props.deleteFavorite}>Delete From Favorites</button></li>
     </div>
 
   )

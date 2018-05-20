@@ -12,6 +12,7 @@ class ApartmentsContainer extends Component {
       favorites: [],
     }
         this.addToFavorites = this.addToFavorites.bind(this);
+        this.deleteFromFavs = this.deleteFromFavs.bind(this);
   }
 
   componentDidMount() {
@@ -32,7 +33,13 @@ class ApartmentsContainer extends Component {
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
 
-      fetch('/api/v1/favorites')
+      fetch('/api/v1/favorites', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          credentials: 'same-origin'
+        })
       .then(response => {
         if (response.ok) {
           return response;
@@ -43,6 +50,9 @@ class ApartmentsContainer extends Component {
           }
       })
       .then(response => response.json())
+      // .then(json => {
+      //   debugger;
+      // })
       .then(body => {
         let allFavorites = body.favorites
           this.setState({ favorites: allFavorites });
@@ -50,8 +60,14 @@ class ApartmentsContainer extends Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
 
-//     componentDidMount(){
-// fetch('/api/v1/favorites')
+//     componentWillMount(){
+// fetch('/api/v1/favorites', {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     credentials: 'same-origin'
+//   })
 // .then(response => {
 //   if (response.ok) {
 //     return response;
@@ -62,6 +78,9 @@ class ApartmentsContainer extends Component {
 //     }
 // })
 // .then(response => response.json())
+// // .then(json => {
+// //   debugger;
+// // })
 // .then(body => {
 //   let allFavorites = body.favorites
 //     this.setState({ favorites: allFavorites });
@@ -69,7 +88,7 @@ class ApartmentsContainer extends Component {
 // .catch(error => console.error(`Error in fetch: ${error.message}`));
 // }
 
-addToFavorites(apartment){
+  addToFavorites(apartment){
   fetch('/api/v1/favorites', {
     credentials: 'same-origin',
     method: 'post',
@@ -84,11 +103,31 @@ addToFavorites(apartment){
         this.setState({ favorites: favoritesArray })
         })
   }
+
+  deleteFromFavs(current_favorite){
+    fetch('/api/v1/favorites/' + current_favorite, {
+      method: 'DELETE',
+      credentials: 'same-origin',
+      // body: JSON.stringify(book),
+      headers: {
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest'
+     }
+
+    }).then((response) => response.json())
+    const newFavs = this.state.favorites.filter(favorite => favorite.id !== current_favorite)
+      this.setState({favorites: newFavs})
+
+ }
+
   render() {
     let sideBar = (
   <SideBarComponent
     favorites={this.state.favorites}
+    deleteFromFavs={this.deleteFromFavs}
+    pageWrapId={ "sidebarburgercomponent" }
   />
+
 )
 
     let apartmentObjects = this.state.apts.map((apt) =>{
@@ -106,10 +145,12 @@ addToFavorites(apartment){
       let latitude= apt.latitude
       let longitude= apt.longitude
       let addAptToFavs = () => this.addToFavorites(apt)
+      let deleteFav = () => this.deleteFromFavs(apt)
 
       return(
         <ApartmentTile
           addAptToFavs={ addAptToFavs }
+          deleteFav={ deleteFav }
           key={ id }
           id={ id }
           description={ description }
@@ -130,10 +171,15 @@ addToFavorites(apartment){
     })
 
     return(
+
       <div>
       <div>
-            {sideBar}
-            </div>
+
+
+      {sideBar}
+
+      </div>
+
       <div>
       <Welcome
       />

@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :email, presence: true, uniqueness: true
+  has_many :favorites
 
-         def admin?
+  def admin?
     role == "admin"
   end
 end
