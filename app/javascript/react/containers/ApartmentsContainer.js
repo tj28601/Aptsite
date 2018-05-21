@@ -165,6 +165,7 @@ class ApartmentsContainer extends Component {
           date_available={ date_available }
           latitude={ latitude }
           longitude={ longitude }
+          favorites = { this.state.favorites }
         />
 
       )
