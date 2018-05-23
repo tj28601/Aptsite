@@ -1,11 +1,10 @@
 import React from 'react';
 
-// Router, browserHistory, Route, IndexRoute,
 const FavoriteTile = props => {
 
   return (
     <div>
-  <li>{`${props.address} ${props.title}`}<button id="deleteFromFavorites" onClick={props.deleteFavorite}>Delete From Favorites</button></li>
+  <h3>{`${props.address}`} <button id="deleteFromFavorites" onClick={props.deleteFavorite}><h2><i className="fas fa-times" style={{color: 'red'}}></i></h2></button></h3>
     </div>
 
   )

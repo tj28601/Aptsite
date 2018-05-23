@@ -12,9 +12,9 @@ imgUrl = 'default.png'
 }
 let starButton = <button id="starId" onClick={props.addAptToFavs}><h1><i className="far fa-star"></i></h1></button>;
 let favArray = props.favorites.map((fav) => {
-  console.log(fav.address)
+  // let id=cow
   if (fav.address === props.address) {
-    starButton = <h1><i className="fas fa-star" style={{color: '#FFCA3F'}}></i></h1>
+    starButton = <h1><i className="fas fa-star" style={{color: '#FFCA3F'}}></i></h1>;
   }
   // else {
   //   starButton = <i className="far fa-star"></i>
