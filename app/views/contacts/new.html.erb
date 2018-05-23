@@ -1,14 +1,15 @@
 <div id="contactUs">
-  <h1 id="page_title">Say Hello!</h1>
-
+  <h1 id="page_title">Feel free to send us a message! We'll get back to you ASAP.</h1>
+<br/>
     <%= form_for @contact do |f| %>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name, required: true %>
+    <%= f.label :name, class: "form_label_styling" %><br/>
+    <%= f.text_field :name, id: "field_styling", required: true %>
+
     <br/>
-    <%= f.label :email %><br/>
-    <%= f.email_field :email, required: true %>
+    <%= f.label :email, class: "form_label_styling" %><br/>
+    <%= f.email_field :email,id: "field_styling", required: true %>
     <br/>
-    <%= f.label :message %><br/>
+    <%= f.label :message, class: "form_label_styling" %><br/>
     <%= f.text_area :message, as: :text, class: "textarea" %>
     <div class="hidden">
       <%= f.label :nickname %><br/>

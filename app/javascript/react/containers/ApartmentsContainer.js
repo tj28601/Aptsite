@@ -32,7 +32,6 @@ class ApartmentsContainer extends Component {
       this.setState({ apts: body.apartments });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
-
       fetch('/api/v1/favorites', {
           method: 'GET',
           headers: {
@@ -119,9 +118,7 @@ class ApartmentsContainer extends Component {
       this.setState({favorites: newFavs})
 
  }
- // componentWillMount() {
- //   this.deleteFromFavs()
- // }
+
 
   render() {
     let sideBar = (

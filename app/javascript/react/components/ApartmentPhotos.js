@@ -1,8 +1,9 @@
 import React from 'react';
 
+import Gallery from 'react-grid-gallery';
 
 const ApartmentPhotos = props => {
-
+debugger;
   return(
     <div id='apartmentPhotoDisplay'>
     <div id="apartmentPhotoDisplayText">

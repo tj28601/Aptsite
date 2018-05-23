@@ -10,6 +10,7 @@
     "react-burger-menu": "^2.4.4",
     "react-dom": "^15.4.2",
     "react-google-maps": "^9.4.5",
+    "react-grid-gallery": "^0.4.11",
     "react-router": "~3.2.0"
   },
   "devDependencies": {
