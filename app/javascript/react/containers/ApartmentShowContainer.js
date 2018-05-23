@@ -3,14 +3,30 @@ import ApartmentInformation from '../components/ApartmentInformation';
 import ApartmentPhotos from '../components/ApartmentPhotos';
 import PhotosTitle from '../components/PhotosTitle';
 
+
+
 class ApartmentShowContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
       apartmentInfo: {},
-      photoInfo: []
+      photoInfo: [],
+      images: []
     }
+    // this.onSelectImage = this.onSelectImage.bind(this);
   }
+//   onSelectImage (index, image) {
+//     var images = this.state.images.slice();
+//     var img = images[index];
+//     if(img.hasOwnProperty("isSelected"))
+//         img.isSelected = !img.isSelected;
+//     else
+//         img.isSelected = true;
+//
+//     this.setState({
+//         images: images
+//     });
+// }
 
   componentDidMount(){
     let apartmentId = this.props.params.id
@@ -92,8 +108,16 @@ class ApartmentShowContainer extends Component {
           <br/>
           <br/>
           <br/>
+          <div style={{
+              display: "block",
+              minHeight: "1px",
+              width: "100%",
+              border: "1px solid #ddd",
+              overflow: "auto"}}></div>
+         <Gallery images={photoObjects}
+                  lightboxWidth={1536}
+          />
 
-         {photoObjects}
        </div>
     );
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, browserHistory, Route, IndexRoute } from 'react-router';
 import ApartmentsContainer from './ApartmentsContainer';
 import NavBar from '../components/NavBar'
-import SideBarComponent from '../components/SideBarComponent';
+// import SideBarComponent from '../components/SideBarComponent';
 import ApartmentShowContainer from './ApartmentShowContainer';
 
 
