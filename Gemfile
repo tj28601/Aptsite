@@ -65,6 +65,7 @@ gem 'active_model_serializers'
 gem 'fog-aws'
 gem 'fog'
 gem 'carrierwave'
+gem 'twilio-ruby', '~> 5.10', '>= 5.10.1'
 
 gem 'geokit-rails'
 gem 'geocoder'

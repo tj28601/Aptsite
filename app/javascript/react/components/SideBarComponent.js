@@ -22,15 +22,21 @@ const SideBarComponent = props => {
         />
       )
     })
-//
+
 
     return(
+
       <Menu id='sideBar'>
-         <h3 id='favorites'> My Favorites </h3>
+         <a id="favorites" className="menu-item" href="/"><i className="fas fa-home"></i> Home</a>
+         <a id="contact" className="menu-item" href="/contacts/new"><i className="far fa-envelope"></i> Contact Us</a>
+         <a id="about" className="menu-item" href="/aboutdetails"><i className="fas fa-users"></i> About</a>
+         <a id="about" className="menu-item" href="/aboutdetails"><i className="far fa-star"></i> My Favorites</a>
          <ul>
-        {favoritesArray}
-         </ul>
+  {favoritesArray}
+   </ul>
+
        </Menu>
+
     )
 }
 // return (

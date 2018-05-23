@@ -119,6 +119,9 @@ class ApartmentsContainer extends Component {
       this.setState({favorites: newFavs})
 
  }
+ // componentWillMount() {
+ //   this.deleteFromFavs()
+ // }
 
   render() {
     let sideBar = (
@@ -187,7 +190,6 @@ class ApartmentsContainer extends Component {
         {apartmentObjects}
       </div>
       </div>
-
 
     );
   }
