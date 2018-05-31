@@ -23,8 +23,9 @@
 
 apt1 = Apartment.find_or_create_by!({
   title: "4 BR 2 BA Apt by the Charles River!",
-  description: "BREATHTAKING apartment.",
-  price: "$900", address: "32 State Street, Boston, MA 02144",
+  description: "BREATHTAKING apt close to Kendall Square. This property comes with central AC. Washer & dryer also included.",
+  price: "$900",
+  address: "33 Rogers St, Cambridge, MA, 02142",
   bedrooms: "4",
   bathrooms: "2",
   sq_ft: "1020",
@@ -35,18 +36,20 @@ apt1 = Apartment.find_or_create_by!({
 apt2 = Apartment.find_or_create_by!({
   title: "2 BR 3BA Apt in Historic Beacon Hill",
   description: "Close to various bars and restaurants. AMAZING LOCATION!",
-  price: "$750", address: "25 Beacon Street, Boston, MA 02215",
+  price: "$750",
+  address: "33 Garden St, APT 3, Boston, MA, 02114",
   bedrooms: "2",
   bathrooms: "3",
   sq_ft: "750",
-  pets: "No Pets.", date_available: "2018-07-01"
+  pets: "No Pets.",
+  date_available: "2018-07-01"
 })
 
 apt3 = Apartment.find_or_create_by!({
   title: "Nice 3BR 1.5 BA close to Fenway Park!",
-  description: "Located in fantastic, family-oriented neighborhood",
+  description: "Located in fantastic, family-oriented neighborhood. Comes with central AC & garage parking!",
   price: "$800",
-  address: "47 8th Street, Boston, MA 02122",
+  address: "59 Symphony Rd, Boston, MA, 02115",
   bedrooms: "3",
   bathrooms: "1.5",
   sq_ft: "900",
@@ -64,7 +67,7 @@ apt1photo1 = Photo.find_or_create_by!({
 apt1photo2 = Photo.find_or_create_by!({
   apartment_id: 1,
   photo_description: "Gorgeous bedroom with amazing views of the Boston Common!",
-  image_url: "https://heifetz.s3.amazonaws.com/uploads/photo/image/21/br2.jpeg"
+  image: "br2.jpeg"
 })
 # aptphoto1 = Photo.find_or_create_by(apartment_id: 2, photo_description: "Living Room", image: "livingroom2.jpeg"),
 # aptphoto2 = Photo.find_or_create_by(apartment_id: 2, photo_description: "Gorgeous Kitchen!", image: "kitchen2.jpeg"),

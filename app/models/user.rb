@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :email, presence: true, uniqueness: true
-  has_many :favorites
+
+  has_many :apartments
+  has_many :favorites, through: :apartments
 
   def admin?
     role == "admin"

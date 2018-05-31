@@ -9,8 +9,8 @@ const SideBarComponent = props => {
 
     let favoritesArray = props.favorites.map(favorite => {
           let id = favorite.title
-          let address = favorite.address
-          let title = favorite.title
+          let address = favorite.apartment.address
+          let title = favorite.apartment.title
           let handleDeleteFav = () => props.deleteFromFavs(favorite.id)
       return(
         <FavoriteTile

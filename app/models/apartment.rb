@@ -22,6 +22,9 @@ class Apartment < ApplicationRecord
 
   has_many :photos
 
+  has_many :users
+  has_many :favorites, through: :users
+
   # def date_display
   #   if !self.date_available == nil
   #   self.date_available.strftime("%m/%d/%Y")

@@ -32,6 +32,7 @@ class ApartmentsContainer extends Component {
       this.setState({ apts: body.apartments });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
+
       fetch('/api/v1/favorites', {
           method: 'GET',
           headers: {
@@ -87,11 +88,11 @@ class ApartmentsContainer extends Component {
 // .catch(error => console.error(`Error in fetch: ${error.message}`));
 // }
 
-  addToFavorites(apartment){
+  addToFavorites(apt){
   fetch('/api/v1/favorites', {
     credentials: 'same-origin',
     method: 'post',
-    body: JSON.stringify(apartment),
+    body: JSON.stringify(apt),
     headers: { 'Content-Type': 'application/json' }
       }).then(response => response.json())
       // .then(json => {
@@ -132,6 +133,7 @@ class ApartmentsContainer extends Component {
 
     let apartmentObjects = this.state.apts.map((apt) =>{
       let id = apt.id
+      let apartment_id = apt.id
       let description = apt.description
       let title = apt.title
       let address= apt.address
@@ -153,6 +155,7 @@ class ApartmentsContainer extends Component {
           deleteFav={ deleteFav }
           key={ id }
           id={ id }
+          apartment_id={ apartment_id }
           description={ description }
           address={ address }
           title={ title }

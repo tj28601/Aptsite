@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 const ApartmentTile = props => {
 
-console.log(props.address)
+console.log(props)
   let imgUrl = props.thumbnail_photo_url
 if (props.thumbnail_photo_url === '/images/fallback/default.png') {
 imgUrl = 'default.png'
@@ -13,7 +13,7 @@ imgUrl = 'default.png'
 let starButton = <button id="starId" onClick={props.addAptToFavs}><h1><i className="far fa-star"></i></h1></button>;
 let favArray = props.favorites.map((fav) => {
   // let id=cow
-  if (fav.address === props.address) {
+  if (fav.apartment.address === props.address) {
     starButton = <h1><i className="far fa-star" style={{color: '#FFCA3F'},{background: 'red'}}></i></h1>;
   }
 })
