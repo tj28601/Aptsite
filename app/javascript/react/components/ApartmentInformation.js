@@ -9,8 +9,8 @@ sqFeet = '(unspecified)'
 } else{
   sqFeet == '{props.sq_ft}'
 }
-  return(
 
+  return(
     <div id='apartmentInformation'>
   <div id='apartmentInformationText'>
       <h1>{props.title}</h1>

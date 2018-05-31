@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ApartmentInformation from '../components/ApartmentInformation';
 import ApartmentPhotos from '../components/ApartmentPhotos';
 import PhotosTitle from '../components/PhotosTitle';
-
+// import Gallery from 'react-grid-gallery';
 
 
 class ApartmentShowContainer extends Component {
@@ -27,6 +27,7 @@ class ApartmentShowContainer extends Component {
 //         images: images
 //     });
 // }
+
 
   componentDidMount(){
     let apartmentId = this.props.params.id
@@ -66,19 +67,20 @@ class ApartmentShowContainer extends Component {
   render(){
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
+
       return(
         <div id = "photoarray">
-          <ApartmentPhotos
-            apartment_id={ photo.apartment_id }
-            key={ photo.id }
-            id={ photo.id }
-            description={ photo.photo_description }
-            image_url={ photo.image_url }
-          />
+        <ApartmentPhotos
+         apartment_id={ photo.apartment_id }
+         key={ photo.id }
+         id={ photo.id }
+         description={ photo.photo_description }
+         image_url={ photo.image_url }
+       />
         </div>
       )
     })
-
+// console.log(photoObjects[0].apartment_id)
     return(
       <div>
         <ApartmentInformation
@@ -104,19 +106,12 @@ class ApartmentShowContainer extends Component {
             apt_id={ this.state.apartmentInfo.id }
             apt_key={ this.state.apartmentInfo.id }
           />
-
+    <div>
+      {photoObjects}
+    </div>
           <br/>
           <br/>
           <br/>
-          <div style={{
-              display: "block",
-              minHeight: "1px",
-              width: "100%",
-              border: "1px solid #ddd",
-              overflow: "auto"}}></div>
-         <Gallery images={photoObjects}
-                  lightboxWidth={1536}
-          />
 
        </div>
     );

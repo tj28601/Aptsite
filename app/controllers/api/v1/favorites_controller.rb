@@ -1,5 +1,5 @@
 class Api::V1::FavoritesController < ApplicationController
-skip_before_action :verify_authenticity_token
+# skip_before_action :verify_authenticity_token
   def show
   end
 
@@ -8,7 +8,16 @@ skip_before_action :verify_authenticity_token
   end
   def create
     # binding.pry
-    @favorite = Favorite.new(favorite_params)
+    # @favorite = Favorite.new(favorite_params)
+    # @favorite.user_id = current_user.id
+    # if @favorite.save
+    #   render json: Favorite.all
+    # else
+    #   render json: { error: @favorite.errors.full_messages }, status: :unprocessable_entity
+    # end
+    @apartment=Apartment.find(params[:id])
+    @favorite=Favorite.new(favorite_params)
+    @favorite.apartment_id = @apartment.id
     @favorite.user_id = current_user.id
     if @favorite.save
       render json: Favorite.all
@@ -18,7 +27,8 @@ skip_before_action :verify_authenticity_token
   end
 
   def index
-    render json: Favorite.where(user_id: current_user)
+    # render json: Favorite.where(user_id: current_user)
+    render json: Favorite.all
   end
 
   def update
@@ -36,6 +46,6 @@ skip_before_action :verify_authenticity_token
   protected
 
   def favorite_params
-    params.require(:favorite).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, :thumbnail_photo, :latitude, :longitude, :user_id)
+    params.require(:favorite).permit(:apartment_id, :user_id, :apartment)
   end
 end

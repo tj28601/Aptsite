@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180516042218) do
+ActiveRecord::Schema.define(version: 20180530201119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "aboutdetails", force: :cascade do |t|
+    t.string "about_description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "apartments", force: :cascade do |t|
@@ -36,20 +39,12 @@ ActiveRecord::Schema.define(version: 20180516042218) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "description", null: false
-    t.string "price", null: false
-    t.string "address", null: false
-    t.string "bedrooms", null: false
-    t.string "bathrooms", null: false
-    t.string "sq_ft"
-    t.string "pets"
-    t.date "date_available"
-    t.string "thumbnail_photo"
-    t.float "latitude"
-    t.float "longitude"
+    t.bigint "apartment_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["apartment_id"], name: "index_favorites_on_apartment_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -74,7 +69,6 @@ ActiveRecord::Schema.define(version: 20180516042218) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "role", default: "user", null: false
-    t.string "user_name", default: "user", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

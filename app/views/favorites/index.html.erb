@@ -1,5 +1,5 @@
 <div id="contactUs">
 <h1> My Favorites </h1>
 <% @favorites.each do |favorite| %>
-  <h3><%= favorite.address %> <button id='deletebutton'><%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></button></h3>
+  <h3><%= favorite.apartment.address %> <button id='deletebutton'><%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></button></h3>
 <% end %>
