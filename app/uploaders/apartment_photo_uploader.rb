@@ -9,11 +9,18 @@ class ApartmentPhotoUploader < CarrierWave::Uploader::Base
     storage :fog
   end
 #asdf
-  # def serializable_hash
-  #    model.read_attribute :image
-  #  end
+  def serializable_hash
+     model.read_attribute :image
+   end
 
+  def default_url(*args)
+  #   # For Rails 3.1+ asset pipeline compatibility:
+ "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    # 'https://heifetz.s3.amazonaws.com/uploads/apartment/thumbnail_photodefault.png'
+    # 'https://heifetz.s3.amazonaws.com/default.png'
+    # 'default.png'
 
+  end
   # Choose what kind of storage to use for this uploader:
 
   # storage :file

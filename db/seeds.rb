@@ -59,16 +59,22 @@ apt3 = Apartment.find_or_create_by!({
 
 # aptphoto1 = Photo.find_or_create_by(apartment_id: 1, photo_description: "Amazing Photo!", image: "logo.jpg")
 # aptphoto2 = Photo.find_or_create_by(apartment_id: 2, photo_description: "cool photo!" , image: "blacklogo.jpg")
+# apt1.photos = [
+#   Pathname.new('/public/apt1photo1.jpg').open
+# ]
+# apartment.save!
 
 apt1photo1 = Photo.find_or_create_by!({
   apartment_id: 1,
-  photo_description: "Elegant Living Room with Marvelous Views !!!",
-  image: "livingroom1.jpeg"})
-apt1photo2 = Photo.find_or_create_by!({
-  apartment_id: 1,
-  photo_description: "Gorgeous bedroom with amazing views of the Boston Common!",
-  image: "br2.jpeg"
-})
+  photo_description: "Elegant Living Room with Marvelous Views !!!"
+  })
+#   apt1photo1.image = Rails.root.join("/apt1photo1.jpg").open
+#   apt1photo1.save!
+# apt1photo2 = Photo.find_or_create_by!({
+#   apartment_id: 1,
+#   photo_description: "Gorgeous bedroom with amazing views of the Boston Common!",
+#   image: "apt1photo2.jpeg"
+# })
 # aptphoto1 = Photo.find_or_create_by(apartment_id: 2, photo_description: "Living Room", image: "livingroom2.jpeg"),
 # aptphoto2 = Photo.find_or_create_by(apartment_id: 2, photo_description: "Gorgeous Kitchen!", image: "kitchen2.jpeg"),
 # aptphoto3 = Photo.find_or_create_by(apartment_id: 3, photo_description: "SPACIOUS Kitchen with BEAUTIFUL hardwood floors !!!", image: "kitchen3.jpeg")
