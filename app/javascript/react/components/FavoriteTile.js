@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const FavoriteTile = props => {
 
   return (
@@ -9,5 +10,6 @@ const FavoriteTile = props => {
 
   )
 }
+
 
 export default FavoriteTile;

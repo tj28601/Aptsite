@@ -38,6 +38,12 @@ class Apartment < ApplicationRecord
     end
   end
 
+# def lat
+#   self.longitude
+# end
+# def long
+#   self.longitude
+# end
 
 
   mount_uploader :thumbnail_photo, ThumbnailPhotoUploader

@@ -1,6 +1,7 @@
 class Favorite < ApplicationRecord
+# attr_accessor :apartment
   belongs_to :apartment
-  belongs_to :user 
+  belongs_to :user
 #   geocoded_by :address
 #   after_validation :geocode
 #
@@ -11,7 +12,29 @@ class Favorite < ApplicationRecord
 #   validates :bedrooms, presence: true
 #   validates :bathrooms, presence: true
 #   validates :pets, presence: true
+# def initialize(apartment)
+#   @apartment = apartment
+# end
+# def apartment
+#   @apartment
+# end
+# def initialize(apartment)
+#   @apartment = apartment
+# end
 #
+def lat
+  self.apartment.latitude
+end
+
+def long
+  self.apartment.longitude
+end
+
+# def apartment
+#   self.apartment
+# end
+
+
 #   has_many :photos
 #   def date_display
 #     if self.date_available.nil?
