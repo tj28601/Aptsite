@@ -26,8 +26,8 @@ sqFeet = '(unspecified)'
       <h5><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </button></h5>
       <br/>
       <MapWithAMarker
-      latitude={ props.latitude }
-      longitude={ props.longitude }
+        latitude={ props.latitude }
+        longitude={ props.longitude }
       />
       </div>
     </div>

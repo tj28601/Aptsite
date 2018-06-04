@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Connaughton & Associates </title>
-
+  <%= include_gon %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
@@ -64,6 +64,13 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
+
+
+    <!-- <%= include_gon %> -->
+
+
+
 
     <%= yield :extra_footer %>
     <!-- Calendly badge widget begin -->

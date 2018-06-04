@@ -69,3 +69,5 @@ gem 'twilio-ruby', '~> 5.10', '>= 5.10.1'
 
 gem 'geokit-rails'
 gem 'geocoder'
+
+gem 'gon', '~> 6.2'
