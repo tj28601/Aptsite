@@ -30,6 +30,10 @@ def long
   self.apartment.longitude
 end
 
+def address
+  self.apartment.address
+end
+
 # def apartment
 #   self.apartment
 # end

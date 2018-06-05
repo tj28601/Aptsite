@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 const ApartmentTile = props => {
 
-console.log(props)
+// console.log(props)
   let imgUrl = props.thumbnail_photo_url
 if (props.thumbnail_photo_url === '/images/fallback/default.png') {
 imgUrl = 'default.png'
