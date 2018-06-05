@@ -9,6 +9,8 @@ sqFeet = '(unspecified)'
 } else{
   sqFeet == '{props.sq_ft}'
 }
+console.log(this.props.current_user)
+      // <h5><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </button></h5>
 
   return(
     <div id='apartmentInformation'>

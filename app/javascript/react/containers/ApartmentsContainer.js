@@ -185,8 +185,8 @@ class ApartmentsContainer extends Component {
       </div>
 
       <div>
-      <Welcome
-      />
+       <Welcome
+       />
         {apartmentObjects}
       </div>
       </div>

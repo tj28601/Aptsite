@@ -19,12 +19,12 @@ function myFunction() {
   // for (let i = 0; i < gon.cray.length; i++){
   //   alert(`${gon.cray[i]}, lng: -71.5`);
   // }
-  alert(gon.coords[0][0])
+  alert(gon.marker[0][1])
   // alert(gon.cray.forEach((latvalue) =>{
   // latvalue);
   // })
 }
-
+console.log(gon.coords[0][2])
 </script>
 <h1>My Google Map</h1>
 
@@ -39,65 +39,54 @@ function myFunction() {
     function initMap(){
       //Map options
       var options = {
-        zoom:8,
+        zoom:13,
         center:{lat:42.3601,lng:-71.0589}
-
       }
-
-// var favLat
-// console.log(gon.apt.title)
+      console.log(gon.address)
       //New map
       var map = new
       google.maps.Map(document.getElementById('map'), options);
-    // Add marker
-    // var marker = new google.maps.Marker({
-    //    for (let i = 0; i < gon.cray.length; i++){
-    //         position:{lat: ${gon.cray[i]},lng: -71.5},
-    //         map:map
-    //   }
-    // });
 
+      // gon.coords.forEach((coord)=>{
+      //   addMarker({lat:coord[0],lng:coord[1]}, 'beautiful day today');
+      // })
+      gon.markerArray.forEach((favorite)=>{
+        addMarker({lat:favorite[0][0],lng:favorite[0][1]}, favorite[1]);
+      })
 
-// alert(`${gon.cray[i]}, lng: -71.5`);
-
-// (`${gon.cray[i]}, lng: -71.5`)
-    // var marker = new google.maps.Marker({
-    //   position:{lat: 42.36 ,lng: -71.5},
-    //   map:map
-    // });
-
-    // function myFunction() {
-    //   for (let i = 0; i < gon.array.length; i++){
-    //     alert(gon.array[i].id );
-    //   }
-    // }
-
-// gon.cray.forEach((latvalue) =>{
-// latvalue;
-// })
-
-// gon.cray.forEach((latvalue)=>{
-// addMarker({lat:latvalue,lng:-70.9300});
-// })
-
-gon.coords.forEach((coordlat, coordlong)=>{
-// // gon.long.forEach((longvalue)=>{
-//
-// // })
-addMarker({lat:`${coordlat}`,lng:`${coordlong}`);
-// // })
-})
-      // addMarker({lat:42.8584,lng:-70.9300});
-// (`${gon.cray[i]}, lng: -71.5`)
-
-// console.log('asdfgertret')
+      // gon.address.forEach((address)=>{
+      //   addinfoWindow({address});
+      // })
     // Add Marker function
-    function addMarker(coords){
-      var marker = new google.maps.Marker({
-        position:coords,
-        map:map
-      });
-    }
+        function addMarker(coords, address){
+          var marker = new google.maps.Marker({
+            position:coords,
+            map:map
+          });
+          var infoWindow = new google.maps.InfoWindow({
+            content:address
+          });
+            marker.addListener('click', function(){
+              infoWindow.open(map, marker);
+          });
+        }
+// Add infoWindow function
+        // function addinfoWindow(address){
+        //   // var marker = new google.maps.Marker({
+        //   //   position:coords,
+        //   //   map:map
+        //   // });
+        //   var infoWindow = new google.maps.InfoWindow({
+        //     content:'howdy'
+        //   });
+        //     marker.addListener('click', function(){
+        //       infoWindow.open(map, marker);
+        //   });
+        // }
+
+//completed this function above^...trying to imitate function structure and pass address into infowindow
+
+
     }
   </script>
 
