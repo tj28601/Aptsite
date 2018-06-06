@@ -3,6 +3,8 @@ class FavoritesController < ApplicationController
     # @apartments = Apartment.all.where(user_id: current_user)
     @favorites=Favorite.all.where(user_id: current_user)
 
+    # gon.user = current_user
+
     gon.address = []
     gon.lat = []
     gon.long = []

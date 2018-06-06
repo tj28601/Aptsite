@@ -3,7 +3,8 @@ import React from 'react';
 // import Gallery from 'react-grid-gallery';
 // //
 const ApartmentPhotos = props => {
-//   return(
+//  return(
+console.log(props.image_url)
 // <h1>hewoooo</h1>
 //   )
 // }
@@ -16,8 +17,10 @@ const ApartmentPhotos = props => {
   //     }
   //   }
   let imgUrl = props.image_url
-if (props.image_url === '/images/fallback/apt1photo1.jpeg') {
-imgUrl = 'apt1photo1.jpeg'
+  if (props.image_url === '/images/fallback/default.png') {
+// if (props.image_url === '/images/fallback/apt1photo1.jpeg') {
+// imgUrl = 'apt1photo1.jpeg'
+imgUrl = '/default.png'
 }
 
 // debugger;
@@ -27,9 +30,6 @@ imgUrl = 'apt1photo1.jpeg'
     <div id="apartmentPhotoDisplayText">
         <li><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.apartment_id}/photos/${props.id}/edit`}>Edit | Delete</a></button></li>
         <img src= {imgUrl} alt= "apartment photo" id="aptphoto" height='20px' width='600px' />
-        <h2><img src= {imgUrl} alt= "thumbnail photo"id="apartmentpic" height='300px' width='500px' /></h2>
-          <img src= 'apt1photo1.jpeg' alt= "apartment photo" id="aptphoto" height='20px' width='600px' />
-            <img src= 'about.jpg' alt= "apartment photo" id="aptphoto" height='20px' width='600px' />
         <li>{`*** ${props.description} ***`}</li>
       </div>
     </div>

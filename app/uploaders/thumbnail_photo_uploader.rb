@@ -8,9 +8,9 @@ class ThumbnailPhotoUploader < CarrierWave::Uploader::Base
     storage :fog
   end
 
-  def serializable_hash
-     model.read_attribute :thumbnail_photo_url
-   end
+  # def serializable_hash
+  #    model.read_attribute :thumbnail_photo_url
+  #  end
   # Choose what kind of storage to use for this uploader:
 
   # storage :file
@@ -27,11 +27,7 @@ class ThumbnailPhotoUploader < CarrierWave::Uploader::Base
 
   def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
- "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-    # 'https://heifetz.s3.amazonaws.com/uploads/apartment/thumbnail_photodefault.png'
-    # 'https://heifetz.s3.amazonaws.com/default.png'
-    # 'default.png'
-
+  "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end
 
   # Process files as they are uploaded:

@@ -12,5 +12,8 @@ attributes :id,
     :date_display,
     :thumbnail_photo_url,
     :latitude,
-    :longitude
+    :longitude,
+    :current_user
+
+
 end

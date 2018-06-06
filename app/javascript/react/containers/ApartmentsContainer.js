@@ -10,6 +10,7 @@ class ApartmentsContainer extends Component {
     this.state = {
       apts: [],
       favorites: [],
+      userInfo: {},
     }
         this.addToFavorites = this.addToFavorites.bind(this);
         this.deleteFromFavs = this.deleteFromFavs.bind(this);
@@ -28,6 +29,9 @@ class ApartmentsContainer extends Component {
         }
       })
       .then(response => response.json())
+      // .then(json => {
+      //   debugger;
+      // })
       .then(body => {
       this.setState({ apts: body.apartments });
       })
