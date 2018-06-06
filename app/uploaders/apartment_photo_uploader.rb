@@ -9,18 +9,18 @@ class ApartmentPhotoUploader < CarrierWave::Uploader::Base
     storage :fog
   end
 #asdf
-  # def serializable_hash
-  #    model.read_attribute :image_url
-  #  end
+  def serializable_hash
+     model.read_attribute :image_url
+   end
 
- #  def default_url(*args)
- #  #   # For Rails 3.1+ asset pipeline compatibility:
- # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
- #    # 'https://heifetz.s3.amazonaws.com/uploads/apartment/thumbnail_photodefault.png'
- #    # 'https://heifetz.s3.amazonaws.com/default.png'
- #    # 'default.png'
- #
- #  end
+  def default_url(*args)
+  #   # For Rails 3.1+ asset pipeline compatibility:
+ "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    # 'https://heifetz.s3.amazonaws.com/uploads/apartment/thumbnail_photodefault.png'
+    # 'https://heifetz.s3.amazonaws.com/default.png'
+    # 'default.png'
+
+  end
   # Choose what kind of storage to use for this uploader:
 
   # storage :file
@@ -34,13 +34,13 @@ class ApartmentPhotoUploader < CarrierWave::Uploader::Base
   end
 
   # {`/uploads/apartment/photo/${props.id}/${props.photo}`}
+  # def default_url(*args)
+  # #   # For Rails 3.1+ asset pipeline compatibility:
+  # "/images/fallback/" + [version_name, "apt1photo1.jpeg"].compact.join('_')
+  # end
   def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
- "/images/fallback/" + [version_name, "apt1photo1.jpeg"].compact.join('_')
-    # 'https://heifetz.s3.amazonaws.com/uploads/apartment/thumbnail_photodefault.png'
-    # 'https://heifetz.s3.amazonaws.com/default.png'
-    # 'default.png'
-
+  "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

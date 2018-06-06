@@ -37,6 +37,9 @@ class Apartment < ApplicationRecord
       self.date_available.strftime("%m/%d/%Y")
     end
   end
+  # def current_user
+  #   self.apartment.current_user.email
+  # end
 
 # def lat
 #   self.longitude

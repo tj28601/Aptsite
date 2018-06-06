@@ -30,9 +30,13 @@ class ApartmentsController < ApplicationController
 
   def index;
 
+# @current_user = current_user
+
+
   end
 
   def new
+
     if (current_user.role == 'admin')
       @apartment = Apartment.new
 
@@ -62,7 +66,7 @@ class ApartmentsController < ApplicationController
 
   def new_apartment_params
     # params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, params[:images] )
-      params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, :thumbnail_photo )
+      params.require(:apartment).permit(:title, :description, :price, :address, :bedrooms, :bathrooms, :sq_ft, :pets, :date_available, :thumbnail_photo, :current_user )
   end
   def authenticate_user
     if !user_signed_in? || !current_user.admin?

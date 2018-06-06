@@ -10,6 +10,7 @@ class ApartmentShowContainer extends Component {
     super(props);
     this.state = {
       apartmentInfo: {},
+      userInfo: {},
       photoInfo: [],
       images: []
     }
@@ -31,7 +32,13 @@ class ApartmentShowContainer extends Component {
 
   componentDidMount(){
     let apartmentId = this.props.params.id
-    fetch(`/api/v1/apartments/${apartmentId}`)
+    fetch(`/api/v1/apartments/${apartmentId}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin'
+      })
       .then(response => {
         if (response.ok) {
           return response;
@@ -42,8 +49,12 @@ class ApartmentShowContainer extends Component {
         }
       })
       .then(response => response.json())
+      // .then(json => {
+      //   debugger;
+      // })
       .then(body => {
         this.setState({ apartmentInfo: body.apartment });
+        this.setState({ userInfo: body.current_user });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
       fetch(`/api/v1/photos/${apartmentId}`)
@@ -67,7 +78,7 @@ class ApartmentShowContainer extends Component {
   render(){
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
-
+      let image_url=photo.image_url
       return(
         <div id = "photoarray">
         <ApartmentPhotos
@@ -75,7 +86,7 @@ class ApartmentShowContainer extends Component {
          key={ photo.id }
          id={ photo.id }
          description={ photo.photo_description }
-         image_url={ photo.image_url }
+         image_url={ image_url }
        />
         </div>
       )
@@ -99,12 +110,15 @@ class ApartmentShowContainer extends Component {
           datedisplay={ this.state.apartmentInfo.date_display }
           latitude={ this.state.apartmentInfo.latitude }
           longitude={ this.state.apartmentInfo.longitude }
+          current_user={ this.state.userInfo.role }
+
           />
           <br/>
           <br/>
           <PhotosTitle
             apt_id={ this.state.apartmentInfo.id }
             apt_key={ this.state.apartmentInfo.id }
+            current_user={ this.state.userInfo.role }
           />
     <div>
       {photoObjects}

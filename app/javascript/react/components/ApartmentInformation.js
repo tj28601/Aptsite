@@ -3,16 +3,23 @@ import { Link } from 'react-router';
 import MapWithAMarker from './MyMapComponent';
 
 const ApartmentInformation = (props) => {
+
   let sqFeet = props.sq_ft
 if (props.sq_ft === "") {
 sqFeet = '(unspecified)'
 } else{
   sqFeet == '{props.sq_ft}'
 }
-console.log(this.props.current_user)
-      // <h5><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </button></h5>
+// debugger;
+// console.log(gon.user.role)
+let editButton = ''
+if (props.current_user === 'admin') {
+    editButton = <h5><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </button></h5>
+  }
+console.log(props)
 
   return(
+
     <div id='apartmentInformation'>
   <div id='apartmentInformationText'>
       <h1>{props.title}</h1>
@@ -25,7 +32,7 @@ console.log(this.props.current_user)
       <li>{`Available Date: ${props.datedisplay}`}</li>
       <li>{`Description: ${props.description}`}</li>
       <br/>
-      <h5><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </button></h5>
+      <h1>{editButton}</h1>
       <br/>
       <MapWithAMarker
         latitude={ props.latitude }
