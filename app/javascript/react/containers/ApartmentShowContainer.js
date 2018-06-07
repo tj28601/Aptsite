@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ApartmentInformation from '../components/ApartmentInformation';
-import ApartmentPhotos from '../components/ApartmentPhotos';
+// import ApartmentPhotos from '../components/ApartmentPhotos';
 import PhotosTitle from '../components/PhotosTitle';
-// import Gallery from 'react-grid-gallery';
+import Gallery from 'react-grid-gallery';
 
 
 class ApartmentShowContainer extends Component {
@@ -78,16 +78,15 @@ class ApartmentShowContainer extends Component {
   render(){
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
-      let image_url=photo.image_url
+      // let image_url=photo.image_url
       return(
         <div id = "photoarray">
-        <ApartmentPhotos
-         apartment_id={ photo.apartment_id }
-         key={ photo.id }
-         id={ photo.id }
-         description={ photo.photo_description }
-         image_url={ image_url }
-       />
+        <div id='apartmentPhotoDisplay'>
+       <div id="apartmentPhotoDisplayText">
+
+         {photo.image_url}
+</div>
+</div>
         </div>
       )
     })

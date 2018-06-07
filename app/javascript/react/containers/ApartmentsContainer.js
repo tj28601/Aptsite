@@ -18,7 +18,13 @@ class ApartmentsContainer extends Component {
 
   componentDidMount() {
 
-    fetch('/api/v1/apartments')
+    fetch('/api/v1/apartments', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin'
+      })
       .then(response => {
         if (response.ok) {
           return response;
@@ -34,6 +40,7 @@ class ApartmentsContainer extends Component {
       // })
       .then(body => {
       this.setState({ apts: body.apartments });
+      this.setState({ userInfo: body.current_user });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
 
@@ -190,6 +197,7 @@ class ApartmentsContainer extends Component {
 
       <div>
        <Welcome
+          current_user={ this.state.userInfo.role }
        />
         {apartmentObjects}
       </div>

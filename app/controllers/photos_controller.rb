@@ -46,6 +46,9 @@ end
         redirect_to apartment_url (@photo.apartment_id)
     end
   end
+  # def show
+  #   gon.photos = 'Hallelujah'
+  # end
 
   def update
 
