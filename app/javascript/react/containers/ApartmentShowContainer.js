@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ApartmentInformation from '../components/ApartmentInformation';
-// import ApartmentPhotos from '../components/ApartmentPhotos';
+import ApartmentPhotos from '../components/ApartmentPhotos';
 import PhotosTitle from '../components/PhotosTitle';
 import Gallery from 'react-grid-gallery';
 
@@ -12,10 +12,12 @@ class ApartmentShowContainer extends Component {
       apartmentInfo: {},
       userInfo: {},
       photoInfo: [],
-      images: []
+      images: [],
     }
-    // this.onSelectImage = this.onSelectImage.bind(this);
+
   }
+
+
 //   onSelectImage (index, image) {
 //     var images = this.state.images.slice();
 //     var img = images[index];
@@ -78,19 +80,24 @@ class ApartmentShowContainer extends Component {
   render(){
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
-      // let image_url=photo.image_url
+            // let image_url= photo.image_url
       return(
         <div id = "photoarray">
-        <div id='apartmentPhotoDisplay'>
-       <div id="apartmentPhotoDisplayText">
 
-         {photo.image_url}
-</div>
-</div>
-        </div>
+     <ApartmentPhotos
+      apartment_id={ photo.apartment_id }
+      key={ photo.id }
+      id={ photo.id }
+      description={ photo.photo_description }
+      image_url={ photo.image_url }
+      current_user={ this.state.userInfo.role }
+    />
+
+          </div>
+
       )
     })
-// console.log(photoObjects[0].apartment_id)
+  // console.log("asdlfkjlkj")
     return(
       <div>
         <ApartmentInformation
@@ -119,9 +126,11 @@ class ApartmentShowContainer extends Component {
             apt_key={ this.state.apartmentInfo.id }
             current_user={ this.state.userInfo.role }
           />
+
     <div>
-      {photoObjects}
+    {photoObjects}
     </div>
+
           <br/>
           <br/>
           <br/>
@@ -129,5 +138,6 @@ class ApartmentShowContainer extends Component {
        </div>
     );
   }
+
 }
 export default ApartmentShowContainer;
