@@ -27,8 +27,15 @@
  }
 
  body {
-  background: image-url("background.jpg");
+  // background: image-url("background.jpg");
+    background: image-url("b4.jpg");
   background-size: 1460px 1220px;
+  font-family:Courier;
+  color: white;
+}
+li {
+font-family:Courier;
+color: white;
 }
 
 #aboutdetails {
@@ -68,6 +75,7 @@
 
 a {
   color: white;
+  // font-family:Courier
 }
 #logInButton {
   background: white;
@@ -82,8 +90,8 @@ a {
 }
 
 #apartmentIndex {
-  border: 5.5px solid black;
-  background: rgba(241,241,241,0.8);
+  // border: 5.5px solid black;
+  // background: rgba(241,241,241,0.8);
   padding: 20px;
   margin-top: 15px;
   width: auto;
@@ -91,11 +99,13 @@ a {
   columns: 3;
   margin: 3em;
   text-align: left;
+  font-family:Courier;
 }
 
 #apartmentIndexText {
   color: black;
   font-weight: bold;
+  font-family:Courier;
 }
 
 #apartmentInformation {
@@ -137,6 +147,18 @@ a {
 ul .photolist {
      list-style-type: none;
     font-size: 42px;
+    font-family:Courier;
+}
+h1{
+    font-family:Courier;
+    color:white;
+}
+h2{
+    font-family:Courier;
+    color:white;
+}
+h3{
+    font-family:Courier;
 }
 
 //  .right {
@@ -230,6 +252,7 @@ padding: 0px 25px 0px 25px;
 font-size: 20px;
 }
 
+
 #logIn {
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
@@ -240,13 +263,17 @@ font-size: 20px;
   padding: 1em;
 }
 #contactUs {
-    background: rgba(241,241,241,0.8);
+    // background: rgba(241,241,241,0.8);
     border: 5.5px solid black;
-    color: black;
+    // color: black;
     font-weight: bold;
     text-align: left;
-    margin: 5em 10em;
+    color:white;
+    // margin: 5em 10em;
     padding: 2em;
+
+    // display: inline;
+    margin: 5em 50em 160em 5em;
 }
 .hidden {
   display: none;
@@ -269,16 +296,19 @@ font-size: 20px;
   margin-left: 80px;
 }
 #welcomeTitle {
-  background: rgba(241,241,241,0.8);
+  // background: rgba(241,241,241,0.8);
   text-align: center;
   // width: 100%;
   margin-left: 50px;
   margin-right: 50px;
+  font-family:Courier;
 }
 #welcomeTitleText {
   color: black;
   font-size: 20px;
-  border: 5.5px solid black;
+  // border: 5.5px solid black;
+  // border: 5.5px solid white;
+  font-family:Courier;
 }
 
 #photosTitleText {
@@ -305,9 +335,22 @@ font-size: 20px;
   height: 200px;
   border-radius: 15px;
 }
+// .button {
+//   background: black;
+//   border-radius: 30px;
+//
+// }
 .button {
-  background: black;
+  background: #009CFF;
+  border-radius: 20%;
+  color: white;
+  padding: .9em;
+
 }
+// #submit{
+//   border-radius: 15px;
+// }
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
@@ -393,7 +436,7 @@ fasfa-times{
   color: black;
 }
 .form_label_styling {
-color: black;
+color: white;
 font-size: 23px;
 }
 

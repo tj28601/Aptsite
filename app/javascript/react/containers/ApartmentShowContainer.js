@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ApartmentInformation from '../components/ApartmentInformation';
-import ApartmentPhotos from '../components/ApartmentPhotos';
+import ApartmentPhoto from '../components/ApartmentPhoto';
 import PhotosTitle from '../components/PhotosTitle';
 import Gallery from 'react-grid-gallery';
 
@@ -75,30 +75,63 @@ class ApartmentShowContainer extends Component {
         })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
+// componentWillMount(){
+//   let apartmentId = this.props.params.id
+//   fetch(`/api/v1/photos/${apartmentId}`)
+//     .then(response => {
+//       if (response.ok) {
+//         return response;
+//       } else {
+//         let errorMessage = `${response.status}(${response.statusText})`,
+//           error = new Error(errorMessage);
+//         throw(error);
+//       }
+//     })
+//     .then(response => response.json())
+//     .then(body => {
+//       this.setState({ photoInfo: body.photos });
+//     })
+//     .catch(error => console.error(`Error in fetch: ${error.message}`));
+// }
 
 
   render(){
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
             // let image_url= photo.image_url
+Object.assign({}, photo,{scaleWidth: undefined})
       return(
         <div id = "photoarray">
+<ApartmentPhoto
 
-     <ApartmentPhotos
       apartment_id={ photo.apartment_id }
       key={ photo.id }
       id={ photo.id }
       description={ photo.photo_description }
       image_url={ photo.image_url }
       current_user={ this.state.userInfo.role }
-    />
+      scaleWidth={ photo.scaleWidth }
 
+
+/>
           </div>
 
       )
     })
+// console.log(photoObjects[0])
+// let IMAGES = []
+// photoObjects.forEach((photo)=>{
+//   IMAGES.push({src:`${photo.image_url}`,
+//      thumbnail:photo.image_url,
+//    })
+// console.log({IMAGES})
+// })
+
+
+console.log({photoObjects})
   // console.log("asdlfkjlkj")
     return(
+
       <div>
         <ApartmentInformation
           id={ this.state.apartmentInfo.id }
@@ -128,7 +161,7 @@ class ApartmentShowContainer extends Component {
           />
 
     <div>
-    {photoObjects}
+    <Gallery images={photoObjects} />
     </div>
 
           <br/>
@@ -137,6 +170,7 @@ class ApartmentShowContainer extends Component {
 
        </div>
     );
+
   }
 
 }
