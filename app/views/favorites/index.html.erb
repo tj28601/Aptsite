@@ -1,32 +1,27 @@
-<div id="contactUs">
+<div id="favorites">
+  <div id="favoriteshover">
 <h1> My Favorites </h1>
 <% @favorites.each do |favorite| %>
 
-  <h3><%= favorite.apartment.address %> <button id='deletebutton'><%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></button></h3>
-
-  <!-- <h3><%= favorite.apartment.latitude %></h3>
-  <h3><%= favorite.apartment.longitude %></h3> -->
-
-
+<h3><%= link_to "#{favorite.apartment.address}", apartment_path(:id => favorite.apartment.id) %><button id='deletebutton'><%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></button></h3>
 
 <% end %>
+</div>
 </br>
 </br>
+<!-- </div> -->
 
-<button onclick='myFunction()'>Try it</button>
+<!-- <button onclick='myFunction()'>Try it</button>
 <script>
 function myFunction() {
-  // for (let i = 0; i < gon.cray.length; i++){
-  //   alert(`${gon.cray[i]}, lng: -71.5`);
-  // }
+
   alert('hello there!!!')
-  // alert(gon.cray.forEach((latvalue) =>{
-  // latvalue);
-  // })
+
 }
-// console.log(gon.coords[0][2])
-</script>
-<h1>My Google Map</h1>
+
+</script> -->
+<div id="mapdiv"></div>
+<h1>My Favorites Map</h1>
 
   <style>
     #map{
@@ -92,3 +87,4 @@ function myFunction() {
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDboS0d_sYpMgl4MQJFw7N1Mghmi6XPU8Y&callback=initMap"
    async defer></script>
+ </div>

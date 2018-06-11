@@ -13,14 +13,14 @@ class ApartmentPhotoUploader < CarrierWave::Uploader::Base
      model.read_attribute :image_url
    end
 
-  def default_url(*args)
-  #   # For Rails 3.1+ asset pipeline compatibility:
- "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-    # 'https://heifetz.s3.amazonaws.com/uploads/apartment/thumbnail_photodefault.png'
-    # 'https://heifetz.s3.amazonaws.com/default.png'
-    # 'default.png'
-
-  end
+ #  def default_url(*args)
+ #  #   # For Rails 3.1+ asset pipeline compatibility:
+ # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+ #    # 'https://heifetz.s3.amazonaws.com/uploads/apartment/thumbnail_photodefault.png'
+ #    # 'https://heifetz.s3.amazonaws.com/default.png'
+ #    # 'default.png'
+ #
+ #  end
   # Choose what kind of storage to use for this uploader:
 
   # storage :file
@@ -38,6 +38,7 @@ class ApartmentPhotoUploader < CarrierWave::Uploader::Base
   # #   # For Rails 3.1+ asset pipeline compatibility:
   # "/images/fallback/" + [version_name, "apt1photo1.jpeg"].compact.join('_')
   # end
+
   def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
   "/images/fallback/" + [version_name, "default.png"].compact.join('_')

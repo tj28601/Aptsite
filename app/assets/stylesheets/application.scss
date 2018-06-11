@@ -28,23 +28,33 @@
 
  body {
   // background: image-url("background.jpg");
-    background: image-url("b4.jpg");
+    background: image-url("background.jpg");
   background-size: 1460px 1220px;
   font-family:Courier;
-  color: white;
+  color: black;
 }
 li {
 font-family:Courier;
-color: white;
+color: black;
 }
 
 #aboutdetails {
+  // background: rgba(241,241,241,0.8);
+  // text-align: left;
+  // margin: 10em;
+  // margin-top: 5em;
+  // padding-top: 0em;
+  // border: 5.5px solid black;
+
   background: rgba(241,241,241,0.8);
-  text-align: left;
-  margin: 10em;
-  margin-top: 5em;
-  padding-top: 0em;
   border: 5.5px solid black;
+  // color: black;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  margin: 5em 20em;
+  padding: 1em;
+  background-position: center;
 }
 
 
@@ -58,7 +68,10 @@ color: white;
   padding: 0em 4em;
   margin-bottom: 0em;
   text-indent: 3.5em;
+
   // font-family: Quicksand;
+
+
 }
 
 #standardbutton {
@@ -71,6 +84,11 @@ color: white;
 
 #deletebutton {
   background: red;
+  color: white;
+}
+
+ #favorites #deletebutton a {
+  color: white;
 }
 
 a {
@@ -90,16 +108,29 @@ a {
 }
 
 #apartmentIndex {
-  // border: 5.5px solid black;
-  // background: rgba(241,241,241,0.8);
+  border: 5.5px solid black;
+  background: rgba(241,241,241,0.8);
   padding: 20px;
-  margin-top: 15px;
+  // margin-top: 15px;
   width: auto;
   height: auto;
   columns: 3;
-  margin: 3em;
+  margin: 3em 17em;
   text-align: left;
   font-family:Courier;
+  font-weight: bold;
+
+  // background: rgba(241,241,241,0.8);
+  // border: 5.5px solid black;
+  // // color: black;
+  // font-weight: bold;
+  // text-align: left;
+  // color: black;
+  // margin: 3em 20em;
+  // padding: 2em;
+  // background-position: center;
+
+
 }
 
 #apartmentIndexText {
@@ -108,14 +139,29 @@ a {
   font-family:Courier;
 }
 
+// #apartmentIndexText h3 li {
+//   color: black;
+// }
+
 #apartmentInformation {
+  // background: rgba(241,241,241,0.8);
+  // text-align: left;
+  // background-position: top;
+  // background-position: auto;
+  // margin: 4em;
+  // margin-top: 2em;
+  // margin-bottom: 2em;
+
   background: rgba(241,241,241,0.8);
+  border: 5.5px solid black;
+  // color: black;
+  font-weight: bold;
   text-align: left;
-  background-position: top;
-  background-position: auto;
-  margin: 4em;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  color: black;
+  margin: 3em 20em;
+  padding: 2em;
+  background-position: center;
+
 }
 
 #photoarray {
@@ -151,14 +197,15 @@ ul .photolist {
 }
 h1{
     font-family:Courier;
-    color:white;
+    color:black;
 }
 h2{
     font-family:Courier;
-    color:white;
+    color:black;
 }
 h3{
     font-family:Courier;
+    color:black;
 }
 
 //  .right {
@@ -166,10 +213,16 @@ h3{
 // }
 
 #apartmentInformationText {
+  // color: black;
+  // font-size: 20px;
+  // border: 5.5px solid black;
+  // padding: 2em;
+
+
+}
+
+#apartmentInformationText li {
   color: black;
-  font-size: 20px;
-  border: 5.5px solid black;
-  padding: 2em;
 }
 
 
@@ -254,39 +307,113 @@ font-size: 20px;
 
 
 #logIn {
+  // background: rgba(241,241,241,0.8);
+  // border: 5.5px solid black;
+  // color: black;
+  // font-weight: bold;
+  // text-align: center;
+  // margin: 1em;
+  // padding: 1em;
+
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
-  color: black;
+  // color: black;
   font-weight: bold;
-  text-align: center;
-  margin: 1em;
-  padding: 1em;
+  text-align: left;
+  color: black;
+  margin: 5em 20em;
+  padding: 2em;
+  background-position: center;
 }
 #contactUs {
-    // background: rgba(241,241,241,0.8);
+    background: rgba(241,241,241,0.8);
     border: 5.5px solid black;
     // color: black;
     font-weight: bold;
     text-align: left;
-    color:white;
-    // margin: 5em 10em;
+    color: black;
+    margin: 5em 19em;
     padding: 2em;
+    background-position: center;
 
     // display: inline;
-    margin: 5em 50em 160em 5em;
+    // margin: 5em 50em 160em 5em;
+}
+#favoriteshover :hover {
+  background-color: #777777;
+  // background-color: yellow;
+  text-decoration: underline;
+}
+#apartmentIndex :hover {
+  background-color: #777777;
+  text-decoration: underline;
+}
+#favorites {
+      // background: rgba(241,241,241,0.8);
+      // border: 5.5px solid black;
+      // // color: black;
+      // font-weight: bold;
+      // text-align: left;
+      // color: black;
+      // // margin: 5em 10em;
+      // padding: 2em;
+      //
+      // // display: inline;
+      // margin: 5em;
+
+      background: rgba(241,241,241,0.8);
+      border: 5.5px solid black;
+      // color: black;
+      font-weight: bold;
+      text-align: left;
+      color: black;
+      margin: 5em 19em;
+      padding: 2em;
+      background-position: center;
+
+}
+
+#favorites a {
+  color: black;
+}
+
+#mapdiv {
+  padding: 0em;
+  // float: right;
+  // text-align: right;
+  // margin-right: 0;
+  // margin-left: auto;height: 100px;
+  // width: 250px;
+}
+map {
+padding: 0em;
+// text-align: right;
+// margin-right: 0;
+// margin-left: auto;height: 100px;
+// width: 250px;
 }
 .hidden {
   display: none;
 }
 
 #signUp {
+  // background: rgba(241,241,241,0.8);
+  // border: 5.5px solid black;
+  // color: black;
+  // font-weight: bold;
+  // text-align: center;
+  // margin: 1em;
+  // padding: 1em;
+
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
-  color: black;
+  // color: black;
   font-weight: bold;
-  text-align: center;
-  margin: 1em;
-  padding: 1em;
+  text-align: left;
+  color: black;
+  margin: 5em 20em;
+  padding: 2em;
+  background-position: center;
 }
 
 #photosTitle {
@@ -335,18 +462,32 @@ font-size: 20px;
   height: 200px;
   border-radius: 15px;
 }
-// .button {
-//   background: black;
-//   border-radius: 30px;
-//
-// }
-.button {
-  background: #009CFF;
-  border-radius: 20%;
+#button {
+    background: rgba(241,241,241,0.0);
+  // background: black;
+  border: 3px solid black;
   color: white;
-  padding: .9em;
+  border-radius: 15px;
+  padding: 1.5em;
 
 }
+
+// button:hover {
+//   background-color: blue;
+//   text-decoration: underline;
+// }
+.button {
+  // background: rgba(241,241,241,0.8);
+  // background: #009CFF;
+    background: black;
+  border-radius: 15px;
+  // color: white;
+  // padding: .9em;
+
+}
+// #actions {
+// cursor: pointer;
+// }
 // #submit{
 //   border-radius: 15px;
 // }
@@ -436,7 +577,7 @@ fasfa-times{
   color: black;
 }
 .form_label_styling {
-color: white;
+color: black;
 font-size: 23px;
 }
 

@@ -161,7 +161,7 @@ console.log({photoObjects})
           />
 
     <div>
-    <Gallery images={photoObjects} />
+    {photoObjects}
     </div>
 
           <br/>
