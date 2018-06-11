@@ -11,8 +11,6 @@ const Welcome = props => {
 
       <div id='welcomeTitle'>
       <div id='welcomeTitleText'>
-        <h1> Welcome to our website! </h1>
-        <h2> Please feel free to contact us with any questions or concerns you may have. </h2>
         <h1>{addAptButton}</h1>
       </div>
       </div>
