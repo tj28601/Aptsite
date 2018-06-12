@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ApartmentPhoto = props => {
-
+// debugger;
 
   let editButton = ''
   if (props.current_user === 'admin') {

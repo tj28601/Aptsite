@@ -9,9 +9,9 @@ class ApartmentPhotoUploader < CarrierWave::Uploader::Base
     storage :fog
   end
 #asdf
-  def serializable_hash
-     model.read_attribute :image_url
-   end
+  # def serializable_hash
+  #    model.read_attribute :image_url
+  #  end
 
  #  def default_url(*args)
  #  #   # For Rails 3.1+ asset pipeline compatibility:

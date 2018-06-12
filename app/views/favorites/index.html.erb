@@ -1,12 +1,26 @@
 <div id="favorites">
-  <div id="favoriteshover">
+  <!-- <div id="favoriteshover"> -->
+
+
+<div id="fav-menu-outer">
+  <div class="favtable">
+  <ul id="horiz-list" style="list-style-type:none;">
+<li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="/aboutdetails"><i class="fas fa-users"></i> About</a></li>
+<li><a href="/favorites"><i class="far fa-star"></i> Favorites</a></li>
+<li><a href="/contacts/new"><i class="far fa-envelope"></i> Contact Us</a></li>
+</ul>
+</div>
+</div>
+</br>
 <h1> My Favorites </h1>
+</br>
 <% @favorites.each do |favorite| %>
 
-<h3><%= link_to "#{favorite.apartment.address}", apartment_path(:id => favorite.apartment.id) %><button id='deletebutton'><%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></button></h3>
+<h3><div id="favoriteshover"><%= link_to "\u2022"+ "#{favorite.apartment.address}", apartment_path(:id => favorite.apartment.id) %></div><button id='deletebutton'><%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></button></h3>
 
 <% end %>
-</div>
+<!-- </div> -->
 </br>
 </br>
 <!-- </div> -->

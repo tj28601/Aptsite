@@ -8,9 +8,9 @@ class ThumbnailPhotoUploader < CarrierWave::Uploader::Base
     storage :fog
   end
 
-  def serializable_hash
-     model.read_attribute :thumbnail_photo
-   end
+  # def serializable_hash
+  #    model.read_attribute :thumbnail_photo_url
+  #  end
   # Choose what kind of storage to use for this uploader:
 
   # storage :file

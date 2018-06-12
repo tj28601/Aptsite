@@ -29,7 +29,7 @@ if (props.current_user === 'admin') {
       <li>{`Bathrooms: ${props.bathrooms}`}</li>
       <li>{`Size: ${sqFeet}`} ft<sup>2</sup></li>
       <li>{`Pets: ${props.pets}`}</li>
-      <li>{`Available Date: ${props.datedisplay}`}</li>
+      <li>{`Available date: ${props.datedisplay}`}</li>
       <li>{`Description: ${props.description}`}</li>
       <br/>
       <h1>{editButton}</h1>
