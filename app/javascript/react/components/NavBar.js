@@ -3,15 +3,15 @@ import React from 'react';
 import BackButton from './BackButton';
 import { slide as Menu } from 'react-burger-menu';
 
-// import SideBarComponent from './SideBarComponent';
+import SideBarComponent from './SideBarComponent';
 
 
 const NavBar = (props) => {
 
   return(
     <div id='navBar'>
-        <BackButton />
-        { props.children }
+         <SideBarComponent />
+{props.children}
       </div>
   )
 };

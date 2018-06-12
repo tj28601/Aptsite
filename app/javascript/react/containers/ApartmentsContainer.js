@@ -149,7 +149,7 @@ class ApartmentsContainer extends Component {
       let title = apt.title
       let address= apt.address
       let price= apt.price
-      let thumbnail_photo_url=apt.thumbnail_photo
+      let thumbnail_photo_url=apt.thumbnail_photo.url
       let pets=apt.pets
       let bedrooms= apt.bedrooms
       let bathrooms= apt.bathrooms
