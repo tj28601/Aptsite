@@ -32,6 +32,6 @@ class FavoritesController < ApplicationController
   @favorite = Favorite.find(params[:id])
   @favorite.destroy
     flash[:notice] = 'Your favorite has been deleted.'
-  redirect_to apartments_path
+  redirect_to root_path
   end
 end

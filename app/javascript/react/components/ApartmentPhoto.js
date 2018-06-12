@@ -101,7 +101,7 @@ let IMAGE = []
 
   return(
 <div id='apartmentPhotoDisplay'>
-<Gallery images={IMAGE} />
+<Gallery images={IMAGE} /> 
 </div>
 // {src: `${props.image_url}`,
 // thumbnail: `${props.image_url}`,
