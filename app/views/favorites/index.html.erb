@@ -1,8 +1,4 @@
-<div id="favorites">
-  <!-- <div id="favoriteshover"> -->
-
-
-<div id="fav-menu-outer">
+<!-- <div id="fav-menu-outer">
   <div class="favtable">
   <ul id="horiz-list" style="list-style-type:none;">
 <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
@@ -11,19 +7,34 @@
 <li><a href="/contacts/new"><i class="far fa-envelope"></i> Contact Us</a></li>
 </ul>
 </div>
+</div> -->
+
+<div id="favorites">
+ <div id="fav-menu-outer">
+  <div class="favtable">
+    <ul id="horiz-list" style="list-style-type:none;">
+      <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="/aboutdetails"><i class="fas fa-users"></i> About</a></li>
+      <!-- <li><a href="/favorites"><i class="far fa-star"></i></a></li> -->
+      <li><a href="/contacts/new"><i class="far fa-envelope"></i> Contact Us</a></li>
+    </ul>
+  </div>
 </div>
-</br>
-<h1> My Favorites </h1>
-</br>
-<% @favorites.each do |favorite| %>
 
-<h3><div id="favoriteshover"><%= link_to "\u2022"+ "#{favorite.apartment.address}", apartment_path(:id => favorite.apartment.id) %></div><button id='deletebutton'><%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></button></h3>
 
-<% end %>
-<!-- </div> -->
-</br>
-</br>
-<!-- </div> -->
+  </br>
+    <h1> My Favorites </h1>
+<div id="favstext">
+    </br>
+    <% @favorites.each do |favorite| %>
+      <!-- <h3><div id="favoriteshover"><div id="favstext"><%= link_to "\u2022"+ "#{favorite.apartment.address}", apartment_path(:id => favorite.apartment.id) %></div></div><button id='favsdeletebutton'><i class="far fa-times-circle"> <%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></i></button></h3> -->
+      <h3><%= link_to "\u2022"+ "#{favorite.apartment.address}", apartment_path(:id => favorite.apartment.id) %> <button id='favsdeletebutton'><i class="far fa-times-circle"> <%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></i></button></h3>
+    <% end %>
+
+  </br>
+  </br>
+</div>
+
 
 <!-- <button onclick='myFunction()'>Try it</button>
 <script>
@@ -101,4 +112,5 @@ function myFunction() {
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDboS0d_sYpMgl4MQJFw7N1Mghmi6XPU8Y&callback=initMap"
    async defer></script>
+ </div>
  </div>

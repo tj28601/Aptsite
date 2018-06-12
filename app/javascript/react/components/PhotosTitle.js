@@ -12,7 +12,7 @@ const PhotosTile = props => {
 
       <div id='photosTitle'>
       <div id='photosTitleText'>
-        <h1>Apartment Photos: </h1>
+      <h1>Apartment Photos: </h1>
         <h5>{photoButton}</h5>
       </div>
       </div>
