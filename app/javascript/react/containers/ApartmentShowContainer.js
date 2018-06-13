@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ApartmentInformation from '../components/ApartmentInformation';
 import ApartmentPhoto from '../components/ApartmentPhoto';
+// import IMAGES from '../components/ApartmentPhoto';
 import PhotosTitle from '../components/PhotosTitle';
 import Gallery from 'react-grid-gallery';
+
 
 
 class ApartmentShowContainer extends Component {
@@ -14,10 +16,13 @@ class ApartmentShowContainer extends Component {
       photoInfo: [],
       images: [],
     }
-
+        this.cowPie = this.cowPie.bind(this);
   }
 
-
+cowPie(array){
+  this.setState({ images: array })
+}
+// console.log(images)
 //   onSelectImage (index, image) {
 //     var images = this.state.images.slice();
 //     var img = images[index];
@@ -94,42 +99,31 @@ class ApartmentShowContainer extends Component {
 //     .catch(error => console.error(`Error in fetch: ${error.message}`));
 // }
 
-
   render(){
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
             // let image_url= photo.image_url
-Object.assign({}, photo,{scaleWidth: undefined})
+// Object.assign({}, photo,{scaleWidth: undefined})
+// let IMAGES = []
       return(
         <div id = "photoarray">
-<ApartmentPhoto
-
-      apartment_id={ photo.apartment_id }
-      key={ photo.id }
-      id={ photo.id }
-      description={ photo.photo_description }
-      image_url={ photo.image_url }
-      current_user={ this.state.userInfo.role }
-      scaleWidth={ photo.scaleWidth }
-
-
-/>
+          <ApartmentPhoto
+              apartment_id={ photo.apartment_id }
+              key={ photo.id }
+              id={ photo.id }
+              description={ photo.photo_description }
+              image_url={ photo.image_url }
+              current_user={ this.state.userInfo.role }
+              scaleWidth={ photo.scaleWidth }
+              />
           </div>
 
       )
     })
-// console.log(photoObjects[0])
-// let IMAGES = []
-// photoObjects.forEach((photo)=>{
-//   IMAGES.push({src:`${photo.image_url}`,
-//      thumbnail:photo.image_url,
-//    })
+
+
 // console.log({IMAGES})
-// })
 
-
-console.log({photoObjects})
-  // console.log("asdlfkjlkj")
     return(
 
       <div>
@@ -161,7 +155,9 @@ console.log({photoObjects})
           />
 
     <div>
-    {photoObjects}
+
+      {photoObjects}
+
     </div>
 
           <br/>

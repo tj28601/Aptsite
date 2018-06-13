@@ -43,7 +43,7 @@ let favArray = props.favorites.map((fav) => {
         <li>{props.description}</li>
         <li>{props.pets}</li>
         <h8><li>{props.address}</li></h8>
-</div>
+      </div>
 
     )
 
