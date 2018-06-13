@@ -122,7 +122,7 @@ cowPie(array){
     })
 
 
-// console.log({IMAGES})
+// console.log({IMAGES})sdf
 
     return(
 

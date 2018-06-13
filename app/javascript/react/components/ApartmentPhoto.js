@@ -56,6 +56,7 @@ const ApartmentPhoto = props => {
 //     thumbnail: `${imgUrl}`,
 //     caption: `${props.description}`,
 //   }
+//
 
 
     return(
