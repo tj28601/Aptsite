@@ -90,18 +90,23 @@ import Gallery from 'react-grid-gallery';
 // let `IMAGE${props.id}` = []
 
 const ApartmentPhoto = props => {
+
 let IMAGE = []
 
-  IMAGE.push(
-    {src: `${props.image_url}`,
-    thumbnail: `${props.image_url}`,
-    caption: `${props.description}`,
+  let imgUrl = props.image_url
+  if (props.image_url === '/images/fallback/default.png') {
+    imgUrl = '/default.png'
   }
-)
+  IMAGE.push(
+    {src: `${imgUrl}`,
+    thumbnail: `${imgUrl}`,
+    caption: `${props.description}`,
+    }
+  )
 
   return(
 <div id='apartmentPhotoDisplay'>
-<Gallery images={IMAGE} /> 
+<Gallery images={IMAGE} />
 </div>
 // {src: `${props.image_url}`,
 // thumbnail: `${props.image_url}`,
