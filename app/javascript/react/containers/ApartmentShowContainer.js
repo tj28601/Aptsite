@@ -28,7 +28,7 @@ cowPie(array){
 //     var img = images[index];
 //     if(img.hasOwnProperty("isSelected"))
 //         img.isSelected = !img.isSelected;
-//     else
+//     else``
 //         img.isSelected = true;
 //
 //     this.setState({
@@ -57,7 +57,7 @@ cowPie(array){
       })
       .then(response => response.json())
       // .then(json => {
-      //   debugger;
+      //   debugger;sdf
       // })
       .then(body => {
         this.setState({ apartmentInfo: body.apartment });
