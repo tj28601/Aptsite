@@ -14,7 +14,6 @@ tmp/*
 !/log/.keep
 !/tmp/.keep
 
-node_modules/*
 yarn-error.log
 
 .byebug_history
@@ -26,8 +25,10 @@ yarn-debug.log*
 .env
 
 .yarn-integrity
-/public/packs
-/public/packs-test
-/node_modules
+public/packs
+public/packs-test
 yarn-debug.log*
 .yarn-integrity
+
+node_modules/*
+public/uploads/*
