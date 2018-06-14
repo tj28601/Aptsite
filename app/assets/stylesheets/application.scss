@@ -48,12 +48,6 @@ color: black;
 }
 
 
-// @media only screen and (max-width: 850px) {
-//    #aboutdetailsText h3 {
-//     color: blue;
-//   }
-// }
-
 //  ul .menu-outer {
 //   text-align: center;
 // }
@@ -133,22 +127,23 @@ color: black;
 
 
 #aboutdetails {
-  // background: rgba(241,241,241,0.8);
-  // text-align: left;
-  // margin: 10em;
-  // margin-top: 5em;
-  // padding-top: 0em;
-  // border: 5.5px solid black;
-
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
-  // color: black;
+
   font-weight: bold;
   text-align: left;
-  // color: black;
+
   margin: 5em 20em;
   padding: 1em;
   background-position: center;
+}
+@media only screen and (max-width:1000px) {
+    #aboutdetails {
+
+      margin: 3em 1em;
+      padding: .5em;
+
+    }
 }
 
 #favstext{
@@ -250,19 +245,14 @@ a {
   margin: 3em 10em;
   text-align: left;
   font-family:Courier;
-  // font-weight: bold;
 
-  // background: rgba(241,241,241,0.8);
-  // border: 5.5px solid black;
-  // // color: black;
-  // font-weight: bold;
-  // text-align: left;
-  // color: black;
-  // margin: 3em 20em;
-  // padding: 2em;
-  // background-position: center;
-
-
+}
+@media only screen and (max-width:800px) {
+    #apartmentIndex  {
+      columns: 1;
+      margin: 3em 3em;
+      padding: 20px;
+    }
 }
 
 #apartmentIndexText {
@@ -276,24 +266,20 @@ a {
 // }
 
 #apartmentInformation {
-  // background: rgba(241,241,241,0.8);
-  // text-align: left;
-  // background-position: top;
-  // background-position: auto;
-  // margin: 4em;
-  // margin-top: 2em;
-  // margin-bottom: 2em;
-
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
-  // color: black;
-  // font-weight: bold;
   text-align: left;
   color: black;
   margin: 3em 20em;
   padding: 2em;
   background-position: center;
+}
+@media only screen and (max-width:800px) {
+    #apartmentInformation  {
 
+      margin: 3em 3em;
+      // padding: 20px;
+    }
 }
 
 #photoarray {
@@ -472,14 +458,6 @@ font-size: 20px;
 
 
 #logIn {
-  // background: rgba(241,241,241,0.8);
-  // border: 5.5px solid black;
-  // color: black;
-  // font-weight: bold;
-  // text-align: center;
-  // margin: 1em;
-  // padding: 1em;
-
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
   // color: black;
@@ -487,8 +465,15 @@ font-size: 20px;
   text-align: left;
   color: black;
   margin: 5em 20em;
-  padding: 2em;
+  padding: 0em 2em 2em 2em;
   background-position: center;
+}
+@media only screen and (max-width:900px) {
+    #logIn {
+
+      margin: 5em .33em;
+      // padding: 20px;
+    }
 }
 #contactUs {
     background: rgba(241,241,241,0.8);
@@ -504,12 +489,15 @@ font-size: 20px;
     // display: inline;
     // margin: 5em 50em 160em 5em;
 }
-// #favoriteshover :hover {
-//   background-color: #777777;
-//   // background-color: yellow;
-//   width: 30%;
-//   text-decoration: underline;
-// }
+
+@media only screen and (max-width:1000px) {
+    #contactUs {
+
+      margin: 3em .7em;
+      padding: 1em;
+      // padding: 20px;
+    }
+}
 
 #apartmentIndexhover :hover {
   // background-color: #777777;
@@ -523,29 +511,21 @@ font-size: 20px;
 // }
 
 #favorites {
-      // background: rgba(241,241,241,0.8);
-      // border: 5.5px solid black;
-      // // color: black;
-      // font-weight: bold;
-      // text-align: left;
-      // color: black;
-      // // margin: 5em 10em;
-      // padding: 2em;
-      //
-      // // display: inline;
-      // margin: 5em;
-
       background: rgba(241,241,241,0.8);
       border: 5.5px solid black;
-      // color: black;
-      // font-weight: bold;
       text-align: left;
       color: black;
       // margin: 5em 5em;
       margin: 5em 16em;
       padding: 2em;
       background-position: center;
+}
+@media only screen and (max-width:1000px) {
+    #favorites {
+      margin: 5em 0.33em;
+      // padding: .5em;
 
+    }
 }
 
 #favorites a {
@@ -572,14 +552,6 @@ padding: 0em;
 }
 
 #signUp {
-  // background: rgba(241,241,241,0.8);
-  // border: 5.5px solid black;
-  // color: black;
-  // font-weight: bold;
-  // text-align: center;
-  // margin: 1em;
-  // padding: 1em;
-
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
   // color: black;
@@ -587,9 +559,18 @@ padding: 0em;
   text-align: left;
   color: black;
   margin: 5em 20em;
-  padding: 2em;
+  padding: 0em 2em 2em 2em;
+  // padding: 2em;
   background-position: center;
 }
+@media only screen and (max-width:900px) {
+    #signUp {
+
+      margin: 5em 0.33em;
+      // padding: 20px;
+    }
+}
+
 
 #photosTitle {
   background: rgba(241,241,241,0.8);
@@ -597,6 +578,13 @@ padding: 0em;
   // width: 50%;
   // margin-left: 80px;
   margin: 3em 20em;
+}
+@media only screen and (max-width:800px) {
+    #photosTitle {
+
+      margin: 3em 3em;
+      // padding: 20px;
+    }
 }
 #welcomeTitle {
   // background: rgba(241,241,241,0.8);
