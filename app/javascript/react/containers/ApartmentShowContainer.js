@@ -114,7 +114,7 @@ cowPie(array){
               description={ photo.photo_description }
               image_url={ photo.image_url }
               current_user={ this.state.userInfo.role }
-              scaleWidth={ photo.scaleWidth }
+
               />
           </div>
 

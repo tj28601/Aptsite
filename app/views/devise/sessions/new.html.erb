@@ -1,6 +1,17 @@
 <div id = 'logIn'>
-<h2>Log in</h2>
-
+  <div id="fav-menu-outer">
+   <div class="favtable">
+     <ul id="horiz-list" style="list-style-type:none;">
+       <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+       <li><a href="/aboutdetails"><i class="fas fa-users"></i> About</a></li>
+       <li><a href="/favorites"><i class="far fa-star"></i> Favorites</a></li>
+       <li><a href="/contacts/new"><i class="far fa-envelope"></i> Contact Us</a></li>
+     </ul>
+   </div>
+ </div>
+<h1>Sign In</h1>
+</br>
+</br>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email, class: "form_label_styling" %><br />
@@ -21,7 +32,7 @@
 
   <div class="actions">
     <br/>
-    <%= f.submit "Log in", class: "button" %>
+    <%= f.submit "Log in", class: "button", id: "sendmsg" %>
   <!-- </div -->
 <% end %>
 <br/>

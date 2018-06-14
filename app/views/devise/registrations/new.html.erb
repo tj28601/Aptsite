@@ -1,6 +1,17 @@
 <div id = 'signUp'>
-<h2>Sign up</h2>
-
+  <div id="fav-menu-outer">
+   <div class="favtable">
+     <ul id="horiz-list" style="list-style-type:none;">
+       <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+       <li><a href="/aboutdetails"><i class="fas fa-users"></i> About</a></li>
+       <li><a href="/favorites"><i class="far fa-star"></i> Favorites</a></li>
+       <li><a href="/contacts/new"><i class="far fa-envelope"></i> Contact Us</a></li>
+     </ul>
+   </div>
+ </div>
+<h1>Sign Up</h1>
+</br>
+</br>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -24,9 +35,8 @@
 
   <div class="actions">
     <br/>
-    <%= f.submit "Sign up", class: "button" %>
+    <%= f.submit "Sign up", class: "button", id: "sendmsg" %>
   </div>
 <% end %>
 <br/>
-<!-- <button id='standardbutton'><%= render "devise/shared/links" %></button> -->
 </div>
