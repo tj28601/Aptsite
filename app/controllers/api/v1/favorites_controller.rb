@@ -1,5 +1,5 @@
 class Api::V1::FavoritesController < ApplicationController
-# skip_before_action :verify_authenticity_token
+# before_action :authenticate_user!, except: [:index, :show]
   def show
   end
 
@@ -7,7 +7,7 @@ class Api::V1::FavoritesController < ApplicationController
     @favorite = Favorite.new
   end
   def create
-    # binding.pry
+    # if user_signed_in?
     # @favorite = Favorite.new(favorite_params)
     # @favorite.user_id = current_user.id
     # if @favorite.save
@@ -15,16 +15,43 @@ class Api::V1::FavoritesController < ApplicationController
     # else
     #   render json: { error: @favorite.errors.full_messages }, status: :unprocessable_entity
     # end
+if user_signed_in?
     @apartment=Apartment.find(params[:id])
     @favorite=Favorite.new(favorite_params)
     @favorite.apartment_id = @apartment.id
     @favorite.user_id = current_user.id
-    if @favorite.save
-      render json: Favorite.all
-    else
-      render json: { error: @favorite.errors.full_messages }, status: :unprocessable_entity
-    end
-  end
+     @favorite.save
+      # redirect_to favorites_path
+      flash[:notice] = 'Favorite added successfully!'
+# rendirect_to favorites_path
+# render template: 'aboutdetails/index'
+
+ else
+    flash[:notice] = 'You must be signed in to add a favorite.'
+     # render 'aboutdetails/index'
+end
+end
+#       flash[:notice] = 'Favorite added successfully!'
+
+    # role = current_user.role
+# if current_user.id = undefined
+#     flash[:notice] = 'You must be signed in to add a favorite.'
+#   redirect_to root_path
+# binding.pry
+    # if @favorite.save
+
+        # binding.pry
+              # flash[:notice] = 'Favorite added successfully!'
+      #   # binding.pry
+      # # console.log("hello")
+      #   # render json: Favorite.all
+    #     redirect_to new_user_session_path
+    #   #   # render json: { error: @favorite.errors.full_messages }, status: :unprocessable_entity
+    #   end
+    # end
+
+
+
 
   def index
     # render json: Favorite.where(user_id: current_user)

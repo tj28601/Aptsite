@@ -18,7 +18,7 @@ imgUrl = '/default.png'
 //   }
 // })
 // <h5><button id='photobutton'><a id="addNewApt" href='/apartments/new'>Add New Apartment</a></button></h5>
-let favButton = <h5><button id="favId" onClick={props.addAptToFavs}><i className="fas fa-plus"></i> Add Fav</button></h5>;
+let favButton = <h5><button id="favId" onClick={props.addAptToFavs}><div id = 'favIdhover'><i className="fas fa-plus"></i> Add Fav</div></button></h5>;
 let favArray = props.favorites.map((fav) => {
   // let id=cow
   if (fav.apartment.address === props.address) {

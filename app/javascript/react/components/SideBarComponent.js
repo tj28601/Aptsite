@@ -24,14 +24,29 @@ const SideBarComponent = props => {
     // })
 
 
+  //   let sessionDisplay = props.current_user
+  // if (props.current_user === undefined) {
+  // sessionDisplay =   <a id="sessionDisplay" className="menu-item" href="/users/sign_in"><i className="fas fa-sign-in-alt"></i> Log In</a>
+  // // <a id="sessionDisplay" className="menu-item" href="/users/sign_in"><i className="fas fa-sign-in-alt"></i> {sessionDisplay}</a>
+  // }
+  // else{
+  //   sessionDisplay = <a id="sessionDisplay" className="menu-item" href="/users/sign_in"><i className="fas fa-sign-in-alt"></i> Sign Out</a>
+  // }
+
+      // debugger;
     return(
 
       <Menu id='sideBar'>
+      <br/>
+      <br/>
 
+        <br/>
         <a id="home" className="menu-item" href="/"><i className="fas fa-home"></i> Home</a>
         <a id="about" className="menu-item" href="/aboutdetails"><i className="fas fa-users"></i> About</a>
         <a id="favs" className="menu-item" href="/favorites"><i className="far fa-star"></i> Favorites</a>
         <a id="contact" className="menu-item" href="/contacts/new"><i className="far fa-envelope"></i> Contact Us</a>
+
+
        </Menu>
 
     )
