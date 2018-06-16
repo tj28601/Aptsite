@@ -57,11 +57,11 @@ cowPie(array){
       })
       .then(response => response.json())
       // .then(json => {
-      //   debugger;sdf
+      //   debugger;
       // })
       .then(body => {
         this.setState({ apartmentInfo: body.apartment });
-        this.setState({ userInfo: body.current_user });
+        this.setState({ userInfo: body.apartment.current_user });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
       fetch(`/api/v1/photos/${apartmentId}`)
