@@ -66,8 +66,48 @@ apt3 = Apartment.find_or_create_by!({
 
 apt1photo1 = Photo.find_or_create_by!({
   apartment_id: 1,
-  photo_description: "Elegant Living Room with Marvelous Views !!!"
+  photo_description: "Elegant Living Room with Marvelous Views!"
   })
+
+  apt1photo2 = Photo.find_or_create_by!({
+    apartment_id: 1,
+    photo_description: "Beautiful bathroom"
+    })
+
+  apt1photo3 = Photo.find_or_create_by!({
+    apartment_id: 1,
+    photo_description: "Amazing bedroom!"
+    })
+
+  apt2photo1 = Photo.find_or_create_by!({
+    apartment_id: 2,
+    photo_description: "GORGEOUS bedroom !!!"
+    })
+
+  apt2photo2 = Photo.find_or_create_by!({
+    apartment_id: 2,
+    photo_description: "SPACIOUS Living Room!"
+    })
+
+  apt2photo3 = Photo.find_or_create_by!({
+    apartment_id: 2,
+    photo_description: "Nice kitchen, GREAT for entertainment!"
+    })
+
+  apt3photo1 = Photo.find_or_create_by!({
+    apartment_id: 3,
+    photo_description: "INCREDIBLE bedroom!"
+    })
+
+  apt3photo2 = Photo.find_or_create_by!({
+    apartment_id: 3,
+    photo_description: "Stylish Living Room!"
+    })
+
+  apt3photo3 = Photo.find_or_create_by!({
+    apartment_id: 3,
+    photo_description: "Beautiful bathroom!"
+    })
 #   apt1photo1.image = Rails.root.join("/apt1photo1.jpg").open
 #   apt1photo1.save!
 # apt1photo2 = Photo.find_or_create_by!({
