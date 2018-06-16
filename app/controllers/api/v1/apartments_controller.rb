@@ -6,9 +6,15 @@ class Api::V1::ApartmentsController < ApplicationController
     # all_apartments = Apartment.all
     # render json: all_apartments, each_serializer: ApartmentSerializer
 
+    all_apartments = Apartment.all
+    # serializedapts = all_apartments, each_serializer: ApartmentSerializer
+
     @apartments=Apartment.all
     @current_user = current_user
-     render json: {apartments: @apartments, current_user: current_user}
+     # render json: {apartments: @apartments, current_user: current_user}
+     render json: {apartments: all_apartments, current_user: current_user}
+
+     # render json: all_apartments, each_serializer: ApartmentSerializer, current_user: current_user
 
 
   end
@@ -19,6 +25,7 @@ class Api::V1::ApartmentsController < ApplicationController
 
     @apartment=Apartment.find(params[:id])
     @current_user = current_user
-     render json: {apartment: @apartment, current_user: current_user }
+     # render json: {apartment: @apartment, current_user: current_user }
+     render json: @apartment, serializer: ApartmentSerializer, current_user: current_user
   end
 end

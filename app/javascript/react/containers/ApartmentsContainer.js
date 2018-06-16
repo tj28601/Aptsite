@@ -138,6 +138,7 @@ class ApartmentsContainer extends Component {
     favorites={this.state.favorites}
     deleteFromFavs={this.deleteFromFavs}
     pageWrapId={ "sidebarburgercomponent" }
+    current_user={ this.state.userInfo.role }
   />
 
 )
