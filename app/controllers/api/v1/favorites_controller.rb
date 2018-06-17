@@ -54,8 +54,8 @@ end
 
 
   def index
-    # render json: Favorite.where(user_id: current_user)
-    render json: Favorite.all
+    render json: Favorite.where(user_id: current_user)
+    # render json: Favorite.all
   end
 
   def update
