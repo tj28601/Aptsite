@@ -16,12 +16,12 @@ class ApartmentShowContainer extends Component {
       photoInfo: [],
       images: [],
     }
-        this.cowPie = this.cowPie.bind(this);
+
   }
 
-cowPie(array){
-  this.setState({ images: array })
-}
+// cowPie(array){
+//   this.setState({ images: array })
+// }
 // console.log(images)
 //   onSelectImage (index, image) {
 //     var images = this.state.images.slice();

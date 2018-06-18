@@ -64,7 +64,7 @@ const ApartmentPhoto = props => {
 
   <div id='apartmentPhotoDisplay'>
     <Gallery images={IMAGES}/>
-
+    <h1>{editButton}</h1>
   </div>
 
     )
