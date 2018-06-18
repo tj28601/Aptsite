@@ -7,9 +7,16 @@ class Api::V1::PhotosController < ApplicationController
     render json: all_photos, each_serializer: PhotoSerializer
   end
   def show
-    # gon.photos = "Hallelujah"
+
+
+
+
     @apartment=Apartment.find(params[:id])
     render json: @apartment.photos, each_serializer: PhotoSerializer
+
+      # @current_user = current_user
+       # render :json => @current_user, :json => @apartment.photos
+       # render json: {photos: @apartment.photos, current_user: current_user}
   end
   def create
     # binding.pry

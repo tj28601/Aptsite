@@ -19,23 +19,6 @@ class ApartmentShowContainer extends Component {
 
   }
 
-// cowPie(array){
-//   this.setState({ images: array })
-// }
-// console.log(images)
-//   onSelectImage (index, image) {
-//     var images = this.state.images.slice();
-//     var img = images[index];
-//     if(img.hasOwnProperty("isSelected"))
-//         img.isSelected = !img.isSelected;
-//     else``
-//         img.isSelected = true;
-//
-//     this.setState({
-//         images: images
-//     });
-// }
-
 
   componentDidMount(){
     let apartmentId = this.props.params.id
@@ -61,10 +44,19 @@ class ApartmentShowContainer extends Component {
       // })
       .then(body => {
         this.setState({ apartmentInfo: body.apartment });
+if (body.apartment.current_user !== null){
         this.setState({ userInfo: body.apartment.current_user });
+      }
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
-      fetch(`/api/v1/photos/${apartmentId}`)
+
+      fetch(`/api/v1/photos/${apartmentId}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          credentials: 'same-origin'
+        })
         .then(response => {
           if (response.ok) {
             return response;
@@ -75,6 +67,9 @@ class ApartmentShowContainer extends Component {
           }
         })
         .then(response => response.json())
+        // .then(json => {
+        //   debugger;
+        // })
         .then(body => {
           this.setState({ photoInfo: body.photos });
         })
@@ -105,6 +100,7 @@ class ApartmentShowContainer extends Component {
             // let image_url= photo.image_url
 // Object.assign({}, photo,{scaleWidth: undefined})
 // let IMAGES = []
+
       return(
         <div id = "photoarray">
           <ApartmentPhoto
@@ -114,6 +110,7 @@ class ApartmentShowContainer extends Component {
               description={ photo.photo_description }
               image_url={ photo.image_url }
               current_user={ this.state.userInfo.role }
+
 
               />
           </div>

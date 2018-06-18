@@ -25,6 +25,7 @@ class Api::V1::ApartmentsController < ApplicationController
 
     @apartment=Apartment.find(params[:id])
     # cow = @apartment, serializer: ApartmentSerializer
+
     @current_user = current_user
 
      # render json: {apartment: @apartment, current_user: current_user}
