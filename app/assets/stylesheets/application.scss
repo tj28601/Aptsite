@@ -836,13 +836,21 @@ padding: 0em;
 
 /* General sidebar styles */
 .bm-menu {
-  // background: #373a47;
-  padding: 2.5em 1.5em 0;
+
+  // padding: 2.5em 1.5em 0;
+  padding: 4.5em 1.5em 0;
   font-size: 1.15em;
   height: 20px;
   background: white;
-    border: 5.5px solid black;
+  border: 5.5px solid black;
+
+// top: 20px;
+
+  // padding: 0em 1.5em 0;
 }
+// .bm-menu-wrap{
+//   padding: 0em;
+// }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
@@ -851,14 +859,28 @@ padding: 0em;
 
 /* Wrapper for item list */
 .bm-item-list {
-  // color: #b8b7ad;
+
   color: black;
   padding: 0.8em;
+
+  // padding: 0em, 0.8, 0.8, 0.8em;
+}
+
+@media only screen and (max-width:425px) {
+  .bm-item-list {
+    // padding: 0em, 0.8em, 0em, 0em;
+    padding: 0em;
+  }
+  .bm-menu {
+     padding: 0em 1.5em;
+  }
 }
 
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+
+
 }
 farfa-star{
   height:24px;

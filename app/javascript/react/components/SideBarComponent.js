@@ -37,10 +37,7 @@ const SideBarComponent = props => {
     return(
 
       <Menu id='sideBar'>
-      <br/>
-      <br/>
 
-        <br/>
         <a id="home" className="menu-item" href="/"><i className="fas fa-home"></i> Home</a>
         <a id="about" className="menu-item" href="/aboutdetails"><i className="fas fa-users"></i> About</a>
         <a id="favs" className="menu-item" href="/favorites"><i className="far fa-star"></i> Favorites</a>
