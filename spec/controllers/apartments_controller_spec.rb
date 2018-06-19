@@ -12,32 +12,78 @@ RSpec.describe ApartmentsController, type: :controller do
     address: '13 4th St Boston, MA 02147',
     bedrooms: '3',
     bathrooms: '3',
+    pets: 'Only fish.'
     )
 
   describe "POST#create" do
     it "admin is able to add apartment to the database" do
       sign_in (user)
-      post :create, params: { apartment: { title: apartment.title, description: apartment.description, price: apartment.price, address: apartment.address, bedrooms: apartment.bedrooms, bathrooms: apartment.bathrooms, sq_ft: apartment.sq_ft, pets: apartment.pets, date_available: apartment.date_available, thumbnail_photo: apartment.thumbnail_photo } }
+      post :create, params: { apartment: { title: apartment.title,
+        description: apartment.description,
+        price: apartment.price,
+        address: apartment.address,
+        bedrooms: apartment.bedrooms,
+        bathrooms: apartment.bathrooms,
+        sq_ft: apartment.sq_ft,
+        pets: apartment.pets,
+        date_available: apartment.date_available,
+        thumbnail_photo: apartment.thumbnail_photo } }
       expect(Apartment.find(apartment.id).description).to eq 'Beautiful apartment!'
     end
     it 'should not add apartment to database if admin is not signed in' do
-      post :create, params: { apartment: { title: apartment.title, description: apartment.description, price: apartment.price, address: apartment.address, bedrooms: apartment.bedrooms, bathrooms: apartment.bathrooms, sq_ft: apartment.sq_ft, pets: apartment.pets, date_available: apartment.date_available, thumbnail_photo: apartment.thumbnail_photo } }
+      post :create, params: { apartment: { title: apartment.title,
+        description: apartment.description,
+        price: apartment.price,
+        address: apartment.address,
+        bedrooms: apartment.bedrooms,
+        bathrooms: apartment.bathrooms,
+        sq_ft: apartment.sq_ft,
+        pets: apartment.pets,
+        date_available: apartment.date_available,
+        thumbnail_photo: apartment.thumbnail_photo } }
       expect{Apartment.find_by(description: 'Beautiful apartment!').length}.to raise_error(NoMethodError)
     end
   end
   describe "PATCH#update" do
     it "should change the data in the db if creator is signed in" do
       sign_in (user)
-      patch :update, params: { id: apartment.id, apartment: { title: 'new apartment title', description: apartment.description, price: apartment.price, address: apartment.address, bedrooms: apartment.bedrooms, bathrooms: apartment.bathrooms, sq_ft: apartment.sq_ft, pets: apartment.pets, date_available: apartment.date_available, thumbnail_photo: apartment.thumbnail_photo } }
+      patch :update, params: { id: apartment.id, apartment: { title: 'new apartment title',
+        description: apartment.description,
+        price: apartment.price,
+        address: apartment.address,
+        bedrooms: apartment.bedrooms,
+        bathrooms: apartment.bathrooms,
+        sq_ft: apartment.sq_ft,
+        pets: apartment.pets,
+        date_available: apartment.date_available,
+        thumbnail_photo: apartment.thumbnail_photo } }
       expect(Apartment.find(apartment.id).description).to eq 'Beautiful apartment!'
     end
     it "should not update db if form is incomplete" do
       sign_in (user)
-      patch :update, params: { id: apartment.id, apartment: { title: 'new apartment title', description: apartment.description, price: apartment.price, address: apartment.address, bedrooms: apartment.bedrooms, bathrooms: apartment.bathrooms, sq_ft: apartment.sq_ft, pets: apartment.pets, date_available: apartment.date_available, thumbnail_photo: apartment.thumbnail_photo } }
+      patch :update, params: { id: apartment.id, apartment: { title: 'new apartment title',
+        description: apartment.description,
+        price: apartment.price,
+        address: apartment.address,
+        bedrooms: apartment.bedrooms,
+        bathrooms: apartment.bathrooms,
+        sq_ft: apartment.sq_ft,
+        pets: apartment.pets,
+        date_available: apartment.date_available,
+        thumbnail_photo: apartment.thumbnail_photo } }
       expect(Apartment.find(apartment.id).price).to eq '$1700'
     end
   it "should not update db if user is not logged in" do
-    patch :update, params: { id: apartment.id, apartment: { title: 'new apartment title', description: "", price: apartment.price, address: apartment.address, bedrooms: apartment.bedrooms, bathrooms: apartment.bathrooms, sq_ft: apartment.sq_ft, pets: apartment.pets, date_available: apartment.date_available, thumbnail_photo: apartment.thumbnail_photo } }
+    patch :update, params: { id: apartment.id, apartment: { title: 'new apartment title',
+      description: "",
+      price: apartment.price,
+      address: apartment.address,
+      bedrooms: apartment.bedrooms,
+      bathrooms: apartment.bathrooms,
+      sq_ft: apartment.sq_ft,
+      pets: apartment.pets,
+      date_available: apartment.date_available,
+      thumbnail_photo: apartment.thumbnail_photo } }
     expect(Apartment.find(apartment.id).price).to eq '$1700'
     end
   end
@@ -61,13 +107,13 @@ RSpec.describe ApartmentsController, type: :controller do
     end
   end
 
-  describe "DELETE#destroy" do
-    it 'An admin deletes an apartment profile' do
-
-      sign_in (user)
-      delete :destroy, params: { id: apartment.id }
-      expect{Apartment.find(params:[:id])}.to raise_error
-
-    end
-  end
+  # describe "DELETE#destroy" do
+  #   it 'An admin deletes an apartment profile' do
+  #
+  #     sign_in (user)
+  #     delete :destroy, params: { id: apartment.id }
+  #     expect{Apartment.find(params:[:id])}.to raise_error
+  #
+  #   end
+  # end
 end

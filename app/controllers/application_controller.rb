@@ -17,14 +17,20 @@ class ApplicationController < ActionController::Base
 
 
 #bring this back.......1234567
-#   before_action :configure_permitted_parameters, if: :devise_controller?
+  # before_action :configure_permitted_parameters, if: :devise_controller?
 #
 # protected
 #
-#   def configure_permitted_parameters
-#     devise_parameter_sanitizer.permit(:sign_up, keys: [:profile_photo])
-#   end
+  # def configure_permitted_parameters
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:profile_photo, :email])
+  # end
   #this and above
+  # protected
+  # def configure_permitted_parameters
+  #   whitelist = %i[email, password]
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: whitelist)
+  #       devise_parameter_sanitizer.permit(:account_update, keys: whitelist)
+  # end
 
 
 #

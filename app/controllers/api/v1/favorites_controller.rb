@@ -21,6 +21,8 @@ if user_signed_in?
     @favorite.apartment_id = @apartment.id
     @favorite.user_id = current_user.id
      @favorite.save
+
+
       # redirect_to favorites_path
       flash[:notice] = 'Favorite added successfully!'
 # rendirect_to favorites_path

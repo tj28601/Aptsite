@@ -11,6 +11,7 @@ RSpec.describe Api::V1::PhotosController, type: :controller do
     address: '13 4th St Boston, MA 02147',
     bedrooms: '3',
     bathrooms: '3',
+    pets: 'Only cats. Meow!'
     )
 
   # photo = Photo.create!(

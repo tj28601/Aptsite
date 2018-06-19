@@ -5,12 +5,13 @@ RSpec.describe PhotosController, type: :controller do
   let!(:user1) {FactoryBot.create(:user, role: "member")}
   # let!(:apartment) {Apartment.new(:apartment)}
   apartment = Apartment.create!(
-    title: "Amazing Apartment",
+    title: 'Amazing Apartment',
     description: "Beautiful apartment!",
     price: "$1700",
     address: '13 4th St Boston, MA 02147',
     bedrooms: '3',
     bathrooms: '3',
+    pets: 'Only cats. Meow!'
     )
 
     # photo = Photo.create!(apartment_id: apartment.id,
