@@ -14,14 +14,20 @@
 </br>
 </br>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :email, class: "form_label_styling" %><br />
     <%= f.email_field :email, id: "field_styling", autofocus: true, autocomplete: "email" %>
-  </div>
+  </div> -->
+
+  <div class="field">
+  <%= f.label :email, class: "form_label_styling" %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+</div>
+<!-- <div id="field_styling"></div> -->
 
   <div class="field">
     <%= f.label :password, class: "form_label_styling" %><br />
-    <%= f.password_field :password, id: "field_styling", autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
