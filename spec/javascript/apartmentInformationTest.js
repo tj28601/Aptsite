@@ -26,11 +26,12 @@ describe('ApartmentInformation', ()=>{
    wrapper.setProps({ price: "$1700", title: "Amazing Apartment", description: "Beautiful apartment!",
      address: '13 4th St Boston, MA 02147',
      bedrooms: '3',
-     bathrooms: '3' })
+     bathrooms: '3',
+   pets: 'No pets' })
  });
 
  it('Should return html with the data from props', () => {
-   expect(wrapper.find('li').at(1)).toHaveText('Amazing Apartment')
+   expect(wrapper.find('li').at(0)).toHaveText('Rent: $1700/month')
 
  })
 })
