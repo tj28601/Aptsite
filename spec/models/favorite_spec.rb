@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-# RSpec.configure do |config|
-#   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
-# end
+RSpec.configure do |config|
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+end
 
 RSpec.describe Favorite, type: :model do
   describe 'validations' do
@@ -12,5 +12,11 @@ RSpec.describe Favorite, type: :model do
 
     it { should_not have_valid(:user_id).when('') }
     it { should_not have_valid(:apartment_id).when('') }
+
+    # it { should belong_to :apartment }
+    # it { should belong_to :user }
+    it { should belong_to(:apartment) }
+  it { should belong_to(:user) }
+
   end
 end

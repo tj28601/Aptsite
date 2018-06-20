@@ -14,16 +14,16 @@ RSpec.describe PhotosController, type: :controller do
     pets: 'Only cats. Meow!'
     )
 
-    # photo = Photo.create!(apartment_id: apartment.id,
-    #   photo_description: "this is a photo description",
-    #   image: "photo.png")
-    # photo.apartment = apartment
-    # @apartment = Apartment.find(params[:apartment_id])
-    # @photo = Photo.new(photo_params)
-    # @photo.apartment = @apartment
-    # @apartment=Apartment.find(params[:id])
-    #   render json: @apartment.photos, each_serializer: PhotoSerializer
-
+  #   photo = Photo.create!(apartment_id: apartment.id,
+  #     photo_description: "this is a photo description",
+  #     image: "photo.png")
+  #   photo.apartment = apartment
+  #   @apartment = Apartment.find(params[:apartment_id])
+  #   @photo = Photo.new(photo_params)
+  #   @photo.apartment = @apartment
+  #   @apartment=Apartment.find(params[:id])
+  #     render json: @apartment.photos, each_serializer: PhotoSerializer
+  #
   # describe "POST#create" do
   #   it "admin is able to add a photo to an apartment profile" do
   #     sign_in (user)
@@ -31,9 +31,9 @@ RSpec.describe PhotosController, type: :controller do
   #     # post :create, params: { photo: { apartment_id: apartment.id, photo_description: photo.photo_description, image: photo.image } }
   #     expect(Photo.find(photo.id).photo_description).to eq 'Here is a photo description'
   #   end
-    # it 'should not add apartment to database if admin is not signed in' do
-    #   post :create, params: { apartment: { title: apartment.title, description: apartment.description, price: apartment.price, address: apartment.address, bedrooms: apartment.bedrooms, bathrooms: apartment.bathrooms, sq_ft: apartment.sq_ft, pets: apartment.pets, date_available: apartment.date_available, thumbnail_photo: apartment.thumbnail_photo } }
-    #   expect{Apartment.find_by(description: 'Beautiful apartment!').length}.to raise_error(NoMethodError)
-    # end
   # end
+  #   it 'should not add apartment to database if admin is not signed in' do
+  #     post :create, params: { apartment: { title: apartment.title, description: apartment.description, price: apartment.price, address: apartment.address, bedrooms: apartment.bedrooms, bathrooms: apartment.bathrooms, sq_ft: apartment.sq_ft, pets: apartment.pets, date_available: apartment.date_available, thumbnail_photo: apartment.thumbnail_photo } }
+  #     expect{Apartment.find_by(description: 'Beautiful apartment!').length}.to raise_error(NoMethodError)
+  #   end
 end
