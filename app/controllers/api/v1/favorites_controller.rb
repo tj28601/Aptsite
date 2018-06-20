@@ -15,6 +15,8 @@ class Api::V1::FavoritesController < ApplicationController
     # else
     #   render json: { error: @favorite.errors.full_messages }, status: :unprocessable_entity
     # end
+
+    #end
 if user_signed_in?
     @apartment=Apartment.find(params[:id])
     @favorite=Favorite.new(favorite_params)
