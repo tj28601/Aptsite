@@ -1,9 +1,14 @@
 {
   "name": "apartmentsss",
   "private": true,
+  "engines": {
+    "node": ">=6.0.0",
+    "yarn": ">=0.25.2"
+  },
   "dependencies": {
-    "@rails/webpacker": "^3.3.1",
+    "@rails/webpacker": "^3.4.0",
     "babel-preset-react": "^6.24.1",
+    "npm": "^6.0.0",
     "google-map-react": "^1.0.0",
     "prop-types": "^15.6.0",
     "react": "^15.4.2",
