@@ -27,6 +27,7 @@ RSpec.describe Apartment, type: :model do
     it { should have_valid(:address).when('Apt description') }
     it { should have_valid(:bedrooms).when('4') }
     it { should have_valid(:bathrooms).when('2') }
+    it { should have_valid(:pets).when('Cats only.') }
 
     it { should_not have_valid(:title).when("") }
     it { should_not have_valid(:description).when("") }
@@ -34,8 +35,14 @@ RSpec.describe Apartment, type: :model do
     it { should_not have_valid(:address).when("") }
     it { should_not have_valid(:bedrooms).when("") }
     it { should_not have_valid(:bathrooms).when("") }
+      it { should_not have_valid(:pets).when("") }
 
     it { should have_many :photos }
+    # it { should have_many :users }
+    # it { should have_many :favorites }
+    # it { should have_many(:favorites) }
+    # it { should have_many(:users) }
+    # it { should have_many(:users).through(:favorites) }
     end
   end
 
