@@ -11,10 +11,12 @@ class Api::V1::FavoritesController < ApplicationController
     # @favorite = Favorite.new(favorite_params)
     # @favorite.user_id = current_user.id
     # if @favorite.save
-    #   render json: Favorite.all
+    #   render json: Favorit ....e.all
     # else
     #   render json: { error: @favorite.errors.full_messages }, status: :unprocessable_entity
     # end
+
+    #end
 if user_signed_in?
     @apartment=Apartment.find(params[:id])
     @favorite=Favorite.new(favorite_params)
