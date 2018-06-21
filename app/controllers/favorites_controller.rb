@@ -25,10 +25,11 @@ class FavoritesController < ApplicationController
 
     gon.coords.zip(gon.address).each do|coords, address|
       gon.markerArray <<  [coords, address]
+
     end
   end
 
-def create
+# def create
   # if @favorite.save
   #  # redirect_to favorites_path
   #  flash[:notice] = 'asdfkl;'
@@ -36,7 +37,7 @@ def create
   #   # redirect_to favorites_path
   #   render 'aboutdetails/index'
   # end
-end
+# end
 
   def destroy
 # binding.pry

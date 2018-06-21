@@ -131,5 +131,4 @@ RSpec.describe ApartmentsController, type: :controller do
 
     end
   end
-
 end
