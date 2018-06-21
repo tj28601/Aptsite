@@ -917,7 +917,7 @@ padding: 0em;
   // padding: 0em, 0.8, 0.8, 0.8em;
 }
 
-@media only screen and (min-width:425px) {
+@media only screen and (max-height:425px) {
   .bm-item-list {
     // padding: 0em, 0.8em, 0em, 0em;
     padding: 0em;
