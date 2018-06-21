@@ -13,7 +13,16 @@ npm install
 rake db:create
 rake db:migrate
 ```
+# Test Suite
+```
 
+rake db:test:prepare
+rspec spec
+npm test
+```
+<!-- # App Overview
+* In order to create a favorites list, create an account & log in.
+* U
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
@@ -35,4 +44,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* ... -->
