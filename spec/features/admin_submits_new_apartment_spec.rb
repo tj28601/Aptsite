@@ -41,7 +41,7 @@ describe 'New Apartment Form' do
   end
   scenario 'guest attempts to access form' do
     visit '/apartments/new'
-    expect(page).to have_content "You need to sign in or sign up before continuing."
+    expect(page).to have_content "You do not have access to this page."
     page.should have_xpath('/')
   end
 end
