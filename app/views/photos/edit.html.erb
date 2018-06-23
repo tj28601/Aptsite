@@ -1,6 +1,16 @@
 <br/>
 <br/>
 <div id = 'editPhotoForm'>
+  <br/>
+  <div id="fav-menu-outer">
+   <div class="favtable">
+     <ul id="horiz-list" style="list-style-type:none;">
+       <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+       <li><a href="/about_details"><i class="fas fa-users"></i> About</a></li>
+       <li><a href="/favorites"><i class="far fa-star"></i> Favorites</a></li>
+     </ul>
+   </div>
+  </div>
 <h1>Edit Photo Details</h1>
 
 <h3><button id='deletebutton'><%= link_to 'Delete', [@apartment, @photo], method: :delete, data: { confirm: 'Are you sure?' } %></button></h3>

@@ -202,6 +202,7 @@ a#addNewPhoto:hover{
 #deletebutton {
   background: red;
   color: white;
+  border-radius: 7px;
 }
 #favsdeletebutton {
   background: red;
@@ -560,46 +561,134 @@ margin-left: 90px;
 
 
 #editForm {
+  // background: rgba(241,241,241,0.8);
+  // padding-top: 3.5em;
+  // margin: 0em, 1em;
+  // border: 5.5px solid black;
+  // width: 90%;
+  // margin-left: 70px;
+  // background-position: center;
+  // padding: 15px 40px;
+
   background: rgba(241,241,241,0.8);
-  padding-top: 3.5em;
-  margin: 0em, 1em;
   border: 5.5px solid black;
-  width: 90%;
-  margin-left: 70px;
+  // color: black;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  // margin: 5em 22em;
+  margin: 3em 22em 5em 22em;
+  // margin: 5em 25em 25em 25em;
+  // margin: 5em 30em 25em 30em;
+  // margin: 5em 30em 100em 30em;
+  padding: 0em 2em 2em 2em;
   background-position: center;
-  padding: 15px 40px;
 }
 
 #editPhotoForm {
+  // background: rgba(241,241,241,0.8);
+  // padding-top: 3.5em;
+  // border: 5.5px solid black;
+  // width: 90%;
+  // margin-left: 70px;
+  // background-position: center;
+  // padding: 15px 40px;
+
   background: rgba(241,241,241,0.8);
-  padding-top: 3.5em;
   border: 5.5px solid black;
-  width: 90%;
-  margin-left: 70px;
+  // color: black;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  margin: 5em 22em;
+  // margin: 5em 25em 25em 25em;
+  // margin: 5em 30em 25em 30em;
+  // margin: 5em 30em 100em 30em;
+  padding: 0em 2em 2em 2em;
   background-position: center;
-  padding: 15px 40px;
 }
 
 #newPhotoForm {
+  // background: rgba(241,241,241,0.8);
+  // padding-top: 3.5em;
+  // border: 5.5px solid black;
+  // width: 95%;
+  // margin-left: 38px;
+  // background-position: center;
+  // padding: 15px 40px;
+
+
   background: rgba(241,241,241,0.8);
-  padding-top: 3.5em;
   border: 5.5px solid black;
-  width: 95%;
-  margin-left: 38px;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  margin: 5em 20em;
+  padding: 0em 2em 2em 2em;
   background-position: center;
-  padding: 15px 40px;
 }
 
 #newApartmentForm {
-  background: image-url("background.jpg");
-  background-size: 1460px 1220px;
+  // // background: image-url("background.jpg");
+  // // background-size: 1460px 1220px;
+  //   background: rgba(241,241,241,0.8);
+  //   padding-top: 3.5em;
+  //   border: 5.5px solid black;
+  //   // width: 90%;
+  //   // margin-left: 70px;
+  //   margin: 5em 22em;
+  //   // background-position: center;
+  //   // padding: 15px 40px;
+
+
     background: rgba(241,241,241,0.8);
-    padding-top: 3.5em;
     border: 5.5px solid black;
-    width: 90%;
-    margin-left: 70px;
+    // color: black;
+    font-weight: bold;
+    text-align: left;
+    color: black;
+    // margin: 5em 22em;
+    margin: 3em 22em 5em 22em;
+    // margin: 5em 25em 25em 25em;
+    // margin: 5em 30em 25em 30em;
+    // margin: 5em 30em 100em 30em;
+    padding: 0em 2em 2em 2em;
     background-position: center;
-    padding: 15px 40px;
+
+    // display: inline;
+    // margin: 5em 50em 160em 5em;
+}
+@media only screen and (max-width:1000px) {
+    #newApartmentForm {
+
+      margin: 3em .7em;
+      padding: 1em;
+      // padding: 20px;
+    }
+}
+@media only screen and (max-width:1000px) {
+    #editForm {
+
+      margin: 3em .7em;
+      padding: 1em;
+      // padding: 20px;
+    }
+}
+@media only screen and (max-width:1000px) {
+    #editPhotoForm {
+
+      margin: 3em .7em;
+      padding: 1em;
+      // padding: 20px;
+    }
+}
+@media only screen and (max-width:1000px) {
+    #newPhotoForm {
+
+      margin: 3em .7em;
+      padding: 1em;
+      // padding: 20px;
+    }
 }
 
 .flash {
@@ -984,5 +1073,39 @@ input#user_password{
 border-radius: 10px;
 }
 input#user_password_confirmation{
+border-radius: 10px;
+}
+input#photo_photo_description {
+border-radius: 10px;
+}
+
+input#apartment_title {
+border-radius: 10px;
+}
+input#apartment_description {
+border-radius: 10px;
+}
+input#apartment_price {
+border-radius: 10px;
+}
+input#apartment_address {
+border-radius: 10px;
+}
+input#apartment_bedrooms {
+border-radius: 10px;
+}
+input#apartment_bedrooms {
+border-radius: 10px;
+}
+input#apartment_bathrooms {
+border-radius: 10px;
+}
+input#apartment_sq_ft {
+border-radius: 10px;
+}
+input#apartment_pets {
+border-radius: 10px;
+}
+input#apartment_date_available {
 border-radius: 10px;
 }

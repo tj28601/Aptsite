@@ -18,7 +18,7 @@ class Api::V1::FavoritesController < ApplicationController
       # end
 
       #end
-  if user_signed_in?
+    if user_signed_in?
       # @apartment=Apartment.find(params[:id])
       @favorite=Favorite.new(favorite_params)
         @apartment=Apartment.find(params[:id])
@@ -32,11 +32,11 @@ class Api::V1::FavoritesController < ApplicationController
   # rendirect_to favorites_path
   # render template: 'aboutdetails/index'
 
-   else
+    else
       flash[:notice] = 'You must be signed in to add a favorite.'
        # render 'aboutdetails/index'
+    end
   end
-end
 #       flash[:notice] = 'Favorite added successfully!'
 
     # role = current_user.role

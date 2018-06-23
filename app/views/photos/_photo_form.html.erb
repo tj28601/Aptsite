@@ -1,13 +1,13 @@
 <%= form_for [@apartment, @photo] do |f| %>
 
 
-<%= f.label :image, "image:"  %>
+<%= f.label :image, "Image:", class: "form_label_styling"  %>
 <%= f.file_field :image %>
-<%= f.label :photo_description, "Image Description:" %>
+<%= f.label :photo_description, "Image Description:", class: "form_label_styling" %>
 <%= f.text_field :photo_description %>
 
 <br/>
-<%= f.submit class: "button" %>
+<%= f.submit class: "button", id: "sendmsg" %>
 <br/>
 <br/>
 <br/>

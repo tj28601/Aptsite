@@ -1,8 +1,7 @@
 class PhotosController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize_user, except: [:index, :show]
 
   def create
-
     @apartment = Apartment.find(params[:apartment_id])
     @photo = Photo.new(photo_params)
     @photo.apartment = @apartment
@@ -11,61 +10,34 @@ class PhotosController < ApplicationController
     if @photo.save
       flash[:notice] = "Your photo has been created successfully!"
     redirect_to apartment_path(@photo.apartment_id)
+    end
   end
-end
-
-
-
 
   def new
-    if (current_user.role == 'admin')
-      @apartment = Apartment.find(params[:apartment_id])
-      @photo = Photo.new
-      # (:apartment=>@apartment)
-    else
-        flash[:notice] = 'Sorry :( You do not have access to this page.'
-
-        redirect_to apartments_path
-      end
-    end
-
-    # @photos = @apartment.photos.build
-  # end
+    @apartment = Apartment.find(params[:apartment_id])
+    @photo = Photo.new
+  end
 
   def edit
-
-    if (current_user.role == 'admin')
     @apartment= Apartment.find(params[:apartment_id])
     @photo = Photo.find(params[:id])
-
-  else
-    @apartment= Apartment.find(params[:apartment_id])
-    @photo = Photo.find(params[:id])
-      flash[:notice] = 'You are not able to edit any photos.'
-        # redirect_to apartments_path
-        redirect_to apartment_url (@photo.apartment_id)
-    end
   end
-  # def show
-  #   gon.photos = 'Hallelujah'
-  # end
 
   def update
-
     @apartment= Apartment.find(params[:apartment_id])
     @photo = Photo.find(params[:id])
     if @photo.update(photo_params)
           flash[:notice] = 'Photo updated successfully!'
       redirect_to @apartment
-  else
+    else
       flash[:notice] = 'You are not able to edit this page.'
         redirect_to apartment_path(@photo.apartment_id)
     end
   end
 
   def destroy
-  @apartment= Apartment.find(params[:apartment_id])
-  @photo = Photo.find(params[:id])
+    @apartment= Apartment.find(params[:apartment_id])
+    @photo = Photo.find(params[:id])
 
      @photo.destroy
      flash[:notice] = 'Your photo has been deleted.'
@@ -81,9 +53,13 @@ end
   def photo_params
     params.require(:photo).permit(:photo_description, :image, :apartment_id)
   end
-  def authenticate_user
+
+  def authorize_user
+    @apartment= Apartment.find(params[:apartment_id])
+    # @photo = Photo.find(params[:id])
     if !user_signed_in? || !current_user.admin?
-      raise ActionController::RoutingError.new("Not Found")
+      flash[:notice] = "You do not have access to this page."
+      redirect_to apartment_url(@apartment)
     end
   end
 end
