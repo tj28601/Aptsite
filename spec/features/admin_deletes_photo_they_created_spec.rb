@@ -24,6 +24,6 @@ scenario 'member (non-admin) attempts to delete photo' do
     fill_in 'Password', with: user5.password
     click_button 'Log in'
     visit "/apartments/#{photo.apartment_id}/photos/#{photo.id}/edit"
-    expect(page).to have_content "You are not able to edit any photos."
+    expect(page).to have_content "You do not have access to this page."
   end
 end

@@ -29,8 +29,8 @@ class Api::V1::FavoritesController < ApplicationController
 
         # redirect_to favorites_path
         flash[:notice] = 'Favorite added successfully!'
-  # rendirect_to favorites_path
-  # render template: 'aboutdetails/index'
+    # rendirect_to favorites_path
+    # render template: 'aboutdetails/index'
 
     else
       flash[:notice] = 'You must be signed in to add a favorite.'
