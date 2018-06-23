@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe AboutdetailsController, type: :controller do
+RSpec.describe AboutDetailsController, type: :controller do
 
 
   describe "GET#index" do

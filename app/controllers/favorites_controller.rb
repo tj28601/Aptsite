@@ -40,10 +40,9 @@ class FavoritesController < ApplicationController
 # end
 
   def destroy
-# binding.pry
-  @favorite = Favorite.find(params[:id])
-  @favorite.destroy
-    flash[:notice] = 'Your favorite has been deleted.'
-  redirect_to favorites_path
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+      flash[:notice] = 'Your favorite has been deleted.'
+    redirect_to favorites_path
   end
 end

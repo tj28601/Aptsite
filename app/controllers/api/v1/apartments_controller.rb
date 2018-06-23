@@ -15,8 +15,6 @@ class Api::V1::ApartmentsController < ApplicationController
      render json: {apartments: all_apartments, current_user: current_user}
 
      # render json: all_apartments, each_serializer: ApartmentSerializer, current_user: current_user
-
-
   end
   def show
 
