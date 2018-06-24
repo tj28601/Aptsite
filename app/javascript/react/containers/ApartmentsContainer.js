@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import ApartmentTile from '../components/ApartmentTile';
 import Welcome from '../components/Welcome';
 import { slide as Menu } from 'react-burger-menu';
@@ -8,6 +9,14 @@ class ApartmentsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+//     }
+//   }
+//
+//   render() {
+//   return(
+//   <h1>This is ApartmentsContainer</h1>
+//   )
+// }
       apts: [],
       favorites: [],
       userInfo: {},
@@ -70,34 +79,6 @@ class ApartmentsContainer extends Component {
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
-
-//     componentWillMount(){
-// fetch('/api/v1/favorites', {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     credentials: 'same-origin'
-//   })
-// .then(response => {
-//   if (response.ok) {
-//     return response;
-//   } else {
-//       let errorMessage = `${response.status}(${response.statusText})`,
-//         error = new Error(errorMessage);
-//         throw(error);
-//     }
-// })
-// .then(response => response.json())
-// // .then(json => {
-// //   debugger;
-// // })
-// .then(body => {
-//   let allFavorites = body.favorites
-//     this.setState({ favorites: allFavorites });
-// })
-// .catch(error => console.error(`Error in fetch: ${error.message}`));
-// }
 
   addToFavorites(apt){
   fetch('/api/v1/favorites', {
