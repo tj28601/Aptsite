@@ -2,7 +2,6 @@
 // //
 // const ApartmentPhoto = props => {
 //
-// //
 //   let editButton = ''
 //   if (props.current_user === 'admin') {
 //       editButton = <li><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.apartment_id}/photos/${props.id}/edit`}>Edit | Delete</a></button></li>
