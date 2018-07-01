@@ -11,9 +11,11 @@ class ApartmentsContainer extends Component {
       apts: [],
       favorites: [],
       userInfo: {},
+      selectedTileId:[]
     }
         this.addToFavorites = this.addToFavorites.bind(this);
         this.deleteFromFavs = this.deleteFromFavs.bind(this);
+        this.handleTileClick = this.handleTileClick.bind(this);
   }
 
   componentDidMount() {
@@ -40,7 +42,9 @@ class ApartmentsContainer extends Component {
       // })
       .then(body => {
       this.setState({ apts: body.apartments });
+      if (body.current_user !== null){
       this.setState({ userInfo: body.current_user });
+      }
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
 
@@ -115,6 +119,14 @@ class ApartmentsContainer extends Component {
         })
   }
 
+  handleTileClick(apt) {
+    this.addToFavorites(apt)
+    let clickArray= this.state.selectedTileId.concat(apt.id)
+    this.setState({ selectedTileId: clickArray })
+
+    // this.setState({ selectedTileId: apt.id })
+  }
+
   deleteFromFavs(current_favorite){
     fetch('/api/v1/favorites/' + current_favorite, {
       method: 'DELETE',
@@ -158,8 +170,9 @@ class ApartmentsContainer extends Component {
       let date_available= apt.date_available
       let latitude= apt.latitude
       let longitude= apt.longitude
-      let addAptToFavs = () => this.addToFavorites(apt)
-      let deleteFav = () => this.deleteFromFavs(apt)
+      let addAptToFavs = () => this.addToFavorites(apt);
+      let deleteFav = () => this.deleteFromFavs(apt);
+      let onTileClick = () => this.handleTileClick(apt);
 
       return(
         <ApartmentTile
@@ -180,7 +193,11 @@ class ApartmentsContainer extends Component {
           date_available={ date_available }
           latitude={ latitude }
           longitude={ longitude }
-          favorites = { this.state.favorites }
+          favorites={ this.state.favorites }
+          onTileClick={ onTileClick }
+          selectedTileId={ this.state.selectedTileId }
+          current_user={ this.state.userInfo.role }
+
         />
 
       )
