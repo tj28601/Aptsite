@@ -292,6 +292,9 @@ a {
       padding: 20px;
     }
 }
+#apartmentIndex a {
+color: red;
+}
 
 #apartmentIndexText {
   color: black;
@@ -378,6 +381,18 @@ a {
   // background-color: #D0D0D2;
   background-color: #A9A9A9;
   border-radius: 5px;
+
+  // background-color:#000080;
+}
+#selectedfav {
+  // background-color: yellow;
+  // background-color: #cc5500;
+
+  background-color:#000080;
+  border-radius: 5px;
+  // color: black;
+
+// background-color: #A9A9A9;
 }
 
 ul .photolist {

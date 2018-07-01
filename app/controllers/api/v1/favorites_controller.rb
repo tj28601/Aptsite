@@ -28,7 +28,7 @@ class Api::V1::FavoritesController < ApplicationController
 
 
         # redirect_to favorites_path
-        flash[:notice] = 'Favorite added successfully!'
+        flash[:notice] = 'Added Successfully To Favorites!'
     # rendirect_to favorites_path
     # render template: 'aboutdetails/index'
 
