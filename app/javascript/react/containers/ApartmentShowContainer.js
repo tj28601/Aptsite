@@ -97,10 +97,7 @@ if (body.apartment.current_user !== null){
   render(){
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
-            // let image_url= photo.image_url
-// Object.assign({}, photo,{scaleWidth: undefined})
-// let IMAGES = []
-
+            let thumbnail = `thumbnail: ${photo.image_url}`
       return(
         <div id = "photoarray">
           <ApartmentPhoto
@@ -108,21 +105,13 @@ if (body.apartment.current_user !== null){
               key={ photo.id }
               id={ photo.id }
               description={ photo.photo_description }
-              image_url={ photo.image_url }
+              image_url={ thumbnail }
               current_user={ this.state.userInfo.role }
-
-
               />
-          </div>
-
-      )
-    })
-
-
-// console.log({IMAGES})sdf
-
+        </div>
+      )})
+      console.log({photoObjects})
     return(
-
       <div>
         <ApartmentInformation
           id={ this.state.apartmentInfo.id }
@@ -141,20 +130,17 @@ if (body.apartment.current_user !== null){
           latitude={ this.state.apartmentInfo.latitude }
           longitude={ this.state.apartmentInfo.longitude }
           current_user={ this.state.userInfo.role }
-
           />
           <br/>
           <br/>
-          <PhotosTitle
-            apt_id={ this.state.apartmentInfo.id }
-            apt_key={ this.state.apartmentInfo.id }
-            current_user={ this.state.userInfo.role }
-          />
-
+        <PhotosTitle
+          apt_id={ this.state.apartmentInfo.id }
+          apt_key={ this.state.apartmentInfo.id }
+          current_user={ this.state.userInfo.role }
+        />
     <div>
 
-      {photoObjects}
-
+      <Gallery images={photoObjects}/>
     </div>
 
           <br/>

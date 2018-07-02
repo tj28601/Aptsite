@@ -32,7 +32,7 @@ import React from 'react';
 import Gallery from 'react-grid-gallery';
 //
 //
-let IMAGES = [];
+// let IMAGES = [];
 
 const ApartmentPhoto = props => {
 
@@ -40,7 +40,7 @@ const ApartmentPhoto = props => {
 // let IMAGES = [];
 
   let imgUrl = props.image_url
-  if (props.image_url === '/images/fallback/default.png') {
+  if (props.image_url === 'thumbnail: /images/fallback/default.png') {
     imgUrl = '/default.png'
   }
 
@@ -50,18 +50,19 @@ const ApartmentPhoto = props => {
     }
 
 
-  IMAGES.push(
-    {src: `${imgUrl}`,
-    thumbnail: `${imgUrl}`,
-    caption: `${props.description}`,
-  })
+  // IMAGES.push(
+  //   {src: `${imgUrl}`,
+  //   thumbnail: `${imgUrl}`,
+  //   caption: `${props.description}`,
+  // })
 
-
+  // let IMAGES=
+  //   [{thumbnail: `${imgUrl}`}]
+  console.log({imgUrl})
     return(
 
-
   <div id='apartmentPhotoDisplay'>
-    <Gallery images={IMAGES}/>
+  {imgUrl}
   <h1>{editButton}</h1>
   </div>
 
