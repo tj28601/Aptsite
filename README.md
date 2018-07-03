@@ -21,6 +21,8 @@ rake db:test:prepare
 rspec spec
 npm test
 ```
+<!-- App Overview -->
+
 <!-- # App Overview
 * In order to create a favorites list, create an account & log in.
 * U
