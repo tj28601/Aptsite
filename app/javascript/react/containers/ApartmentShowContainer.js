@@ -98,6 +98,7 @@ if (body.apartment.current_user !== null){
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
             let thumbnail = `thumbnail: ${photo.image_url}`
+            // let sRc = `src: ${photo.image_url}`
       return(
         <div id = "photoarray">
           <ApartmentPhoto
@@ -106,6 +107,7 @@ if (body.apartment.current_user !== null){
               id={ photo.id }
               description={ photo.photo_description }
               image_url={ thumbnail }
+
               current_user={ this.state.userInfo.role }
               />
         </div>

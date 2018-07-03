@@ -62,7 +62,7 @@ const ApartmentPhoto = props => {
     return(
 
   <div id='apartmentPhotoDisplay'>
-  {imgUrl}
+  {`${imgUrl}`}
   <h1>{editButton}</h1>
   </div>
 
