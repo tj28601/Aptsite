@@ -98,7 +98,9 @@ if (body.apartment.current_user !== null){
 
     let photoObjects = this.state.photoInfo.map((photo) =>{
             let thumbnail = `thumbnail: ${photo.image_url}`
-            // let sRc = `src: ${photo.image_url}`
+            let thumbnailWidth = `thumbnailWidth: 320`
+            let thumbnailHeight = `thumbnailHeight: 174`
+            let sRc = `src: ${photo.image_url}`
       return(
         <div id = "photoarray">
           <ApartmentPhoto
@@ -107,6 +109,11 @@ if (body.apartment.current_user !== null){
               id={ photo.id }
               description={ photo.photo_description }
               image_url={ thumbnail }
+              thumbnailWidth={ thumbnailWidth }
+              thumbnailHeight={ thumbnailHeight }
+              sRc ={ sRc }
+
+
 
               current_user={ this.state.userInfo.role }
               />
@@ -142,7 +149,7 @@ if (body.apartment.current_user !== null){
         />
     <div>
 
-      <Gallery images={photoObjects}/>
+      {photoObjects}
     </div>
 
           <br/>

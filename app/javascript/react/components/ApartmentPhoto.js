@@ -40,7 +40,7 @@ const ApartmentPhoto = props => {
 // let IMAGES = [];
 
   let imgUrl = props.image_url
-  if (props.image_url === 'thumbnail: /images/fallback/default.png') {
+  if (props.image_url === '/images/fallback/default.png') {
     imgUrl = '/default.png'
   }
 
@@ -56,14 +56,20 @@ const ApartmentPhoto = props => {
   //   caption: `${props.description}`,
   // })
 
-  // let IMAGES=
-  //   [{thumbnail: `${imgUrl}`}]
-  console.log({imgUrl})
+  let IMAGES=
+    [{thumbnail: `${imgUrl}`}]
+
     return(
 
   <div id='apartmentPhotoDisplay'>
-  {`${imgUrl}`}
+
+  {props.image_url}
+  {props.thumbnailWidth}
+  {props.thumbnailHeight}
+  {props.sRc}
+
   <h1>{editButton}</h1>
+
   </div>
 
     )
