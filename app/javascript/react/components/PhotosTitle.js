@@ -10,12 +10,17 @@ const PhotosTile = props => {
 
     return (
 
-      <div id='photosTitle'>
-      <div id='photosTitleText'>
-      <h1>Apartment Photos: </h1>
+      // <div id='photosTitle'>
+      // <div id='photosTitleText'>
+      // // <h1>Apartment Photos: </h1>
+
+<div id='adminbutton'>
+
+
         <h5>{photoButton}</h5>
-      </div>
-      </div>
+</div>
+       // </div>
+       // </div>
 
     )
 

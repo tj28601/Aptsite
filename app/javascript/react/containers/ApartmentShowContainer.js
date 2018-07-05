@@ -95,33 +95,57 @@ if (body.apartment.current_user !== null){
 // }
 
   render(){
-
+let IMAGES =[]
     let photoObjects = this.state.photoInfo.map((photo) =>{
-            let thumbnail = `thumbnail: ${photo.image_url}`
-            let thumbnailWidth = `thumbnailWidth: 320`
-            let thumbnailHeight = `thumbnailHeight: 174`
-            let sRc = `src: ${photo.image_url}`
+            // let thumbnail = "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg"
+            // let thumbnailWidth = 320
+            // let thumbnailHeight = 174
+            // let sRc = "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg"
+            // let CAT = [{thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg"},{src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg"},{thumbnailWidth: 320},{thumbnailHeight: 174}]
+            // let COW =[]
+            let imgUrl = photo.image_url
+            if (photo.image_url === '/images/fallback/default.png') {
+              imgUrl = '/default.png'
+            }
+            IMAGES.push(
+                  {src: `${imgUrl}`,
+                  thumbnail: `${imgUrl}`,
+                  thumbnailWidth: 320,
+                  thumbnailHeight: 212,
+                  caption: `${photo.photo_description}`
+                })
+
       return(
         <div id = "photoarray">
           <ApartmentPhoto
               apartment_id={ photo.apartment_id }
               key={ photo.id }
               id={ photo.id }
-              description={ photo.photo_description }
-              image_url={ thumbnail }
-              thumbnailWidth={ thumbnailWidth }
-              thumbnailHeight={ thumbnailHeight }
-              sRc ={ sRc }
-
-
-
               current_user={ this.state.userInfo.role }
+              image_url={ photo.image_url }
+              description={ photo.photo_description }
+
               />
         </div>
       )})
-      console.log({photoObjects})
+      // console.log({photoObjects})
+      // let COW=[{
+      //       src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
+      //       thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
+      //       thumbnailWidth: 320,
+      //       thumbnailHeight: 174},
+      //       {src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+      //       thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
+      //       thumbnailWidth: 320,
+      //       thumbnailHeight: 212}]
+
+          console.log({IMAGES})
+
     return(
-      <div>
+     // <div id="cow">
+      <div id='apartmentInformation'>
+      <div id='apartmentInformationText'>
+
         <ApartmentInformation
           id={ this.state.apartmentInfo.id }
           key={ this.state.apartmentInfo.id }
@@ -140,23 +164,31 @@ if (body.apartment.current_user !== null){
           longitude={ this.state.apartmentInfo.longitude }
           current_user={ this.state.userInfo.role }
           />
-          <br/>
-          <br/>
-        <PhotosTitle
-          apt_id={ this.state.apartmentInfo.id }
-          apt_key={ this.state.apartmentInfo.id }
-          current_user={ this.state.userInfo.role }
-        />
-    <div>
 
-      {photoObjects}
-    </div>
+           <br/>
+           <br/>
 
-          <br/>
-          <br/>
-          <br/>
+<Gallery images={IMAGES}/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<PhotosTitle
+current_user={ this.state.userInfo.role }
+/>
+ {photoObjects}
 
        </div>
+       </div>
+
+
+
     );
 
   }

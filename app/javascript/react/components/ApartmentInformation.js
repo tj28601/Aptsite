@@ -20,8 +20,9 @@ if (props.current_user === 'admin') {
 
   return(
 
-    <div id='apartmentInformation'>
-  <div id='apartmentInformationText'>
+  //   <div id='apartmentInformation'>
+  // <div id='apartmentInformationText'>
+  <div>
       <h1>{props.title}</h1>
       <li>{`Rent: ${props.price}/month`}</li>
       <li>{`Address: ${props.address}`}</li>
@@ -39,7 +40,8 @@ if (props.current_user === 'admin') {
         longitude={ props.longitude }
       />
       </div>
-    </div>
+       // </div>
+    // </div>
 //maybe add "book appointment" or "add to favorites" here ...
   )
 }
