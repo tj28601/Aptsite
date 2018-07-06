@@ -14,6 +14,10 @@ npm install
 rake db:create
 rake db:migrate
 ```
+Navigate to http://localhost:3000 to run this application locally on machine.
+
+View a demo of Aptsite on heroku @ https://connaughton-aptsite.herokuapp.com/.
+
 # Test Suite
 ```
 
@@ -22,7 +26,16 @@ rspec spec
 npm test
 ```
 # App Overview
-Aptsite is a responsive web application for property management firms that facilitates advertisement & dialogue with their prospective clients. Admins are able to perform CRUD operations for their apartment listings and apartment photos via Rails forms. This application allows users to contact admins via Sengrid, create their own lists of Favorites, and schedule appointments with an admin via the Calendly API.
+
+Aptsite is a responsive web application for property management firms that facilitates advertisement & dialogue with prospective clients. Admins are able to perform CRUD operations for their apartment listings and apartment photos via Rails forms. This application allows users to contact an admin with Sengrid, create their own lists of Favorites, and schedule an appointment with an admin via the Calendly API.
+
+The Google Map visible on each apartment show page is rendered with react-google-maps. In contrast, the Google Map on a User’s Favorites page is displayed with vanilla Javascript (for this particular map,  Ruby object data is accessed within JS via the gon gem to display each favorite location and address).
+
+Enjoy!
+
+<!-- Aptsite is a responsive web application for property management firms that facilitates advertisement & dialogue with prospective clients. Admins are able to perform CRUD operations for their apartment listings and apartment photos via Rails forms. This application allows users to contact admins via Sengrid, create their own lists of Favorites, and schedule appointments with an admin via the Calendly API. -->
+
+
 
 <!-- # App Overview
 Aptsite is web application for landlords and property management firms created to facilitate advertisement & dialogue between prospective clients   This application allows users to contact an admin, create their own lists of Favorites, and schedule an appointment with an admin via the Calendly API.
