@@ -5,16 +5,16 @@ import MapWithAMarker from './MyMapComponent';
 const ApartmentInformation = (props) => {
 
 
-  let sqFeet = props.sq_ft
-if (props.sq_ft === "") {
-sqFeet = '(unspecified)'
-} else{
-  sqFeet == '{props.sq_ft}'
-}
+    let sqFeet = props.sq_ft
+  if (props.sq_ft === "") {
+  sqFeet = '(unspecified)'
+  } else{
+    sqFeet == '{props.sq_ft}'
+  }
 
-let editButton = ''
-if (props.current_user === 'admin') {
-    editButton = <h5><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </button></h5>
+  let editButton = ''
+  if (props.current_user === 'admin') {
+      editButton = <h5><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </button></h5>
   }
 
 
@@ -42,7 +42,6 @@ if (props.current_user === 'admin') {
       </div>
        // </div>
     // </div>
-//maybe add "book appointment" or "add to favorites" here ...
   )
 }
 

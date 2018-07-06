@@ -22,6 +22,7 @@ rspec spec
 npm test
 ```
 <!-- # App Overview
+Aptsite is web application for landlords and property management firms created to facilitate advertisement & dialogue between prospective clients   This application allows users to contact an admin, create their own lists of Favorites, and schedule an appointment with an admin via the Calendly API.
 * In order to create a favorites list, create an account & log in.
 * U
 This README would normally document whatever steps are necessary to get the
@@ -45,4 +46,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ... -->
+* ... --> 

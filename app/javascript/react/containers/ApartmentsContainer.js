@@ -13,13 +13,11 @@ class ApartmentsContainer extends Component {
       userInfo: {},
       selectedTileId:[]
     }
-        this.addToFavorites = this.addToFavorites.bind(this);
-        this.deleteFromFavs = this.deleteFromFavs.bind(this);
-        this.handleTileClick = this.handleTileClick.bind(this);
+    this.addToFavorites = this.addToFavorites.bind(this);
+    this.handleTileClick = this.handleTileClick.bind(this);
   }
 
   componentDidMount() {
-
     fetch('/api/v1/apartments', {
         method: 'GET',
         headers: {
@@ -37,9 +35,6 @@ class ApartmentsContainer extends Component {
         }
       })
       .then(response => response.json())
-      // .then(json => {
-      //   debugger;
-      // })
       .then(body => {
       this.setState({ apts: body.apartments });
       if (body.current_user !== null){
@@ -48,100 +43,49 @@ class ApartmentsContainer extends Component {
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
 
-      fetch('/api/v1/favorites', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          credentials: 'same-origin'
-        })
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-            let errorMessage = `${response.status}(${response.statusText})`,
-              error = new Error(errorMessage);
-              throw(error);
-          }
+    fetch('/api/v1/favorites', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin'
       })
-      .then(response => response.json())
-      // .then(json => {
-      //   debugger;
-      // })
-      .then(body => {
-        let allFavorites = body.favorites
-          this.setState({ favorites: allFavorites });
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`));
-    }
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+          let errorMessage = `${response.status}(${response.statusText})`,
+            error = new Error(errorMessage);
+            throw(error);
+        }
+    })
+    .then(response => response.json())
+    .then(body => {
+      let allFavorites = body.favorites
+        this.setState({ favorites: allFavorites });
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
 
-//     componentWillMount(){
-// fetch('/api/v1/favorites', {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     credentials: 'same-origin'
-//   })
-// .then(response => {
-//   if (response.ok) {
-//     return response;
-//   } else {
-//       let errorMessage = `${response.status}(${response.statusText})`,
-//         error = new Error(errorMessage);
-//         throw(error);
-//     }
-// })
-// .then(response => response.json())
-// // .then(json => {
-// //   debugger;
-// // })
-// .then(body => {
-//   let allFavorites = body.favorites
-//     this.setState({ favorites: allFavorites });
-// })
-// .catch(error => console.error(`Error in fetch: ${error.message}`));
-// }
 
   addToFavorites(apt){
-  fetch('/api/v1/favorites', {
-    credentials: 'same-origin',
-    method: 'post',
-    body: JSON.stringify(apt),
-    headers: { 'Content-Type': 'application/json' }
-      }).then(response => response.json())
-      // .then(json => {
-      //   debugger;
-      // })
-      .then(body => {
-        let favoritesArray = this.state.favorites.concat(body)
-        this.setState({ favorites: favoritesArray })
-        })
+    fetch('/api/v1/favorites', {
+      credentials: 'same-origin',
+      method: 'post',
+      body: JSON.stringify(apt),
+      headers: { 'Content-Type': 'application/json' }
+        }).then(response => response.json())
+        .then(body => {
+          let favoritesArray = this.state.favorites.concat(body)
+          this.setState({ favorites: favoritesArray })
+    })
   }
 
   handleTileClick(apt) {
     this.addToFavorites(apt)
     let clickArray= this.state.selectedTileId.concat(apt.id)
     this.setState({ selectedTileId: clickArray })
-
-    // this.setState({ selectedTileId: apt.id })
   }
-
-  deleteFromFavs(current_favorite){
-    fetch('/api/v1/favorites/' + current_favorite, {
-      method: 'DELETE',
-      credentials: 'same-origin',
-      // body: JSON.stringify(book),
-      headers: {
-      'Content-Type': 'application/json',
-      'X-Requested-With': 'XMLHttpRequest'
-     }
-
-    }).then((response) => response.json())
-    const newFavs = this.state.favorites.filter(favorite => favorite.id !== current_favorite)
-      this.setState({favorites: newFavs})
-
- }
 
 
   render() {
@@ -153,7 +97,7 @@ class ApartmentsContainer extends Component {
     current_user={ this.state.userInfo.role }
   />
 
-)
+  )
 
     let apartmentObjects = this.state.apts.map((apt) =>{
       let id = apt.id
@@ -207,7 +151,6 @@ class ApartmentsContainer extends Component {
 
       <div>
       <div>
-
 
       {sideBar}
 

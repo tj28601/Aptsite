@@ -1,34 +1,25 @@
-<!-- <div id="fav-menu-outer">
-  <div class="favtable">
-  <ul id="horiz-list" style="list-style-type:none;">
-<li><a href="/"><i class="fas fa-home"></i> Home</a></li>
-<li><a href="/aboutdetails"><i class="fas fa-users"></i> About</a></li>
-<li><a href="/favorites"><i class="far fa-star"></i> Favorites</a></li>
-<li><a href="/contacts/new"><i class="far fa-envelope"></i> Contact Us</a></li>
-</ul>
-</div>
-</div> -->
-
 <div id="favorites">
  <div id="fav-menu-outer">
   <div class="favtable">
     <ul id="horiz-list" style="list-style-type:none;">
       <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
       <li><a href="/about_details"><i class="fas fa-users"></i> About</a></li>
-      <!-- <li><a href="/favorites"><i class="far fa-star"></i></a></li> -->
       <li><a href="/contacts/new"><i class="far fa-envelope"></i> Contact Us</a></li>
     </ul>
   </div>
 </div>
-
 
   </br>
     <h1> My Favorites </h1>
 <div id="favstext">
     </br>
     <% @favorites.each do |favorite| %>
-      <!-- <h3><div id="favoriteshover"><div id="favstext"><%= link_to "\u2022"+ "#{favorite.apartment.address}", apartment_path(:id => favorite.apartment.id) %></div></div><button id='favsdeletebutton'><i class="far fa-times-circle"> <%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></i></button></h3> -->
-      <h3><%= link_to "\u2022"+ "#{favorite.apartment.address}", apartment_path(:id => favorite.apartment.id) %> <button id='favsdeletebutton'><i class="far fa-times-circle"> <%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></i></button></h3>
+
+      <h3><%= link_to "\u2022"+ "#{favorite.apartment.address}",
+      apartment_path(:id => favorite.apartment.id) %>
+      <button id='favsdeletebutton'><i class="far fa-times-circle">
+        <%= link_to 'Delete', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></i>
+      </button></h3>
     <% end %>
 
   </br>
@@ -67,16 +58,10 @@ function myFunction() {
       var map = new
       google.maps.Map(document.getElementById('map'), options);
 
-      // gon.coords.forEach((coord)=>{
-      //   addMarker({lat:coord[0],lng:coord[1]}, 'beautiful day today');
-      // })
       gon.markerArray.forEach((favorite)=>{
         addMarker({lat:favorite[0][0],lng:favorite[0][1]}, favorite[1]);
       })
 
-      // gon.address.forEach((address)=>{
-      //   addinfoWindow({address});
-      // })
     // Add Marker function
         function addMarker(coords, address){
           var marker = new google.maps.Marker({
@@ -90,23 +75,6 @@ function myFunction() {
               infoWindow.open(map, marker);
           });
         }
-// Add infoWindow function
-        // function addinfoWindow(address){
-        //   // var marker = new google.maps.Marker({
-        //   //   position:coords,
-        //   //   map:map
-        //   // });
-        //   var infoWindow = new google.maps.InfoWindow({
-        //     content:'howdy'
-        //   });
-        //     marker.addListener('click', function(){
-        //       infoWindow.open(map, marker);
-        //   });
-        // }
-
-//completed this function above^...trying to imitate function structure and pass address into infowindow
-
-
     }
   </script>
 
