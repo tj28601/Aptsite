@@ -1,71 +1,45 @@
-// import React from 'react';
-// //
-// const ApartmentPhoto = props => {
-//
-//   let editButton = ''
-//   if (props.current_user === 'admin') {
-//       editButton = <li><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.apartment_id}/photos/${props.id}/edit`}>Edit | Delete</a></button></li>
-//     }
-//
-//   let imgUrl = props.image_url
-//   if (props.image_url === '/images/fallback/default.png') {
-// imgUrl = '/default.png'
-// }
-//   return(
-//     <div id='apartmentPhotoDisplay'>
-//     <div id="apartmentPhotoDisplayText">
-//         <li>{editButton}</li>
-//       <li>  <img src= {imgUrl} alt= "apartment photo" id="aptphoto" height='20px' width='600px' /></li>
-//             <li>  <img src= '/apt1photo1.jpeg' alt= "apartment photo" id="aptphoto" height='20px' width='600px' /></li>
-//         <li>{`*** ${props.description} ***`}</li>
-//       </div>
-//     </div>
-//   )
-// }
-// // //
-// export default ApartmentPhoto;
-
-
-
-//
 import React from 'react';
-import Gallery from 'react-grid-gallery';
-//
-//
-let IMAGES = [];
 
 const ApartmentPhoto = props => {
 
-
-// let IMAGES = [];
-
-  let imgUrl = props.image_url
-  if (props.image_url === '/images/fallback/default.png') {
-    imgUrl = '/default.png'
+  let editButton = ''
+  if (props.current_user === 'admin') {
+    editButton = <li><button id='standardphotobutton'><a id="editYourApartment" href={`/apartments/${props.apartment_id}/photos/${props.id}/edit`}>Edit | Delete</a></button></li>
   }
 
-  let editButton = ''
+  let imgUrl = ''
     if (props.current_user === 'admin') {
-      editButton = <li><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.apartment_id}/photos/${props.id}/edit`}>Edit | Delete</a></button></li>
+      imgUrl = props.image_url
     }
 
+    if (props.image_url === '/images/fallback/default.png' && props.current_user === 'admin' ){
+      imgUrl = '/default.png'
+    }
 
-  IMAGES.push(
-    {src: `${imgUrl}`,
-    thumbnail: `${imgUrl}`,
-    caption: `${props.description}`,
-  })
+  let aptDescription = ''
+    if (props.current_user === 'admin') {
+      aptDescription = props.description
+    }
 
+  let photoDisplayDiv = ''
+    if (props.current_user === 'admin') {
+      photoDisplayDiv = 'apartmentPhotoDisplay'
+    }
 
-    return(
+  let photoDisplayTextDiv = ''
+    if (props.current_user === 'admin') {
+      photoDisplayTextDiv = 'apartmentPhotoDisplayText'
+    }
 
-
-  <div id='apartmentPhotoDisplay'>
-    <Gallery images={IMAGES}/>
-  <h1>{editButton}</h1>
-  </div>
-
-    )
+  return(
+    <div id={photoDisplayDiv}>
+    <div id={photoDisplayTextDiv}>
+        <li>{editButton}</li>
+        <li>  <img src= {imgUrl} alt= "" id="aptphoto" height='150px' width='300px' /></li>
+        <li>{`${aptDescription}`}</li>
+      </div>
+    </div>
+  )
 }
 
 export default ApartmentPhoto;

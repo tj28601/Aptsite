@@ -19,7 +19,6 @@ class ApartmentShowContainer extends Component {
 
   }
 
-
   componentDidMount(){
     let apartmentId = this.props.params.id
     fetch(`/api/v1/apartments/${apartmentId}`, {
@@ -39,14 +38,11 @@ class ApartmentShowContainer extends Component {
         }
       })
       .then(response => response.json())
-      // .then(json => {
-      //   debugger;
-      // })
       .then(body => {
         this.setState({ apartmentInfo: body.apartment });
-if (body.apartment.current_user !== null){
-        this.setState({ userInfo: body.apartment.current_user });
-      }
+        if (body.apartment.current_user !== null){
+          this.setState({ userInfo: body.apartment.current_user });
+        }
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
 
@@ -67,63 +63,48 @@ if (body.apartment.current_user !== null){
           }
         })
         .then(response => response.json())
-        // .then(json => {
-        //   debugger;
-        // })
         .then(body => {
           this.setState({ photoInfo: body.photos });
         })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
-// componentWillMount(){
-//   let apartmentId = this.props.params.id
-//   fetch(`/api/v1/photos/${apartmentId}`)
-//     .then(response => {
-//       if (response.ok) {
-//         return response;
-//       } else {
-//         let errorMessage = `${response.status}(${response.statusText})`,
-//           error = new Error(errorMessage);
-//         throw(error);
-//       }
-//     })
-//     .then(response => response.json())
-//     .then(body => {
-//       this.setState({ photoInfo: body.photos });
-//     })
-//     .catch(error => console.error(`Error in fetch: ${error.message}`));
-// }
 
   render(){
-
+    let IMAGES =[]
     let photoObjects = this.state.photoInfo.map((photo) =>{
-            // let image_url= photo.image_url
-// Object.assign({}, photo,{scaleWidth: undefined})
-// let IMAGES = []
+
+            let imgUrl = photo.image_url
+            if (photo.image_url === '/images/fallback/default.png') {
+              imgUrl = '/default.png'
+            }
+            IMAGES.push(
+                  {src: `${imgUrl}`,
+                  thumbnail: `${imgUrl}`,
+                  thumbnailWidth: 320,
+                  thumbnailHeight: 212,
+                  caption: `${photo.photo_description}`
+                })
 
       return(
-        <div id = "photoarray">
+        <div id='photoarray'>
           <ApartmentPhoto
-              apartment_id={ photo.apartment_id }
-              key={ photo.id }
-              id={ photo.id }
-              description={ photo.photo_description }
-              image_url={ photo.image_url }
-              current_user={ this.state.userInfo.role }
-
-
-              />
-          </div>
-
+            apartment_id={ photo.apartment_id }
+            key={ photo.id }
+            id={ photo.id }
+            current_user={ this.state.userInfo.role }
+            image_url={ photo.image_url }
+            description={ photo.photo_description }
+          />
+        </div>
       )
     })
 
 
-// console.log({IMAGES})sdf
-
     return(
 
-      <div>
+    <div id='apartmentInformation'>
+    <div id='apartmentInformationText'>
+
         <ApartmentInformation
           id={ this.state.apartmentInfo.id }
           key={ this.state.apartmentInfo.id }
@@ -141,30 +122,21 @@ if (body.apartment.current_user !== null){
           latitude={ this.state.apartmentInfo.latitude }
           longitude={ this.state.apartmentInfo.longitude }
           current_user={ this.state.userInfo.role }
+        />
 
-          />
-          <br/>
-          <br/>
-          <PhotosTitle
-            apt_id={ this.state.apartmentInfo.id }
-            apt_key={ this.state.apartmentInfo.id }
-            current_user={ this.state.userInfo.role }
-          />
+           <br/>
+           <br/>
+  <Gallery images={IMAGES}/>
 
-    <div>
-
-      {photoObjects}
+  <PhotosTitle
+    current_user={ this.state.userInfo.role }
+    apt_id={ this.state.apartmentInfo.id }
+  />
+ {photoObjects}
 
     </div>
-
-          <br/>
-          <br/>
-          <br/>
-
-       </div>
+    </div>
     );
-
   }
-
 }
 export default ApartmentShowContainer;

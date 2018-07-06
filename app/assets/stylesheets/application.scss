@@ -183,6 +183,47 @@ color: black;
   background:#778899;
   color: white;
 }
+#standardphotobutton {
+  background: black;
+  border-radius: 5px;
+}
+
+#standardphotobutton:hover,button:hover{
+  // background: #333333;
+  background:#778899;
+  color: white;
+}
+
+@media only screen and (max-width:550px) {
+    // #standardphotobutton  {
+    //
+    //   height: 2em;
+    //   width: 5em;
+    //   padding: 0.1em;
+    //   // font-size: 3px;
+    //   // padding: 3em;
+    //   // padding: 20px;
+    // }
+    a#editYourApartment{
+      // font-size: 7px;
+      padding: 0em;
+      margin: 0em;
+
+    }
+}
+
+@media only screen and (max-width:410px) {
+    #standardphotobutton  {
+
+      height: 3em;
+      width: 5em;
+      padding: 0em;
+      // font-size: 3px;
+      // padding: 3em;
+      // padding: 20px;
+    }
+  }
+
 a#editYourApartment:hover{
   color:white;
 }
@@ -285,7 +326,7 @@ a {
   font-family:Courier;
 
 }
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:900px) {
     #apartmentIndex  {
       columns: 1;
       margin: 3em 1em;
@@ -311,11 +352,13 @@ color: red;
   border: 5.5px solid black;
   text-align: left;
   color: black;
-  margin: 3em 20em;
+  // margin: 3em 20em;
+    margin: 3em 17em;
   padding: 2em;
+    // padding: 0em;
   background-position: center;
 }
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:975px) {
     #apartmentInformation  {
 
       margin: 3em 1em;
@@ -332,17 +375,24 @@ color: red;
   background-position: auto;
   margin-left: 80px;
   list-style-type: none;
+  padding-bottom:none;
+
+
 }
 
 #apartmentPhotoDisplay {
-  // background: rgba(241,241,241,0.8);
-  // text-align: center;
-  // background-position: top;
+  background: rgba(241,241,241,0.8);
+  text-align: center;
+  background-position: top;
   // padding-top: 1.5em;
-  // border: 5.5px solid black;
+  border: 5.5px solid black;
   // padding-bottom: 10px;
   // margin-top: 15px;
-  // list-style-type: none;
+  list-style-type: none;
+  //
+  margin: 1em 5em 1em 1em;
+  padding: 2em 2em;
+
 
 
 
@@ -361,6 +411,15 @@ color: red;
   // float: left;
 }
 
+@media only screen and (max-width:450px) {
+    #apartmentPhotoDisplay  {
+
+      margin: 0em 5em 0em 0em;
+      padding: 1em;
+
+    }
+}
+
 #favId{
   background-color: black;
   border-radius: 5px;
@@ -375,7 +434,15 @@ color: red;
 // }
 
 #apartmentPhotoDisplayText {
-  font-size: 30px;
+  font-size: 20px;
+}
+@media only screen and (max-width:450px) {
+    #apartmentPhotoDisplayText  {
+
+      // margin: 0em 5em 0em 0em;
+      // padding: 1em;
+      font-size: 13px;
+    }
 }
 #alreadyfav {
   // background-color: #D0D0D2;
@@ -805,7 +872,9 @@ font-size: 20px;
       color: black;
       // margin: 5em 5em;
       // margin: 5em 16em;
-      margin: 5em 20em;
+
+      margin: 5em 15em;
+      // margin: 5em 17em;
       // margin: 5em 30em 25em 30em;
       padding: 2em;
       background-position: center;
@@ -820,7 +889,21 @@ font-size: 20px;
 
 #favorites a {
   color: black;
+  // font-size:18px;
 }
+@media only screen and (max-width:1000px) {
+    #favorites {
+      margin: 5em 0.33em;
+      // padding: .5em;
+
+    }
+}
+// @media only screen and (max-width:500px){
+//   #favorites a {
+//     color: black;
+//     font-size:15px;
+//   }
+// }
 
 #mapdiv {
   padding: 0em;
@@ -861,7 +944,10 @@ padding: 0em;
     }
 }
 
-
+#adminbutton {
+text-align: center;
+padding-top: 70px;
+}
 #photosTitle {
   background: rgba(241,241,241,0.8);
   text-align: center;
