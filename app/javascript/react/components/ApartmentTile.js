@@ -40,11 +40,9 @@ const ApartmentTile = props => {
         {favButton}
         {signInMessage}
         <br/>
-        <br/>
-      <div id = 'apartmentIndexhover'><h4><Link to={`/apartments/${props.id}`}><div id = 'apartmentIndexText'>{props.price} - {props.title}</div></Link></h4></div>
-        <br/>
-        <br/>
-        <br/>
+      <div id = 'apartmentIndexhover'>
+        <h4><Link to={`/apartments/${props.id}`}><div id = 'apartmentIndexText'>{props.price} - {props.title}</div></Link></h4>
+      </div>
         <br/>
       <h2><img src= {imgUrl} alt= "thumbnail photo"id="apartmentpic" height='300px' width='500px' /></h2>
       <li>{props.description}</li>
