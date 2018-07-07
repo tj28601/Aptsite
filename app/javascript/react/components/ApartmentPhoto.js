@@ -30,13 +30,20 @@ const ApartmentPhoto = props => {
     if (props.current_user === 'admin') {
       photoDisplayTextDiv = 'apartmentPhotoDisplayText'
     }
-
-  return(
-    <div id={photoDisplayDiv}>
-    <div id={photoDisplayTextDiv}>
+  let photoLayout = ''
+    if (props.current_user === 'admin') {
+      photoLayout =
+      <div>
         <li>{editButton}</li>
         <li>  <img src= {imgUrl} alt= "" id="aptphoto" height='150px' width='300px' /></li>
         <li>{`${aptDescription}`}</li>
+      </div>
+    }
+
+  return(
+    <div id={photoDisplayDiv}>
+      <div id={photoDisplayTextDiv}>
+        {photoLayout}
       </div>
     </div>
   )
