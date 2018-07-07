@@ -330,7 +330,7 @@ a {
     #apartmentIndex  {
       columns: 1;
       margin: 3em 1em;
-      padding: 20px;
+      // padding: 20px;
     }
 }
 #apartmentIndex a {
@@ -788,6 +788,18 @@ margin-left: 90px;
 }
 @media only screen and (max-width:800px) {
     .flash.flash-notice {
+      // margin: 1em 1em;
+      margin: 0.5em 0em;
+      // padding: .5em;
+
+    }
+}
+
+.flash.flash-alert{
+  font-family: Helvetica;
+}
+@media only screen and (max-width:800px) {
+    .flash.flash-alert {
       // margin: 1em 1em;
       margin: 0.5em 0em;
       // padding: .5em;
