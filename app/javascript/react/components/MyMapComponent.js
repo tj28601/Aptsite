@@ -1,6 +1,6 @@
 import React from 'react';
 import { compose, withProps } from "recompose";
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps";
 
 
 const MapWithAMarker = compose(
@@ -21,7 +21,12 @@ const MapWithAMarker = compose(
   >
   <Marker
     position={{ lat: props.latitude, lng: props.longitude }}
-  />
+  >
+  <InfoWindow  position={{lat: props.latitude, lng: props.longitude}}>
+    <h6> {props.address} </h6>
+  </InfoWindow>
+  </Marker>
+  
   </GoogleMap>
   );
 
