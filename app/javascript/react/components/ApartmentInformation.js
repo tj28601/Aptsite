@@ -38,6 +38,7 @@ const ApartmentInformation = (props) => {
       <MapWithAMarker
         latitude={ props.latitude }
         longitude={ props.longitude }
+        address={ props.address }
       />
       </div>
        // </div>
