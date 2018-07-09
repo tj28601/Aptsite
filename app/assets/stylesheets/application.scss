@@ -599,6 +599,12 @@ h3{
     color:black;
 }
 
+@media only screen and (max-width:430px) {
+    h6 {
+      font-size: 9px;
+    }
+}
+
 //  .right {
 //   background-color: orange;
 // }
