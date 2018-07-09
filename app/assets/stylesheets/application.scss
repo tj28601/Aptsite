@@ -376,8 +376,14 @@ color: red;
   margin-left: 80px;
   list-style-type: none;
   padding-bottom:none;
+// margin-left: 50px;
+// padding-right: 80px;
+}
 
-
+@media only screen and (max-width:1200px) {
+    #photoarray  {
+      margin-left: 50px;
+    }
 }
 
 #apartmentPhotoDisplay {
@@ -392,6 +398,7 @@ color: red;
   //
   margin: 1em 5em 1em 1em;
   padding: 2em 2em;
+    // padding: 2em 20em 2em 2em;
 
 
 
