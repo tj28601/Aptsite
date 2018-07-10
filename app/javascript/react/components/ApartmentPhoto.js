@@ -36,7 +36,7 @@ const ApartmentPhoto = props => {
       <div>
         <li>{editButton}</li>
         <li>  <img src= {imgUrl} alt= "" id="aptphoto" height='150px' width='300px' /></li>
-        <li>{`${aptDescription}`}</li>
+        <li>{aptDescription}</li>
       </div>
     }
 

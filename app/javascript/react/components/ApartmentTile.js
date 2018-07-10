@@ -33,7 +33,6 @@ const ApartmentTile = props => {
   })
 
 
-
   return (
 
     <div id = 'apartmentIndex'>

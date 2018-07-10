@@ -4,7 +4,6 @@ import MapWithAMarker from './MyMapComponent';
 
 const ApartmentInformation = (props) => {
 
-
     let sqFeet = props.sq_ft
   if (props.sq_ft === "") {
   sqFeet = '(unspecified)'
@@ -17,11 +16,8 @@ const ApartmentInformation = (props) => {
       editButton = <h5><button id='standardbutton'><a id="editYourApartment" href={`/apartments/${props.id}/edit`}>Edit | Delete</a> </button></h5>
   }
 
-
   return(
 
-  //   <div id='apartmentInformation'>
-  // <div id='apartmentInformationText'>
   <div>
       <h1>{props.title}</h1>
       <li>{`Rent: ${props.price}/month`}</li>
@@ -41,8 +37,7 @@ const ApartmentInformation = (props) => {
         address={ props.address }
       />
       </div>
-       // </div>
-    // </div>
+
   )
 }
 
