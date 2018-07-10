@@ -13,16 +13,13 @@
 
   <%= csrf_meta_tags %>
 
-
-
 </head>
 <body>
 
 
-
   <div class="wrapper">
     <nav class="top-bar">
-        <ul class="top-ul-section">
+      <ul class="top-ul-section">
         <section class="top-bar-section">
           <ul class="right">
             <%- if current_user -%>
@@ -35,8 +32,8 @@
 
 
               <%- end -%>
-            </ul>
-          </section>
+          </ul>
+        </section>
 
         <br/>
         <br/>
@@ -48,14 +45,14 @@
         </br>
 
           <div class="table">
-          <ul id="horizontal-list">
-        <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="/about_details"><i class="fas fa-users"></i> About</a></li>
-        <li><a href="/favorites"><i class="far fa-star"></i> Favorites</a></li>
-        <li><a href="/contacts/new"><i class="far fa-envelope"></i> Contact Us</a></li>
-      </ul>
-    </div>
-  </div>
+            <ul id="horizontal-list">
+              <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="/about_details"><i class="fas fa-users"></i> About</a></li>
+              <li><a href="/favorites"><i class="far fa-star"></i> Favorites</a></li>
+              <li><a href="/contacts/new"><i class="far fa-envelope"></i> Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
       </ul>
 
     </nav>
@@ -69,7 +66,6 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-
 
 
     <%= yield :extra_footer %>
