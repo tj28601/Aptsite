@@ -1,25 +1,11 @@
 class Api::V1::FavoritesController < ApplicationController
-# before_action :authenticate_user!, except: [:index, :show]
-
-  # def show
-  # end
 
   def new
     @favorite = Favorite.new
   end
   def create
-      # if user_signed_in?
-      # @favorite = Favorite.new(favorite_params)
-      # @favorite.user_id = current_user.id
-      # if @favorite.save
-      #   render json: Favorit ....e.all
-      # else
-      #   render json: { error: @favorite.errors.full_messages }, status: :unprocessable_entity
-      # end
 
-      #end
     if user_signed_in?
-      # @apartment=Apartment.find(params[:id])
       @favorite=Favorite.new(favorite_params)
         @apartment=Apartment.find(params[:id])
       @favorite.apartment_id = @apartment.id
@@ -27,53 +13,16 @@ class Api::V1::FavoritesController < ApplicationController
        @favorite.save
 
 
-        # redirect_to favorites_path
-        flash[:notice] = 'Added Successfully To Favorites!'
-    # rendirect_to favorites_path
-    # render template: 'aboutdetails/index'
 
+        flash[:notice] = 'Added Successfully To Favorites!'
     else
       flash[:notice] = 'You must be signed in to add a favorite.'
-       # render 'aboutdetails/index'
     end
   end
-#       flash[:notice] = 'Favorite added successfully!'
-
-    # role = current_user.role
-# if current_user.id = undefined
-#     flash[:notice] = 'You must be signed in to add a favorite.'
-#   redirect_to root_path
-# binding.pry
-    # if @favorite.save
-
-        # binding.pry
-              # flash[:notice] = 'Favorite added successfully!'
-      #   # binding.pry
-      # # console.log("hello")
-      #   # render json: Favorite.all
-    #     redirect_to new_user_session_path
-    #   #   # render json: { error: @favorite.errors.full_messages }, status: :unprocessable_entity
-    #   end
-    # end
-
-
-
 
   def index
     render json: Favorite.where(user_id: current_user)
-    # render json: Favorite.all
   end
-
-  # def update
-  #   @favorite = Favorite.find(params[:id])
-  #   if @favorite.update_attributes(favorite_params)
-  #   end
-  # end
-
-  # def destroy
-  #   favorite = Favorite.find(params[:id])
-  #   favorite.delete
-  # end
 
   protected
 
