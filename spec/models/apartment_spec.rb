@@ -35,23 +35,8 @@ RSpec.describe Apartment, type: :model do
     it { should_not have_valid(:address).when("") }
     it { should_not have_valid(:bedrooms).when("") }
     it { should_not have_valid(:bathrooms).when("") }
-      it { should_not have_valid(:pets).when("") }
-
+    it { should_not have_valid(:pets).when("") }
     it { should have_many :photos }
-    # it { should have_many :users }
-    # it { should have_many :favorites }
-    # it { should have_many(:favorites) }
-    # it { should have_many(:users) }
-    # it { should have_many(:users).through(:favorites) }
+
     end
   end
-
-
-#     validates , presence: true
-#     validates :description, presence: true
-#     validates :price, presence: true
-#     validates :address, presence: true
-#     validates :bedrooms, presence: true
-#     validates :bathrooms, presence: true
-#   end
-# end

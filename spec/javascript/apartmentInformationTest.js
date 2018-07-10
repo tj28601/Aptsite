@@ -28,7 +28,7 @@ describe('ApartmentInformation', ()=>{
      bedrooms: '3',
      bathrooms: '3',
    pets: 'No pets' })
- });
+  });
 
  it('Should return html with the data from props', () => {
    expect(wrapper.find('li').at(0)).toHaveText('Rent: $1700/month')

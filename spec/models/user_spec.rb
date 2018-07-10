@@ -4,7 +4,6 @@ RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
 end
 
-
 RSpec.describe User, type: :model do
 
   it 'has a matching password confirmation for the password' do
@@ -30,18 +29,12 @@ end
 end
 
 describe 'validations' do
-    # it { should have_valid(:user_name).when('NewUserName') }
     it { should have_valid(:email).when('newemail@example.com') }
-    # it { should_not have_valid(:user_name).when("") }
     it { should_not have_valid(:email).when("") }
-    # it { should have_many :apartments }
-    # it { should have_many :favorites }
-    # it { should have_many(:apartments) }
-    # it { should have_many(:favorites) }
-    # it { should have_many(:apartments).through(:favorites) }
+
     it 'should fail for duplicate user name' do
       user = FactoryBot.create(:user, role: "admin")
-      # should_not have_valid(:user_name).when(user.user_name)
+      
       should_not have_valid(:email).when(user.email)
     end
   end
