@@ -14,7 +14,6 @@ require 'factory_bot'
       description "Beautiful apartment!"
       title "apartment title"
       price "$1200"
-      # address "12 Washington St"
       address "59 Symphony Rd, Boston, MA, 02115"
       bedrooms "3"
       bathrooms "2"
@@ -35,10 +34,3 @@ require 'factory_bot'
       message " Do you have any other properties for rent?"
     end
   end
-
-  # FactoryBot.define do
-  #   factory :photo do
-  #     photo_description "Photo Description"
-  #     image "2"
-  #   end
-# end
