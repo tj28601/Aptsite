@@ -7,7 +7,7 @@
 
 View a demo of Aptsite on heroku @ https://connaughton-aptsite.herokuapp.com/.
 
- * Aptsite is a responsive web application for property management firms that facilitates advertisement & dialogue with prospective clients. Admins are able to perform CRUD operations for their apartment listings and apartment photos via Rails forms. This application allows users to contact an admin with Sengrid, create their own lists of Favorites, and schedule an appointment with an admin via the Calendly API.
+ Aptsite is a responsive web application for property management firms that facilitates advertisement & dialogue with prospective clients. Admins are able to perform CRUD operations for their apartment listings and apartment photos via Rails forms. This application allows users to contact an admin with Sengrid, create their own lists of Favorites, and schedule an appointment with an admin via the Calendly API.
 
 My use of the Google Maps API --
 
@@ -15,7 +15,7 @@ My use of the Google Maps API --
 
 In order to optimally run Aptsite locally on your machine, you will need the following:
 
-Google Maps (Javascript) API Key
+* Google Maps (Javascript) API Key
 * Calendly API Key
 * Amazon Web Services S3 Bucket for file storage
 * PostgreSQL
