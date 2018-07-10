@@ -14,16 +14,11 @@
 </br>
 </br>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <!-- <div class="field">
-    <%= f.label :email, class: "form_label_styling" %><br />
-    <%= f.email_field :email, id: "field_styling", autofocus: true, autocomplete: "email" %>
-  </div> -->
 
   <div class="field">
   <%= f.label :email, class: "form_label_styling" %>
   <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
 </div>
-<!-- <div id="field_styling"></div> -->
 
   <div class="field">
     <%= f.label :password, class: "form_label_styling" %><br />
@@ -40,8 +35,6 @@
   <div class="actions">
     <br/>
     <%= f.submit "Log in", class: "button", id: "sendmsg" %>
-  <!-- </div -->
+
 <% end %>
 <br/>
-
-<!-- </div> -->
