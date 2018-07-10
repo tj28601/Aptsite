@@ -1,7 +1,6 @@
 class Api::V1::PhotosController < ApplicationController
    protect_from_forgery unless: -> { request.format.json? }
-     # before_action :authenticate_user!, except: [:index, :show]
-     skip_before_action :verify_authenticity_token
+   skip_before_action :verify_authenticity_token
 
   def index
     all_photos = Photo.all
@@ -11,14 +10,8 @@ class Api::V1::PhotosController < ApplicationController
   def show
     @apartment=Apartment.find(params[:id])
     render json: @apartment.photos, each_serializer: PhotoSerializer
-
-      # @current_user = current_user
-       # render :json => @current_user, :json => @apartment.photos
-       # render json: {photos: @apartment.photos, current_user: current_user}
   end
   def create
-    # binding.pry
-    # if (current_user.role == 'admin')
     @photo = Photo.new(photo_params)
     if @photo.save
       render json: Photo.all
@@ -47,14 +40,9 @@ class Api::V1::PhotosController < ApplicationController
     end
   end
 
-
   protected
-  # def photo_params
-  #   params.require(:photo).permit(:apartment_id, :photo_description, :image)
-  # end
-  # ^^^What I had before
+
   def photo_params
     params.require(:photo).permit(:photo_description, :image, :apartment_id)
-        # params.require(:photo).permit(:photo_description, :image).merge(apartment: Apartment.find(params[:apartment_id]))
   end
 end

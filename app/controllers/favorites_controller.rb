@@ -1,10 +1,7 @@
 class FavoritesController < ApplicationController
 
   def index
-    # @apartments = Apartment.all.where(user_id: current_user)
     @favorites=Favorite.all.where(user_id: current_user)
-
-    # gon.user = current_user
 
     gon.address = []
     gon.lat = []
@@ -28,17 +25,7 @@ class FavoritesController < ApplicationController
 
     end
   end
-
-# def create
-  # if @favorite.save
-  #  # redirect_to favorites_path
-  #  flash[:notice] = 'asdfkl;'
-  # if @favorite.save
-  #   # redirect_to favorites_path
-  #   render 'aboutdetails/index'
-  # end
-# end
-
+  
   def destroy
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
