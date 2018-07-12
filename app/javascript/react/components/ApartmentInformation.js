@@ -20,14 +20,14 @@ const ApartmentInformation = (props) => {
 
   <div>
       <h1>{props.title}</h1>
-      <li>{`Rent: ${props.price}/month`}</li>
-      <li>{`Address: ${props.address}`}</li>
-      <li>{`Bedrooms: ${props.bedrooms}`}</li>
-      <li>{`Bathrooms: ${props.bathrooms}`}</li>
-      <li>{`Size: ${sqFeet}`} ft<sup>2</sup></li>
-      <li>{`Pets: ${props.pets}`}</li>
-      <li>{`Available date: ${props.datedisplay}`}</li>
-      <li>{`Description: ${props.description}`}</li>
+      <li><b>Rent:</b> {`${props.price}/month`}</li>
+      <li><b>Address:</b> {`${props.address}`}</li>
+      <li><b>Bedrooms:</b> {`${props.bedrooms}`}</li>
+      <li><b>Bathrooms:</b> {`${props.bathrooms}`}</li>
+      <li><b>Size:</b> {`${sqFeet}`} ft<sup>2</sup></li>
+      <li><b>Pets:</b> {`${props.pets}`}</li>
+      <li><b>Date Available:</b> {`${props.datedisplay}`}</li>
+      <li><b>Description:</b> {`${props.description}`}</li>
       <br/>
       <h1>{editButton}</h1>
       <br/>
