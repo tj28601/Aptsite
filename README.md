@@ -12,7 +12,7 @@ View a demo of Aptsite on heroku @ https://connaughton-aptsite.herokuapp.com/.
 Notes:
 
  * The Google Map visible on each apartment show page is rendered with react-google-maps. In contrast, the Google Map on a User’s Favorites page is displayed with vanilla Javascript (for this particular map,  Ruby object data is accessed within JS via the gon gem to display each favorite location and address).
- * The navigation bar hides responsively with a width below 1150px
+ * The main navigation bar at the top of each page hides responsively with a width below 1150px. Conversely, the react-burger-menu in the top left corner hides responsively with a width above 1150px. 
 
 In order to optimally run Aptsite locally on your machine, you will need the following:
 
