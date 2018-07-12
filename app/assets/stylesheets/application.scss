@@ -23,33 +23,22 @@
    background-color: black;
  }
 
- // #nav{
- //  padding-bottom: 115px;
- // }
- // #title-area {
- //  background-color: red;
- //    padding-bottom: 15px;
- // }
  section .top-bar-section {
    background-color: black;
  }
 
  body {
-  // background: image-url("background.jpg");
-    background: image-url("background.jpg");
+  background: image-url("background.jpg");
   background-size: 1460px 1220px;
   font-family:Courier;
   color: black;
 }
 li {
-font-family:Courier;
-color: black;
+  font-family:Courier;
+  color: black;
 }
 
 
-//  ul .menu-outer {
-//   text-align: center;
-// }
 .table{
   text-align: center;
 }
@@ -58,30 +47,20 @@ color: black;
   text-align: center;
 }
 
-// #title-area{
-//   padding-bottom: 115px;
-// }
 @media only screen and (min-width:1150px) {
   .table li a {
     visibility: visible;
     text-align: center;
-  // color: red;
   }
-  // .table  {
-  // color: red;
-  // }
 }
 
 @media only screen and (min-width:1150px) {
     .favtable li a  {
       visibility: hidden;
       text-align: center;
-    // float: left;
-    //   color: blue;
-    //   list-style-type: square;
-    // padding: 15px 15px 15px 15px;
     }
 }
+
 #fav-menu-outer li a {
   float: center;
   color: black;
@@ -89,25 +68,12 @@ color: black;
   font-weight: bold;
   size: 15px;
   background-position: left;
-  // background-color: black;
-// margin-left: 50px;
-
-// padding: 0px 15px 0px 15px;
-// background-position: center;
 }
 #fav-menu-outer li a {
-  // float: left;
   margin-left: 90px;
-  // list-style-type: none;
   background-position: center;
-  // padding: 0px 15px 0px 15px;
 }
 
-.favtable{
-  // text-align: center;
-  // float: left;
-  // padding: 15px 15px 15px 15px;
-}
 @media only screen and (max-width: 1150px) {
   .bm-burger-button {
     position: fixed;
@@ -120,10 +86,6 @@ color: black;
     background: white;
   }
 }
-//  .right {
-//   background-position: top;
-// }
-
 
 #aboutdetails {
   background: rgba(241,241,241,0.8);
@@ -147,14 +109,9 @@ color: black;
 
 #favstext{
   font-size: 15px;
-  // columns: 2;
   width: 100%;
 }
 #favstext :hover {
-  // background-color: #589B9A;
-  // background-color: #777777;
-  // background-color: yellow;
-  // width: 60%;
   text-decoration: underline;
 }
 
@@ -168,9 +125,6 @@ color: black;
   margin-bottom: 0em;
   text-indent: 3.5em;
 
-  // font-family: Quicksand;
-
-
 }
 
 #standardbutton {
@@ -179,7 +133,6 @@ color: black;
 }
 
 #standardbutton:hover,button:hover{
-  // background: #333333;
   background:#778899;
   color: white;
 }
@@ -189,38 +142,22 @@ color: black;
 }
 
 #standardphotobutton:hover,button:hover{
-  // background: #333333;
   background:#778899;
   color: white;
 }
 
 @media only screen and (max-width:550px) {
-    // #standardphotobutton  {
-    //
-    //   height: 2em;
-    //   width: 5em;
-    //   padding: 0.1em;
-    //   // font-size: 3px;
-    //   // padding: 3em;
-    //   // padding: 20px;
-    // }
     a#editYourApartment{
-      // font-size: 7px;
       padding: 0em;
       margin: 0em;
-
     }
 }
 
 @media only screen and (max-width:410px) {
     #standardphotobutton  {
-
       height: 3em;
       width: 5em;
       padding: 0em;
-      // font-size: 3px;
-      // padding: 3em;
-      // padding: 20px;
     }
   }
 
@@ -233,7 +170,6 @@ a#addNewApt:hover{
 a#addNewPhoto:hover{
   color:white;
 }
-
 
 
 #editbutton {
@@ -251,45 +187,27 @@ a#addNewPhoto:hover{
   border-radius: 45px;
   size: 10px 10px;
   background-position: right;
-  // float: center;
   display: inline;
   text-decoration:inherit;
 padding: .65em;
 }
 
-#favsdeletebutton:hover {
-  // background: #FFA100;
-  // background: #FF6F00;
-  // background: #EA5557;
-  // background: #FF6900;
-
-
-}
  a :hover{
-  // background: black;
   text-decoration: none;
 }
 
-// #favsdeletebutton {
-//   background: red;
-//   color: white;
-// }
 
- #favorites #favsdeletebutton a {
+#favorites #favsdeletebutton a {
   color: white;
   background-position: left;
-    size: 10px 10px;
-      float: center;
-  // float: right;
-// text-align: right;
-margin-left:auto;
-margin-right:0;
-
+  size: 10px 10px;
+  float: center;
+  margin-left:auto;
+  margin-right:0;
 }
 
 a {
   color: white;
-  // font-family:Courier
 }
 #logInButton {
   background: white;
@@ -302,11 +220,8 @@ a {
 }
 
 #photobutton:hover,button:hover{
-  // background: #00FF00;
   background: #32CD32;
 }
-
-
 
 #signature {
   text-indent: 0em;
@@ -316,21 +231,18 @@ a {
   border: 5.5px solid black;
   background: rgba(241,241,241,0.8);
   padding: 20px;
-  // margin-top: 15px;
   width: auto;
   height: auto;
   columns: 3;
-  // margin: 3em 10em;
   margin: 3em 15em 5em 15em;
   text-align: left;
   font-family:Courier;
-
 }
+
 @media only screen and (max-width:900px) {
     #apartmentIndex  {
       columns: 1;
       margin: 3em 1em;
-      // padding: 20px;
     }
 }
 #apartmentIndex a {
@@ -343,26 +255,18 @@ color: red;
   font-family:Courier;
 }
 
-// #apartmentIndexText h3 li {
-//   color: black;
-// }
-
 #apartmentInformation {
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
   text-align: left;
   color: black;
-  // margin: 3em 20em;
-    margin: 3em 17em;
+  margin: 3em 17em;
   padding: 2em;
-    // padding: 0em;
   background-position: center;
 }
 @media only screen and (max-width:975px) {
     #apartmentInformation  {
-
       margin: 3em 1em;
-      // padding: 20px;
     }
 }
 
@@ -376,8 +280,6 @@ color: red;
   margin-left: 80px;
   list-style-type: none;
   padding-bottom:none;
-// margin-left: 50px;
-// padding-right: 80px;
 }
 
 @media only screen and (max-width:1200px) {
@@ -390,40 +292,16 @@ color: red;
   background: rgba(241,241,241,0.8);
   text-align: center;
   background-position: top;
-  // padding-top: 1.5em;
   border: 5.5px solid black;
-  // padding-bottom: 10px;
-  // margin-top: 15px;
   list-style-type: none;
-  //
   margin: 1em 5em 1em 1em;
   padding: 2em 2em;
-    // padding: 2em 20em 2em 2em;
-
-
-
-
-  // background: rgba(241,241,241,0.8);
-  // border: 5.5px solid black;
-  //
-  // font-weight: bold;
-  // text-align: left;
-  // color: black;
-  //
-  // margin: 3em 17em;
-  // padding: 2em;
-  // background-position: center;
-
-  // columns: 2;
-  // float: left;
 }
 
 @media only screen and (max-width:450px) {
     #apartmentPhotoDisplay  {
-
       margin: 0em 5em 0em 0em;
       padding: 1em;
-
     }
 }
 
@@ -432,41 +310,25 @@ color: red;
   border-radius: 5px;
 }
 #favId:hover,button:hover{
-  // background: #333333;
   background:#778899
 }
 
-// #favId :hover {
-//   background-color: blue;
-// }
 
 #apartmentPhotoDisplayText {
   font-size: 20px;
 }
 @media only screen and (max-width:450px) {
     #apartmentPhotoDisplayText  {
-
-      // margin: 0em 5em 0em 0em;
-      // padding: 1em;
       font-size: 13px;
     }
 }
 #alreadyfav {
-  // background-color: #D0D0D2;
   background-color: #A9A9A9;
   border-radius: 5px;
-
-  // background-color:#000080;
 }
 #selectedfav {
-  // background-color: yellow;
-  // background-color: #cc5500;
-
   background-color:#000080;
   border-radius: 5px;
-  // color: black;
-
-// background-color: #A9A9A9;
 }
 
 ul .photolist {
@@ -486,92 +348,44 @@ ul .photolist {
 
 @media only screen and (max-width: 600px){
   .top-bar-section ul li {
-    // left: 0;
-    // position: absolute;
-    // top: 170px;
-    // display: block;
-    // left: 0px;
-  // top: 130px;
     display: block;
     text-align: left;
     background-position: left;
     float: left;
   }
 }
-@media only screen and (min-width: 1070px){
-  .top-bar-section ul li {
-    // left: 0;
-    // position: absolute
-    // right: 1570px;
 
-
-    // padding: 0px;
-    // margin: 0px;
-    // right: auto;
-    // top: 20px;
-    // text-align: right;
-    // display: inline-block;
-  }
-}
 @media only screen and (min-width: 1070px){
   .top-bar-section {
-    // left: 0;
-    // position: absolute
-    // right: 1570px;
-    // padding: 0px;
-    // margin: 0px;
-    // // right: auto;
-    //
-    // right: 0px;
-    // left: 1000px;
-
-//     display: inline-block;
-//     text-align: right;
-// background-position: right;
-
-display: block;
-text-align: right;
-background-position: right;
-right: 50px;
-float: right;
+    display: block;
+    text-align: right;
+    background-position: right;
+    right: 50px;
+    float: right;
   }
 }
 @media only screen and (max-width: 600px){
   .top-bar-section {
     left: auto;
-      // position: absolute;
-      top: 120px;
-      float: left;
+    top: 120px;
+    float: left;
   }
-  // ul.right{
-  //
-  // }
 }
 
 
 .top-bar-section ul li a {
   color: white;
-  // background: blue;
 }
 
 .top-bar-section ul li {
   color: red;
-  // background: blue;
   bottom: 150px;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button){
 background: black;
-// top: 150px;
 }
-// @media only screen and (max-width:310px) {
-//   .top-bar-section li:not(.has-form) a:not(.button){
-//   background: black;
-//   background: bottom;
-//   display: block;
-//   float: left;
-//   }
-// }
+
 @media only screen and (min-width: 600px){
   .top-bar-section ul {
       display: inline;
@@ -582,15 +396,9 @@ background: black;
 
 @media only screen and (max-width: 600px){
   ul.top-ul-section {
-      // display: inline;
-      // height: auto !important;
-      // width: auto;
-// padding: 40px
       padding: 40px 0px 0px 0px;
   }
 }
-
-
 
 
 h1{
@@ -612,42 +420,24 @@ h3{
     }
 }
 
-//  .right {
-//   background-color: orange;
-// }
-
-#apartmentInformationText {
-  // color: black;
-  // font-size: 20px;
-  // border: 5.5px solid black;
-  // padding: 2em;
-
-
-}
 
 #apartmentInformationText li {
   color: black;
 }
 
 
-#logoImage {
-
-}
 
 #menu-outer li {
-  // text-align: center;
   float: left;
-margin-left: 50px;
-background-position: center;
+  margin-left: 50px;
+  background-position: center;
 }
 
 #menu-outer li a {
-// display: block;
-background-position: center;
-padding: 0px 15px 0px 15px;
-margin-left: 90px;
+  background-position: center;
+  padding: 0px 15px 0px 15px;
+  margin-left: 90px;
 }
-
 
 .name {
   background-color: black;
@@ -656,63 +446,28 @@ margin-left: 90px;
 
 
 #editForm {
-  // background: rgba(241,241,241,0.8);
-  // padding-top: 3.5em;
-  // margin: 0em, 1em;
-  // border: 5.5px solid black;
-  // width: 90%;
-  // margin-left: 70px;
-  // background-position: center;
-  // padding: 15px 40px;
-
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
-  // color: black;
   font-weight: bold;
   text-align: left;
   color: black;
-  // margin: 5em 22em;
   margin: 3em 22em 5em 22em;
-  // margin: 5em 25em 25em 25em;
-  // margin: 5em 30em 25em 30em;
-  // margin: 5em 30em 100em 30em;
   padding: 0em 2em 2em 2em;
   background-position: center;
 }
 
 #editPhotoForm {
-  // background: rgba(241,241,241,0.8);
-  // padding-top: 3.5em;
-  // border: 5.5px solid black;
-  // width: 90%;
-  // margin-left: 70px;
-  // background-position: center;
-  // padding: 15px 40px;
-
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
-  // color: black;
   font-weight: bold;
   text-align: left;
   color: black;
   margin: 5em 22em;
-  // margin: 5em 25em 25em 25em;
-  // margin: 5em 30em 25em 30em;
-  // margin: 5em 30em 100em 30em;
   padding: 0em 2em 2em 2em;
   background-position: center;
 }
 
 #newPhotoForm {
-  // background: rgba(241,241,241,0.8);
-  // padding-top: 3.5em;
-  // border: 5.5px solid black;
-  // width: 95%;
-  // margin-left: 38px;
-  // background-position: center;
-  // padding: 15px 40px;
-
-
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
   font-weight: bold;
@@ -724,65 +479,38 @@ margin-left: 90px;
 }
 
 #newApartmentForm {
-  // // background: image-url("background.jpg");
-  // // background-size: 1460px 1220px;
-  //   background: rgba(241,241,241,0.8);
-  //   padding-top: 3.5em;
-  //   border: 5.5px solid black;
-  //   // width: 90%;
-  //   // margin-left: 70px;
-  //   margin: 5em 22em;
-  //   // background-position: center;
-  //   // padding: 15px 40px;
-
-
-    background: rgba(241,241,241,0.8);
-    border: 5.5px solid black;
-    // color: black;
-    font-weight: bold;
-    text-align: left;
-    color: black;
-    // margin: 5em 22em;
-    margin: 3em 22em 5em 22em;
-    // margin: 5em 25em 25em 25em;
-    // margin: 5em 30em 25em 30em;
-    // margin: 5em 30em 100em 30em;
-    padding: 0em 2em 2em 2em;
-    background-position: center;
-
-    // display: inline;
-    // margin: 5em 50em 160em 5em;
+  background: rgba(241,241,241,0.8);
+  border: 5.5px solid black;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  margin: 3em 22em 5em 22em;
+  padding: 0em 2em 2em 2em;
+  background-position: center;
 }
+
 @media only screen and (max-width:1000px) {
     #newApartmentForm {
-
       margin: 3em .7em;
       padding: 1em;
-      // padding: 20px;
     }
 }
 @media only screen and (max-width:1000px) {
     #editForm {
-
       margin: 3em .7em;
       padding: 1em;
-      // padding: 20px;
     }
 }
 @media only screen and (max-width:1000px) {
     #editPhotoForm {
-
       margin: 3em .7em;
       padding: 1em;
-      // padding: 20px;
     }
 }
 @media only screen and (max-width:1000px) {
     #newPhotoForm {
-
       margin: 3em .7em;
       padding: 1em;
-      // padding: 20px;
     }
 }
 
@@ -794,50 +522,37 @@ margin-left: 90px;
   font-weight: bold;
   text-align: center;
   margin: 1em 5em;
-  // margin: 3em 10em;
 }
+
 .flash.flash-notice{
   font-family: Helvetica;
 }
+
 @media only screen and (max-width:800px) {
     .flash.flash-notice {
-      // margin: 1em 1em;
       margin: 0.5em 0em;
-      // padding: .5em;
-
     }
 }
 
 .flash.flash-alert{
   font-family: Helvetica;
 }
+
 @media only screen and (max-width:800px) {
     .flash.flash-alert {
-      // margin: 1em 1em;
       margin: 0.5em 0em;
-      // padding: .5em;
-
     }
 }
 
-// @media only screen and (max-width:800px) {
-//     .flash.flash-notice {
-//       margin: 1em 1em;
-//       // padding: .5em;
-//
-//     }
-// }
-
 
 #new-contact.label {
-font-size: 20px;
+  font-size: 20px;
 }
 
 
 #logIn {
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
-  // color: black;
   font-weight: bold;
   text-align: left;
   color: black;
@@ -845,106 +560,69 @@ font-size: 20px;
   padding: 0em 2em 2em 2em;
   background-position: center;
 }
+
 @media only screen and (max-width:900px) {
     #logIn {
-
       margin: 5em .33em;
-      // padding: 20px;
     }
 }
-#contactUs {
-    background: rgba(241,241,241,0.8);
-    border: 5.5px solid black;
-    // color: black;
-    font-weight: bold;
-    text-align: left;
-    color: black;
-    margin: 5em 22em;
-    // margin: 5em 25em 25em 25em;
-    // margin: 5em 30em 25em 30em;
-    // margin: 5em 30em 100em 30em;
-    padding: 0em 2em 2em 2em;
-    background-position: center;
 
-    // display: inline;
-    // margin: 5em 50em 160em 5em;
+#contactUs {
+  background: rgba(241,241,241,0.8);
+  border: 5.5px solid black;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  margin: 5em 22em;
+  padding: 0em 2em 2em 2em;
+  background-position: center;
 }
 
 @media only screen and (max-width:1000px) {
     #contactUs {
-
       margin: 3em .7em;
       padding: 1em;
-      // padding: 20px;
     }
 }
 
 #apartmentIndexhover :hover {
-  // background-color: #777777;
-    // background-color: #589B9A;
-  // background-color: yellow;
   text-decoration: underline;
 }
-//   #favsdeletebutton  :hover{
-// // #favsdeletebutton :hover {
-//   background-color: #FF0000;
-// }
 
 #favorites {
-      background: rgba(241,241,241,0.8);
-      border: 5.5px solid black;
-      text-align: left;
-      color: black;
-      // margin: 5em 5em;
-      // margin: 5em 16em;
-
-      margin: 5em 15em;
-      // margin: 5em 17em;
-      // margin: 5em 30em 25em 30em;
-      padding: 2em;
-      background-position: center;
+  background: rgba(241,241,241,0.8);
+  border: 5.5px solid black;
+  text-align: left;
+  color: black;
+  margin: 5em 15em;
+  padding: 2em;
+  background-position: center;
 }
+
 @media only screen and (max-width:1000px) {
     #favorites {
       margin: 5em 0.33em;
-      // padding: .5em;
-
     }
 }
 
 #favorites a {
   color: black;
-  // font-size:18px;
 }
+
 @media only screen and (max-width:1000px) {
     #favorites {
       margin: 5em 0.33em;
-      // padding: .5em;
-
     }
 }
-// @media only screen and (max-width:500px){
-//   #favorites a {
-//     color: black;
-//     font-size:15px;
-//   }
-// }
 
 #mapdiv {
   padding: 0em;
-  // float: right;
-  // text-align: right;
-  // margin-right: 0;
-  // margin-left: auto;height: 100px;
-  // width: 250px;
 }
+
 map {
-padding: 0em;
-// text-align: right;
-// margin-right: 0;
-// margin-left: auto;height: 100px;
-// width: 250px;
+  padding: 0em;
 }
+
 .hidden {
   display: none;
 }
@@ -952,56 +630,47 @@ padding: 0em;
 #signUp {
   background: rgba(241,241,241,0.8);
   border: 5.5px solid black;
-  // color: black;
   font-weight: bold;
   text-align: left;
   color: black;
   margin: 5em 20em;
   padding: 0em 2em 2em 2em;
-  // padding: 2em;
   background-position: center;
 }
+
 @media only screen and (max-width:900px) {
     #signUp {
-
       margin: 5em 0.33em;
-      // padding: 20px;
     }
 }
 
 #adminbutton {
-text-align: center;
-padding-top: 70px;
+  text-align: center;
+  padding-top: 70px;
 }
+
 #photosTitle {
   background: rgba(241,241,241,0.8);
   text-align: center;
-  // width: 50%;
-  // margin-left: 80px;
   margin: 3em 20em;
 }
+
 @media only screen and (max-width:800px) {
     #photosTitle {
-
       margin: 3em 1em;
-      // padding: 20px;
     }
 }
+
 #welcomeTitle {
-  // background: rgba(241,241,241,0.8);
   text-align: center;
-  // width: 100%;
   margin: 0em;
-  // margin-left: 50px;
-  // margin-right: 50px;
   font-family:Courier;
 }
+
 #welcomeTitleText {
   color: black;
   font-size: 20px;
   margin: 0em;
-  // border: 5.5px solid black;
-  // border: 5.5px solid white;
   font-family:Courier;
 }
 
@@ -1011,10 +680,6 @@ padding-top: 70px;
   border: 5.5px solid black;
   padding: 1em;
 }
-//  #photosTitleText h1 {
-//   color: #170085;
-//   // font-weight: bold;
-// }
 
 #navtext {
   color: black;
@@ -1035,39 +700,25 @@ padding-top: 70px;
   border-radius: 15px;
 }
 #button {
-    background: rgba(241,241,241,0.0);
-  // background: black;
+  background: rgba(241,241,241,0.0);
   border: 3px solid black;
   color: white;
   border-radius: 15px;
   padding: 1.5em;
-
 }
+
 #sendmsg{
   border-radius: 7px;
 }
+
 #sendmsg:hover,button:hover{
-  // background: #333333;
   background:#778899;
-  // background: #32CD32;
-  // color: white;
 }
 
 .button {
-  // background: rgba(241,241,241,0.8);
-  // background: #009CFF;
-    background: black;
+  background: black;
   border-radius: 15px;
-  // color: white;
-  // padding: .9em;
-
 }
-// #actions {
-// cursor: pointer;
-// }
-// #submit{
-//   border-radius: 15px;
-// }
 
 /* Position and sizing of burger button */
 .bm-burger-button {
@@ -1076,47 +727,27 @@ padding-top: 70px;
   height: 30px;
   left: 36px;
   top: 36px;
-  // visibility: hidden;
-}
-//
-// /* Color/shape of burger icon bars */
-.bm-burger-bars {
-  // background: white;
-  // visibility: hidden;
 }
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
   height: 24px;
   width: 24px;
-  // max-width: 650px;
-  // color: white
 }
-
 
 /* Color/shape of close button cross */
 .bm-cross {
   background: #bdc3c7;
-  // background: white;
 }
 
 /* General sidebar styles */
 .bm-menu {
-
-  // padding: 2.5em 1.5em 0;
   padding: 4.5em 1.5em 0;
   font-size: 1.15em;
   height: 20px;
   background: white;
   border: 5.5px solid black;
-
-// top: 20px;
-
-  // padding: 0em 1.5em 0;
 }
-// .bm-menu-wrap{
-//   padding: 0em;
-// }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
@@ -1125,18 +756,15 @@ padding-top: 70px;
 
 /* Wrapper for item list */
 .bm-item-list {
-
   color: black;
   padding: 0.8em;
-
-  // padding: 0em, 0.8, 0.8, 0.8em;
 }
 
 @media only screen and (max-height:425px) {
   .bm-item-list {
-    // padding: 0em, 0.8em, 0em, 0em;
     padding: 0em;
   }
+
   .bm-menu {
      padding: 0em 1.5em;
   }
@@ -1146,13 +774,14 @@ padding-top: 70px;
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 
-
 }
+
 farfa-star{
   height:24px;
   width: 24px;
   color: yellow;
 }
+
 fasfa-times{
   height:24px;
   width: 24px;
@@ -1160,12 +789,12 @@ fasfa-times{
 }
 
 #starId{
-  // background: red;
   height: 0em;
   width: 0em;
   padding: 0em;
   margin: 0em;
 }
+
 #deleteFromFavorites{
   height: 0em;
   width: 0em;
@@ -1176,62 +805,72 @@ fasfa-times{
 .menu-item {
   color: black;
 }
+
 .form_label_styling {
 color: black;
 font-size: 23px;
 }
 
-.title-area{
-  // background-color: red;
-  // padding-bottom: 15px;
+#field_styling {
+  border-radius: 10px;
 }
 
-#field_styling {
-border-radius: 10px;
-}
 .field{
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#user_email{
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#user_password{
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#user_password_confirmation{
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#photo_photo_description {
-border-radius: 10px;
+  border-radius: 10px;
 }
 
 input#apartment_title {
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#apartment_description {
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#apartment_price {
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#apartment_address {
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#apartment_bedrooms {
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#apartment_bedrooms {
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#apartment_bathrooms {
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#apartment_sq_ft {
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#apartment_pets {
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 input#apartment_date_available {
-border-radius: 10px;
+  border-radius: 10px;
 }
