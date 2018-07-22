@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-
 const ApartmentTile = props => {
 
   let imgUrl = props.thumbnail_photo_url

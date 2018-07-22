@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import ApartmentInformation from '../components/ApartmentInformation';
 import ApartmentPhoto from '../components/ApartmentPhoto';
-// import IMAGES from '../components/ApartmentPhoto';
 import PhotosTitle from '../components/PhotosTitle';
 import Gallery from 'react-grid-gallery';
-
 
 
 class ApartmentShowContainer extends Component {
